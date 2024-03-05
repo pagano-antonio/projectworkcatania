@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.model.Candidate;
-import com.model.Persona;
 import com.model.repository.CandidateRepository;
 
 @RestController
@@ -48,10 +47,9 @@ public class CandidateRest {
 		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).get();
 		model.addAttribute("CandidateFound", candidate);
 		return "updateCandidate";
-		}else 
+		} else 
 			return "ErrorPage";
 	}
-	
 	
 
 }
