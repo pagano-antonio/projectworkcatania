@@ -28,11 +28,17 @@ public class CandidateRest {
 	} 
 	
 	@GetMapping("/addCandidate")
-    public String addCandidate(Candidate candidate, Model model) {
-		System.out.println("Sto inserendo una nuovo candidato!");
+    public String addOrUpdateCandidate(Candidate candidate, Model model) {
+		System.out.println("Sto inserendo/modificando un candidato!");
 		candidateRep.save(candidate);	
         return "addCandidateOk";
     }
-
+	
+	@GetMapping("/deleteCandidate")
+	public String deleteCandidate(Candidate candidate, Model model) {
+		System.out.println("Sto cancellando il candidato!");
+		candidateRep.delete(candidate);
+		return "deleteCandidateOk";
+	}
 
 }
