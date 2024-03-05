@@ -2,9 +2,10 @@ package com.model.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.model.CandidateSkill;
+
+import com.model.EducationDegreeType;
 
 @Repository
-public interface CandidateSkillRepository extends JpaRepository<CandidateSkill, Integer>  {
+public interface EducationDegreeTypeRepository extends JpaRepository<EducationDegreeType, Integer> {
 
 }
