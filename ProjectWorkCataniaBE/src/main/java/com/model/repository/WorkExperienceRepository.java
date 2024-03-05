@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.model.WorkExperience;
 
 @Repository
-public interface WorkExperienceRepository extends JpaRepository<WorkExperience, Integer>{
+public interface WorkExperienceRepository extends JpaRepository<WorkExperience, Integer> {
+	
 
 }
