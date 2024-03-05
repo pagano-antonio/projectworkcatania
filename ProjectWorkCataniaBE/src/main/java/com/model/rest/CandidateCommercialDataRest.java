@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.model.Candidate;
 import com.model.CandidateCommercialData;
 import com.model.repository.CandidateCommercialDataRepository;
 
@@ -56,7 +56,7 @@ public class CandidateCommercialDataRest {
 	
 	@GetMapping("/searchCommercialDataByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidate) {
-		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByCandidate_id(idCandidate);
+		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidate(idCandidate);
 		System.out.println("Ho trovato l'id Canidato: " + idCandidate);
 		model.addAttribute("candidateList", candidateList);
 		System.out.println(candidateList);
