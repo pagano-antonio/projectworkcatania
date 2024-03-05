@@ -28,5 +28,7 @@ replay_pid*
 .classpath
 .project
 .settings
-.DS_Store
-..DS_Store
+*.properties
+*.yml
+
+/.DS_Store
