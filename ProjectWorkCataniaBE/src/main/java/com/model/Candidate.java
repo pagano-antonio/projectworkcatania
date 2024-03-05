@@ -2,6 +2,7 @@ package com.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.sql.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,7 +26,7 @@ public class Candidate implements Serializable {
 	@Column(name = "birth_place")
 	private String birthPlace;
 
-	private int birthday;
+	private Date birthday;
 
 	private String city;
 
@@ -64,11 +65,11 @@ public class Candidate implements Serializable {
 		this.birthPlace = birthPlace;
 	}
 
-	public int getBirthday() {
+	public Date getBirthday() {
 		return this.birthday;
 	}
 
-	public void setBirthday(int birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 
