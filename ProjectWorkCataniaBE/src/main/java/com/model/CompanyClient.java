@@ -1,10 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -18,7 +20,7 @@ public class CompanyClient implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCompanyClient;
 
 	private String address;
 
@@ -26,15 +28,19 @@ public class CompanyClient implements Serializable {
 
 	private String name;
 
+	// bi-directional many-to-one association to JobOffer
+	@OneToMany(mappedBy = "companyClient")
+	private List<JobOffer> jobOffers;
+
 	public CompanyClient() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCompanyClient() {
+		return this.idCompanyClient;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCompanyClient(int idCompanyClient) {
+		this.idCompanyClient = idCompanyClient;
 	}
 
 	public String getAddress() {
@@ -59,6 +65,28 @@ public class CompanyClient implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<JobOffer> getJobOffers() {
+		return this.jobOffers;
+	}
+
+	public void setJobOffers(List<JobOffer> jobOffers) {
+		this.jobOffers = jobOffers;
+	}
+
+	public JobOffer addJobOffer(JobOffer jobOffer) {
+		getJobOffers().add(jobOffer);
+		jobOffer.setCompanyClient(this);
+
+		return jobOffer;
+	}
+
+	public JobOffer removeJobOffer(JobOffer jobOffer) {
+		getJobOffers().remove(jobOffer);
+		jobOffer.setCompanyClient(null);
+
+		return jobOffer;
 	}
 
 }

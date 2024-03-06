@@ -2,9 +2,10 @@ package com.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
@@ -19,39 +20,43 @@ public class CandidateSkill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCandidateSkill;
 
-	@Column(name = "id_candidate")
-	private int idCandidate;
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
 
-	@Column(name = "id_skill")
-	private int idSkill;
+	// bi-directional many-to-one association to Skill
+	@ManyToOne
+	@JoinColumn(name = "idSkill")
+	private Skill skill;
 
 	public CandidateSkill() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCandidateSkill() {
+		return this.idCandidateSkill;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCandidateSkill(int idCandidateSkill) {
+		this.idCandidateSkill = idCandidateSkill;
 	}
 
-	public int getIdCandidate() {
-		return this.idCandidate;
+	public Candidate getCandidate() {
+		return this.candidate;
 	}
 
-	public void setIdCandidate(int idCandidate) {
-		this.idCandidate = idCandidate;
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 
-	public int getIdSkill() {
-		return this.idSkill;
+	public Skill getSkill() {
+		return this.skill;
 	}
 
-	public void setIdSkill(int idSkill) {
-		this.idSkill = idSkill;
+	public void setSkill(Skill skill) {
+		this.skill = skill;
 	}
 
 }

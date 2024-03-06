@@ -3,9 +3,10 @@ package com.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -22,7 +23,7 @@ public class WorkExperience implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idWorkExperience;
 
 	private String city;
 
@@ -31,27 +32,27 @@ public class WorkExperience implements Serializable {
 	private String description;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "end_date")
 	private Date endDate;
 
-	@Column(name = "id_candidate")
-	private int idCandidate;
-
 	@Temporal(TemporalType.DATE)
-	@Column(name = "start_date")
 	private Date startDate;
 
 	private String title;
 
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
+
 	public WorkExperience() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdWorkExperience() {
+		return this.idWorkExperience;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdWorkExperience(int idWorkExperience) {
+		this.idWorkExperience = idWorkExperience;
 	}
 
 	public String getCity() {
@@ -86,14 +87,6 @@ public class WorkExperience implements Serializable {
 		this.endDate = endDate;
 	}
 
-	public int getIdCandidate() {
-		return this.idCandidate;
-	}
-
-	public void setIdCandidate(int idCandidate) {
-		this.idCandidate = idCandidate;
-	}
-
 	public Date getStartDate() {
 		return this.startDate;
 	}
@@ -108,6 +101,14 @@ public class WorkExperience implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Candidate getCandidate() {
+		return this.candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 
 }

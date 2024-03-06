@@ -1,13 +1,15 @@
 package com.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -23,41 +25,45 @@ public class JobOffer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idJobOffer;
 
 	private String description;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "end_date")
 	private Date endDate;
 
-	@Column(name = "id_company_client")
-	private int idCompanyClient;
+	private int maxRal;
 
-	@Column(name = "id_contract_type")
-	private int idContractType;
-
-	@Column(name = "max_ral")
-	private BigInteger maxRal;
-
-	@Column(name = "min_ral")
-	private BigInteger minRal;
+	private int minRal;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "start_date")
 	private Date startDate;
 
 	private String title;
 
+	// bi-directional many-to-one association to CompanyClient
+	@ManyToOne
+	@JoinColumn(name = "idCompanyClient")
+	private CompanyClient companyClient;
+
+	// bi-directional many-to-one association to ContractType
+	@ManyToOne
+	@JoinColumn(name = "idContractType")
+	private ContractType contractType;
+
+	// bi-directional many-to-one association to JobOfferSkill
+	@OneToMany(mappedBy = "jobOffer")
+	private List<JobOfferSkill> jobOfferSkills;
+
 	public JobOffer() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdJobOffer() {
+		return this.idJobOffer;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdJobOffer(int idJobOffer) {
+		this.idJobOffer = idJobOffer;
 	}
 
 	public String getDescription() {
@@ -76,35 +82,19 @@ public class JobOffer implements Serializable {
 		this.endDate = endDate;
 	}
 
-	public int getIdCompanyClient() {
-		return this.idCompanyClient;
-	}
-
-	public void setIdCompanyClient(int idCompanyClient) {
-		this.idCompanyClient = idCompanyClient;
-	}
-
-	public int getIdContractType() {
-		return this.idContractType;
-	}
-
-	public void setIdContractType(int idContractType) {
-		this.idContractType = idContractType;
-	}
-
-	public BigInteger getMaxRal() {
+	public int getMaxRal() {
 		return this.maxRal;
 	}
 
-	public void setMaxRal(BigInteger maxRal) {
+	public void setMaxRal(int maxRal) {
 		this.maxRal = maxRal;
 	}
 
-	public BigInteger getMinRal() {
+	public int getMinRal() {
 		return this.minRal;
 	}
 
-	public void setMinRal(BigInteger minRal) {
+	public void setMinRal(int minRal) {
 		this.minRal = minRal;
 	}
 
@@ -122,6 +112,44 @@ public class JobOffer implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public CompanyClient getCompanyClient() {
+		return this.companyClient;
+	}
+
+	public void setCompanyClient(CompanyClient companyClient) {
+		this.companyClient = companyClient;
+	}
+
+	public ContractType getContractType() {
+		return this.contractType;
+	}
+
+	public void setContractType(ContractType contractType) {
+		this.contractType = contractType;
+	}
+
+	public List<JobOfferSkill> getJobOfferSkills() {
+		return this.jobOfferSkills;
+	}
+
+	public void setJobOfferSkills(List<JobOfferSkill> jobOfferSkills) {
+		this.jobOfferSkills = jobOfferSkills;
+	}
+
+	public JobOfferSkill addJobOfferSkill(JobOfferSkill jobOfferSkill) {
+		getJobOfferSkills().add(jobOfferSkill);
+		jobOfferSkill.setJobOffer(this);
+
+		return jobOfferSkill;
+	}
+
+	public JobOfferSkill removeJobOfferSkill(JobOfferSkill jobOfferSkill) {
+		getJobOfferSkills().remove(jobOfferSkill);
+		jobOfferSkill.setJobOffer(null);
+
+		return jobOfferSkill;
 	}
 
 }
