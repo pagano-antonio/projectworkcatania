@@ -11,7 +11,7 @@ import com.model.CompanyClient;
 import com.model.repository.CompanyClientRepository;
 
 @RestController
-@RequestMapping("CompanyClientRest")
+@RequestMapping("CompanyClientRest") // tutto da testare
 public class CompanyClientRest {
 	@Autowired
 	CompanyClientRepository companyClientRep;

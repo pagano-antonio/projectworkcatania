@@ -9,7 +9,7 @@ import com.model.EducationDegreeType;
 import com.model.repository.EducationDegreeTypeRepository;
 
 @RestController
-@RequestMapping("EducationDegreeTypeRest")
+@RequestMapping("EducationDegreeTypeRest") // tutto da testare
 public class EducationDegreeTypeRest {
 	@Autowired
 	EducationDegreeTypeRepository educationDegreeTypeRep;
