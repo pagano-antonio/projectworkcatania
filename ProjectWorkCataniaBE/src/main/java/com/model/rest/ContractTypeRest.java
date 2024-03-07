@@ -36,9 +36,9 @@ public class ContractTypeRest {
     }
 	
 	@GetMapping("/searchByIdContract")
-	public String searchByIdContract(Model model, Integer id) {
-		if(contractTypeRep.findById(id).isPresent()) {
-		ContractType contractType = (ContractType)contractTypeRep.findById(id).get();
+	public String searchByIdContract(Model model, Integer idContractType) {
+		if(contractTypeRep.findById(idContractType).isPresent()) {
+		ContractType contractType = (ContractType)contractTypeRep.findById(idContractType).get();
 		model.addAttribute("ContractDataFound", contractType);
 		return "updateContractType";
 		} else 

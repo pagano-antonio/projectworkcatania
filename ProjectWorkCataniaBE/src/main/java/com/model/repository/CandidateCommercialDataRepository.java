@@ -10,6 +10,6 @@ import com.model.CandidateCommercialData;
 @Repository
 public interface CandidateCommercialDataRepository extends JpaRepository<CandidateCommercialData, Integer> {
 
-	List<CandidateCommercialData> findByIdCandidate(Integer idCandidate);
+	List<CandidateCommercialData> findByIdCandidateCommercial(Integer idCandidateCandidateCommercial);
 }
 

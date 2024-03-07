@@ -35,9 +35,9 @@ public class CompanyClientRest {
     }
 	
 	@GetMapping("/searchByIdCompany")
-	public String searchByIdCompany(Model model, Integer id) {
-		if(companyClientRep.findById(id).isPresent()) {
-		CompanyClient companyClient = (CompanyClient)companyClientRep.findById(id).get();
+	public String searchByIdCompany(Model model, Integer idCompanyClient) {
+		if(companyClientRep.findById(idCompanyClient).isPresent()) {
+		CompanyClient companyClient = (CompanyClient)companyClientRep.findById(idCompanyClient).get();
 		model.addAttribute("CompanyClientFound", companyClient);
 		return "updateCompanyClient";
 		} else 

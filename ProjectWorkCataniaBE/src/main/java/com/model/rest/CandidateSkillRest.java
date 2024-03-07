@@ -40,9 +40,9 @@ public class CandidateSkillRest {
 	}
 
 	@PostMapping("/searchById")
-	public String searchById(Model model, Integer id) {
-		if(candidateSkillRep.findById(id).isPresent()) {
-		CandidateSkill candidate = (CandidateSkill)candidateSkillRep.findById(id).get();
+	public String searchById(Model model, Integer idCandidateSkill) {
+		if(candidateSkillRep.findById(idCandidateSkill).isPresent()) {
+		CandidateSkill candidate = (CandidateSkill)candidateSkillRep.findById(idCandidateSkill).get();
 		model.addAttribute("CandidateFound", candidate);
 		return "updateCandidate";
 		} else 
@@ -50,13 +50,13 @@ public class CandidateSkillRest {
 	}
 	@PostMapping("/searchByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidate) {
-		List<CandidateSkill> candidateList = candidateSkillRep.findByIdCandidate(idCandidate);
+		List<CandidateSkill> candidateList = candidateSkillRep.findByCandidate_IdCandidate(idCandidate);
 		model.addAttribute("CandidateListFound", candidateList);
 		return "updateCandidate";
 		}
 	@PostMapping("/searchByIdSkill")
 	public String searchByIdSkill(Model model, Integer idSkill) {
-		List<CandidateSkill> candidateSkillList = candidateSkillRep.findByIdSkill(idSkill);
+		List<CandidateSkill> candidateSkillList = candidateSkillRep.findBySkill_IdSkill(idSkill);
 		model.addAttribute("CandidateSkillListFound", candidateSkillList);
 		return "updateCandidate";
 		}

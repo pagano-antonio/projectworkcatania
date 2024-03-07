@@ -3,9 +3,10 @@ package com.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -22,33 +23,39 @@ public class JobInterview implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idJobInterview;
 
 	@Temporal(TemporalType.DATE)
 	private Date date;
-
-	@Column(name = "id_candidate")
-	private int idCandidate;
-
-	@Column(name = "id_employee")
-	private int idEmployee;
-
-	@Column(name = "id_state_job_interview")
-	private int idStateJobInterview;
 
 	private String notes;
 
 	private int outcome;
 
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
+
+	// bi-directional many-to-one association to StateJobInterview
+	@ManyToOne
+	@JoinColumn(name = "idStateJobInterview")
+	private StateJobInterview stateJobInterview;
+
+	// bi-directional many-to-one association to Employee
+	@ManyToOne
+	@JoinColumn(name = "idEmployee")
+	private Employee employee;
+
 	public JobInterview() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdJobInterview() {
+		return this.idJobInterview;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdJobInterview(int idJobInterview) {
+		this.idJobInterview = idJobInterview;
 	}
 
 	public Date getDate() {
@@ -57,30 +64,6 @@ public class JobInterview implements Serializable {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public int getIdCandidate() {
-		return this.idCandidate;
-	}
-
-	public void setIdCandidate(int idCandidate) {
-		this.idCandidate = idCandidate;
-	}
-
-	public int getIdEmployee() {
-		return this.idEmployee;
-	}
-
-	public void setIdEmployee(int idEmployee) {
-		this.idEmployee = idEmployee;
-	}
-
-	public int getIdStateJobInterview() {
-		return this.idStateJobInterview;
-	}
-
-	public void setIdStateJobInterview(int idStateJobInterview) {
-		this.idStateJobInterview = idStateJobInterview;
 	}
 
 	public String getNotes() {
@@ -97,6 +80,30 @@ public class JobInterview implements Serializable {
 
 	public void setOutcome(int outcome) {
 		this.outcome = outcome;
+	}
+
+	public Candidate getCandidate() {
+		return this.candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
+
+	public StateJobInterview getStateJobInterview() {
+		return this.stateJobInterview;
+	}
+
+	public void setStateJobInterview(StateJobInterview stateJobInterview) {
+		this.stateJobInterview = stateJobInterview;
+	}
+
+	public Employee getEmployee() {
+		return this.employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 }
