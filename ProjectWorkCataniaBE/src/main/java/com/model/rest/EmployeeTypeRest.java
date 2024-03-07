@@ -29,7 +29,7 @@ public class EmployeeTypeRest {
 	
 	@GetMapping("/addEmployeeType")
     public String addOrUpdateEmployeeType(EmployeeType employeeType, Model model) {
-		System.out.println("Sto inserendo/modificando un candidato!");
+		System.out.println("Sto inserendo/modificando!");
 		employeeTypeRep.save(employeeType);	
         return "addEmployeeTypeOk";
     }
@@ -39,15 +39,15 @@ public class EmployeeTypeRest {
 		if(employeeTypeRep.findById(idEmployeeType).isPresent()) {
 		EmployeeType employeeType = (EmployeeType)employeeTypeRep.findById(idEmployeeType).get();
 		model.addAttribute("EmployeeTypeFound", employeeType);
-		return "updateCandidate";
+		return "updateEmployeeType";
 		} else 
 			return "ErrorPage";
 	}
 	
 	@GetMapping("/deleteEmployeeType")
-	public String deleteCandidate(EmployeeType employeeType, Model model) {
-		System.out.println("Sto cancellando il candidato!");
+	public String deleteEmployeeType(EmployeeType employeeType, Model model) {
+		System.out.println("Sto cancellando!");
 		employeeTypeRep.delete(employeeType);
-		return "deleteCandidateOk";
+		return "deleteEmployeeTypeOk";
 	}
 }
