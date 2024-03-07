@@ -8,7 +8,7 @@ import com.model.CandidateSkill;
 @Repository
 public interface CandidateSkillRepository extends JpaRepository<CandidateSkill, Integer>  {
 
-	List<CandidateSkill> findByIdCandidate(Integer idCandidate);
-	List<CandidateSkill> findByIdSkill(Integer idSkill);
+	List<CandidateSkill> findByCandidate_IdCandidate(Integer idCandidate);
+	List<CandidateSkill> findBySkill_IdSkill(Integer idSkill);
 	
 }

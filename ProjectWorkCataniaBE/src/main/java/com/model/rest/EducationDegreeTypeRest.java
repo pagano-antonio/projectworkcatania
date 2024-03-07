@@ -33,9 +33,9 @@ public class EducationDegreeTypeRest {
     }
 	
 	@GetMapping("/searchByIdEducationType")
-	public String searchByIdEducationType(Model model, Integer id) {
-		if(educationDegreeTypeRep.findById(id).isPresent()) {
-		EducationDegreeType educationDegreeType = (EducationDegreeType)educationDegreeTypeRep.findById(id).get();
+	public String searchByIdEducationType(Model model, Integer idEducationDegreeType) {
+		if(educationDegreeTypeRep.findById(idEducationDegreeType).isPresent()) {
+		EducationDegreeType educationDegreeType = (EducationDegreeType)educationDegreeTypeRep.findById(idEducationDegreeType).get();
 		model.addAttribute("EducationDataFound", educationDegreeType);
 		return "updateEducationDegreeType";
 		} else 

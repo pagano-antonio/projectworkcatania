@@ -35,9 +35,9 @@ public class EmployeeTypeRest {
     }
 		
 	@GetMapping("/searchById")
-	public String searchById(Model model, Integer id) {
-		if(employeeTypeRep.findById(id).isPresent()) {
-		EmployeeType employeeType = (EmployeeType)employeeTypeRep.findById(id).get();
+	public String searchById(Model model, Integer idEmployeeType) {
+		if(employeeTypeRep.findById(idEmployeeType).isPresent()) {
+		EmployeeType employeeType = (EmployeeType)employeeTypeRep.findById(idEmployeeType).get();
 		model.addAttribute("EmployeeTypeFound", employeeType);
 		return "updateCandidate";
 		} else 
