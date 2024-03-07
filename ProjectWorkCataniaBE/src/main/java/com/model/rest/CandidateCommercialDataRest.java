@@ -13,7 +13,7 @@ import com.model.CandidateCommercialData;
 import com.model.repository.CandidateCommercialDataRepository;
 
 @RestController
-@RequestMapping("CandidateCommercialDataRest")
+@RequestMapping("CandidateCommercialDataRest") // tutto da testare
 public class CandidateCommercialDataRest {
 	@Autowired
 	CandidateCommercialDataRepository candidateCommercialDataRep;

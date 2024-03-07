@@ -10,7 +10,7 @@ import com.model.ContractType;
 import com.model.repository.ContractTypeRepository;
 
 @RestController
-@RequestMapping("ContractTypeRest")
+@RequestMapping("ContractTypeRest") // tutto da testare
 public class ContractTypeRest {
 	
 	@Autowired
