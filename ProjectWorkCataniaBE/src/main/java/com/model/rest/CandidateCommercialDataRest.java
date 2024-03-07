@@ -55,9 +55,9 @@ public class CandidateCommercialDataRest {
 	}
 	
 	@GetMapping("/searchCommercialDataByIdCandidate")
-	public String searchByIdCandidate(Model model, Integer idCandidate) {
-		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidate(idCandidate);
-		System.out.println("Ho trovato l'id Canidato: " + idCandidate);
+	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
+		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
+		System.out.println("Ho trovato l'id Canidato: " + idCandidateCommercial);
 		model.addAttribute("candidateList", candidateList);
 		System.out.println(candidateList);
 		return "ResultsIdCandidate";
