@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.model.Candidate;
 import com.model.CandidateCommercialData;
 import com.model.repository.CandidateCommercialDataRepository;
 
@@ -57,7 +56,7 @@ public class CandidateCommercialDataRest {
 	@GetMapping("/searchCommercialDataByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
 		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
-		System.out.println("Ho trovato l'id Canidato: " + idCandidateCommercial);
+		System.out.println("Ho trovato l'id Candidato: " + idCandidateCommercial);
 		model.addAttribute("candidateList", candidateList);
 		System.out.println(candidateList);
 		return "ResultsIdCandidate";
