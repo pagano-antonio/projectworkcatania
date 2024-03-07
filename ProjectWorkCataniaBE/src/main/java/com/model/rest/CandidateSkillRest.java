@@ -13,7 +13,7 @@ import com.model.CandidateSkill;
 import com.model.repository.CandidateSkillRepository;
 
 @RestController
-@RequestMapping("CandidateSkillRest")
+@RequestMapping("CandidateSkillRest") // tutto da testare
 public class CandidateSkillRest {
 
 	@Autowired

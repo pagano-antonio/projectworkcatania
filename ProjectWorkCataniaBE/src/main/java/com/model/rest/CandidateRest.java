@@ -10,7 +10,7 @@ import com.model.Candidate;
 import com.model.repository.CandidateRepository;
 
 @RestController
-@RequestMapping("CandidateRest")
+@RequestMapping("CandidateRest") // tutto da testare
 public class CandidateRest {
 	
 	@Autowired

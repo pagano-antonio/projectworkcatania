@@ -15,7 +15,7 @@ public class JobOfferRest {
 	@Autowired
 	JobOfferRepository jobOfferRep;
 	
-	@GetMapping("/preAddJobOffer")
+	@GetMapping("/preAddJobOffer") // per pulsante home se ci sarà
     public String insertAddJobOffer() {
         return "addJobOffer";
 	} 

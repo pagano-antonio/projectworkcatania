@@ -11,7 +11,7 @@ import com.model.WorkExperience;
 import com.model.repository.WorkExperienceRepository;
 
 @RestController
-@RequestMapping("WorkExperienceRest")
+@RequestMapping("WorkExperienceRest") // tutto da testare
 public class WorkExperinceRest {
 	
 	@Autowired

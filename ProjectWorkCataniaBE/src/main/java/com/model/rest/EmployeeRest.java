@@ -10,7 +10,7 @@ import com.model.Employee;
 import com.model.repository.EmployeeRepository;
 
 @RestController
-@RequestMapping("EmployeeRest")
+@RequestMapping("EmployeeRest") // tutto da testare
 public class EmployeeRest {
 	
 	@Autowired
