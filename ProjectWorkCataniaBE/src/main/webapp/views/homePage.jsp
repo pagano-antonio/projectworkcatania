@@ -7,6 +7,6 @@
 <title>La Tua Home</title>
 </head>
 <body>
-La Tua Home Benvenuto 
+La Tua Home Page
 </body>
 </html>
