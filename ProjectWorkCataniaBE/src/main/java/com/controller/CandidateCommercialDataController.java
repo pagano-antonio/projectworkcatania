@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,50 +9,58 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.model.Candidate;
-import com.repository.CandidateRepository;
+import com.model.CandidateCommercialData;
+import com.repository.CandidateCommercialDataRepository;
+
 
 @Controller
 @RequestMapping("CandidateCommercialDataController")
 public class CandidateCommercialDataController {
-	
-
 	@Autowired
-	CandidateRepository candidateRep;
-	
-	
-	@GetMapping("/preAddCandidate")// se non funziona qui è da inserire nel controller normale
-    public String insertCandidate() {
-        return "addCandidate";
+	CandidateCommercialDataRepository candidateCommercialDataRep;
+
+	@GetMapping("/preAddCandidateCommercialData") // questi se non funzionano sono da spostare sui controller Normali
+    public String insertCandidateCommercialData() {
+        return "addCandidateCommercialData";
 	} 
 	
-	@GetMapping("/preSearchByIdCandidate")
-    public String preSearchByIdCandidate(Model model) {
-        return "searchByIdCandidate";
-	} 
+	@GetMapping("/preSearchById")
+    public String preSearchByIdCommercialData() {
+        return "searchByIdCommercialData";
+	} // i PRE se non funzionano vanno spostati in controller come il metodo HOME che deve stare in controller
 	
-	@GetMapping("/addCandidate")
-    public String addOrUpdateCandidate(Candidate candidate, Model model) {
-		System.out.println("Sto inserendo/modificando un candidato!");
-		candidateRep.save(candidate);	
-        return "addCandidateOk";
+	
+	@GetMapping("/addCandidateCommercialData")
+    public String addOrUpdateCommercialData(CandidateCommercialData candidateCommercialData, Model model) {
+		System.out.println("Sto inserendo/aggiornando i dati commerciali di un candidato!");
+		candidateCommercialDataRep.save(candidateCommercialData);	
+        return "addCandidateCommercialDataOk";
     }
-		
-	@GetMapping("/searchById")
-	public String searchById(Model model, Integer idCandidate) {
-		if(candidateRep.findById(idCandidate).isPresent()) {
-		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).get();
-		model.addAttribute("CandidateFound", candidate);
-		return "updateCandidate";
+	
+	@GetMapping("/searchByIdCommercialData")
+	public String searchByIdCommercialData(Model model, Integer id) {
+		if(candidateCommercialDataRep.findById(id).isPresent()) {
+		CandidateCommercialData commercialData = (CandidateCommercialData)candidateCommercialDataRep.findById(id).get();
+		model.addAttribute("CommercialDataFound", commercialData);
+		return "updateCandidateCommercialData";
 		} else 
 			return "ErrorPage";
+	}	
+	
+	@GetMapping("/deleteCommercialData")
+	public String deleteCommercialData(CandidateCommercialData candidateCommercialData, Model model) {
+		System.out.println("Sto cancellando i dati commerciali!");
+		candidateCommercialDataRep.delete(candidateCommercialData);
+		return "deleteCommercialDataOk";
 	}
 	
-	@GetMapping("/deleteCandidate")
-	public String deleteCandidate(Candidate candidate, Model model) {
-		System.out.println("Sto cancellando il candidato!");
-		candidateRep.delete(candidate);
-		return "deleteCandidateOk";
+
+	@GetMapping("/searchCommercialDataByIdCandidate")
+	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
+		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
+		System.out.println("Ho trovato l'id Candidato: " + idCandidateCommercial);
+		model.addAttribute("candidateList", candidateList);
+		System.out.println(candidateList);
+		return "resultsIdCandidate";
 	}
-
-
 }
