@@ -18,15 +18,15 @@ public class CandidateCommercialDataRest {
 	CandidateCommercialDataRepository candidateCommercialDataRep;
 	
 	
-	@GetMapping("/preAddCandidateCommercialData")
-    public String insertCandidateCommercialData(Model model) {
+	@GetMapping("/preAddCandidateCommercialData") // questi se non funzionano sono da spostare sui controller Normali
+    public String insertCandidateCommercialData() {
         return "addCandidateCommercialData";
 	} 
 	
 	@GetMapping("/preSearchById")
-    public String preSearchByIdCommercialData(Model model) {
+    public String preSearchByIdCommercialData() {
         return "searchByIdCommercialData";
-	} 
+	} // i PRE se non funzionano vanno spostati in controller come il metodo HOME che deve stare in controller
 	
 	
 	@GetMapping("/addCandidateCommercialData")
