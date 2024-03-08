@@ -4,9 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-@RequestMapping("candidateController") // vogliamo toglierla la mappatura? così si richiama solo /home
-public class CandidateController {
+@Controller 
+public class CandidateController {   // ricordarsi di fare i nomi e le mappature dei metodi richiamando il termine candidate
 	
 	
 	@GetMapping("/home")
