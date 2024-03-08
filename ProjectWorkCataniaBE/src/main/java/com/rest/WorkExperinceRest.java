@@ -16,11 +16,7 @@ public class WorkExperinceRest {
 	
 	@Autowired
 	WorkExperienceRepository workExperienceRep;
-	
-	@GetMapping("/home")
-	public String goToHome(Model model) {
-		return "home";
-	}
+
 	
 	@GetMapping("/preAddWorkExperience")
 	public String insertWorkExperience(Model model) {

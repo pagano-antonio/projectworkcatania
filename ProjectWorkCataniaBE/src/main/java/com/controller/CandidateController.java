@@ -32,4 +32,23 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		candidateRep.save(candidate);	
         return "addCandidateOk";
     }
+	
+	
+@GetMapping("/searchById")
+public String searchById(Model model, Integer idCandidate) {
+	if(candidateRep.findById(idCandidate).isPresent()) {
+	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).get();
+	model.addAttribute("CandidateFound", candidate);
+	return "updateCandidate";
+	} else 
+		return "ErrorPage";
+}
+
+@GetMapping("/deleteCandidate")
+public String deleteCandidate(Candidate candidate, Model model) {
+	System.out.println("Sto cancellando il candidato!");
+	candidateRep.delete(candidate);
+	return "deleteCandidateOk";
+}
+
 }
