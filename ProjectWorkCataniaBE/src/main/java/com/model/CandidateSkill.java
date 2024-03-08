@@ -59,4 +59,5 @@ public class CandidateSkill implements Serializable {
 		this.skill = skill;
 	}
 
+	
 }
