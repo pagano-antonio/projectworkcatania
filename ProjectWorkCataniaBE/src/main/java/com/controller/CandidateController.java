@@ -21,7 +21,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
         return"homePage";  
     }
 	
-	@GetMapping("/preAddCandidate")// se non funziona qui è da inserire nel controller normale
+	@GetMapping("/preAddCandidate")// test okay
     public String insertCandidate() {
         return "addCandidate";
 	} 
