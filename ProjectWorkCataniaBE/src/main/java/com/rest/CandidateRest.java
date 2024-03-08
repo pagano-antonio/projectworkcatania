@@ -16,13 +16,9 @@ public class CandidateRest {
 	@Autowired
 	CandidateRepository candidateRep;
 	
-	@GetMapping("/home")
-    public String goToHome(Model model) {
-        return "home";  
-    }
 	
-	@GetMapping("/preAddCandidate")
-    public String insertCandidate(Model model) {
+	@GetMapping("/preAddCandidate")// se non funziona qui è da inserire nel controller normale
+    public String insertCandidate() {
         return "addCandidate";
 	} 
 	
