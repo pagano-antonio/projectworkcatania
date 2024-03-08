@@ -46,7 +46,7 @@ public class WorkExperinceRest {
 		if(workExperienceRep.findById(id).isPresent()) {
 		WorkExperience workExperience = (WorkExperience)workExperienceRep.findById(id).get();
 		model.addAttribute("WorkExperienceFound", workExperience);
-		return "updateW";
+		return "updateWorkExperienceId";
 		} else 
 			return "ErrorPage";
 	}
