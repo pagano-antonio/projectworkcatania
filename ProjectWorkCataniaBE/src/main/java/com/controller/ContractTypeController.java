@@ -1,10 +1,10 @@
-package com.model.controller;
+package com.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("JobOfferController")
-public class JobOfferController {
+@RequestMapping("ContractTypeController")
+public class ContractTypeController {
 
 }

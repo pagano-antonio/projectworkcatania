@@ -1,10 +1,10 @@
-package com.model.controller;
+package com.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("WorkExperience")
-public class WorkExperienceController {
+@RequestMapping("JobOfferSkillController")
+public class JobOfferSkillController {
 
 }
