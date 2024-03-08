@@ -27,6 +27,7 @@ public class CandidateSkillController {
 	@GetMapping("/addCandidateSkill")
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
+		System.out.println(candidateSkill);
 		candidateSkillRep.save(candidateSkill);	
         return "addCandidateSkillOk";
     }

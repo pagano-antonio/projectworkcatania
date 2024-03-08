@@ -13,7 +13,10 @@
 <div align="center">
 La Tua Home Page
 <a href="${pageContext.request.contextPath}/preAddCandidate"target="_blank">
-<button type="button">Aggiungi un candidato</button></a>
+<button type="button">Add Candidate</button></a>
+<br>
+<a href="${pageContext.request.contextPath}/CandidateSkillController/preAddCandidateSkill"target="_blank">
+<button type="button">Add Candidate Skill</button></a>
 </div>
 
 </body>
