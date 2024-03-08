@@ -24,7 +24,7 @@ public class CandidateSkillController {
         return "addCandidateSkill";
 	} 
 	
-	@GetMapping("/addCandidateSkill")
+	@GetMapping("/addCandidateSkill") // test okay!
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		System.out.println(candidateSkill);

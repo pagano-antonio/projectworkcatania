@@ -14,6 +14,6 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer> {
 	List<Candidate> findBySurname(String surname);
 	List<Candidate> findByCity(String city);
 	List<Candidate> findByPhone(BigInteger phone);
-	List<Candidate> findByCandidateSkills_Skill_description(String description); // GIT MAMMT!
+	List<Candidate> findByCandidateSkills_Skill_description(String description); 
 
 }

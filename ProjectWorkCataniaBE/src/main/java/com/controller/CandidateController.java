@@ -75,7 +75,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	}
 
 	
-	@GetMapping("/searchCandidateBySkill")// ansia al quadrato!GIT NON FUNZIONA
+	@GetMapping("/searchCandidateBySkill")
 	public String searchBySkill(Candidate candidate, Model model, String description) {
 		List<Candidate> candidateList = candidateRep.findByCandidateSkills_Skill_description(description);
 		System.out.println("Sto cercando una candidato");
