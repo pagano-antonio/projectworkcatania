@@ -18,24 +18,65 @@ public class JobOfferController {
 	@Autowired
 	JobOfferRepository jobOffRep;
 	
-	@GetMapping("/pageSearchByTitle") //pre-inserimento
-	public String searchTitle (Model model) {
-		return "searchByTitleForm";
+	@GetMapping("/preJobOfferPage") // per andare nel menù ricerca offerte lavoro
+	public String jobOfferPage() {
+		return "jobOffersPage";
 	}
 	
-	@PostMapping("/pageResultsSearch")
+	
+	@GetMapping("/preAddJobOffer") // per pulsante home se ci sarà
+    public String insertAddJobOffer() {
+        return "addJobOffer";
+	} 
+	
+	@GetMapping("/preSearchByIdOffer") // potrebbe non servire da controllare le Jsp che servono
+    public String preSearchByIdOffer() {
+        return "searchByIdOffer";
+	} 
+
+	@GetMapping("/addJobOffer")
+    public String addOrUpdateJobOffer(JobOffer jobOffer, Model model) {
+		System.out.println("Sto inserendo/aggiornando un'offerta di lavoro!");
+		jobOffRep.save(jobOffer);	
+        return "addJobOfferOk";
+    }
+	
+	@GetMapping("/searchByIdOffer")
+	public String searchByIdJobOffer(Model model, Integer idJobOffer) {
+		if(jobOffRep.findById(idJobOffer).isPresent()) {
+		JobOffer jobOffer = (JobOffer)jobOffRep.findById(idJobOffer).get();
+		model.addAttribute("JobOfferFound", jobOffer);
+		return "updateJobOffer"; // sulla pagina JSP di aggiorna ci sarà anche il pulsante Elimina
+		} else 
+			return "ErrorPage";
+	}	
+	
+	@GetMapping("/deleteJobOffer")
+	public String deleteContractType(JobOffer jobOffer, Model model) { // da testare, anche sugli altri rest
+																		//e vedere se sceglie il delete o deleteById
+		System.out.println("Sto cancellando l'offerta di lavoro");
+		jobOffRep.delete(jobOffer);
+		return "deleteEmployeeOk";
+	}
+	
+	@GetMapping("/pageSearchByTitle") //pre-inserimento
+	public String searchTitle () {
+		return "searchByTitleForm";
+	}
+
+	@PostMapping("/searchByTitle")
 	public String resultsSearchTitle(Model model, String title) {
 	List <JobOffer> search=(List<JobOffer>)jobOffRep.findByTitle(title);
 	model.addAttribute("JobOfferByTitle", search);
 		return "resultsSearchByJobTitle";	
 	}
 	
-	@GetMapping("/pageSearchRal") 
+	@GetMapping("/preSearchByRal") 
 	public String searchRal (Model model) {
 		return "searchRalForm";
 	}
 	
-	@PostMapping("/pageResultRal") // test tutto okay, grande wendina!
+	@PostMapping("/searchByRal") // test tutto okay, grande wendina!
 	public String resultRal (Model model,Integer minRal, Integer maxRal) {
 	List <JobOffer>	ralList =(List<JobOffer>)jobOffRep.findByMinRalGreaterThanEqualAndMaxRalLessThanEqual(minRal, maxRal);
 	System.out.println(ralList.size());

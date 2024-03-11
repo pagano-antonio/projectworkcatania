@@ -13,14 +13,20 @@ import com.model.CompanyClient;
 import com.repository.CompanyClientRepository;
 
 @Controller
-@RequestMapping("CompanyClientController")
+//@RequestMapping("CompanyClientController")
 public class CompanyClientController {
 
 	@Autowired
 	CompanyClientRepository companyClientRep;
 
+	@GetMapping("/preCompaniesPage")
+	public String preCompaniesPage() {
+		return "companiesPage";
+	}
+
+	
 	@GetMapping("/preAddCompanyClient")
-	public String insertCompanyClient(Model model) {
+	public String insertCompanyClient() {
 		return "addCompanyClient";
 	}
 
@@ -54,33 +60,26 @@ public class CompanyClientController {
 	}
 
 	// Metodo ricerca per nome // da testare //
-	@GetMapping("/preSearchName")
-	public String searchByName(Model model) {
-		return "companyClientByName";
+	@GetMapping("/preSearchCompanyByName")
+	public String searchByName() {
+		return "SearchCompanyClientByName";
 	}
 
-	@PostMapping("/searchByName")
+	@PostMapping("/searchCompanyByName")
 	public String searchByName(Model model, String name) {
 		List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByName(name);
 		if (companyClientList != null) {
 			model.addAttribute("CompanyClientFound", companyClientList);
-			return "companyClientByName";
+			return "ListCompanyClientByName";
 		} else {
 			return "ErrorPage";
 		}
 	}
 
-	@PostMapping("/companyClientByName")
-	public String searchByName(Model model, CompanyClient c) {
-		System.out.println("Sto effettuando la ricerca...");
-		companyClientRep.save(c);
-		return "companyClientByName";
-	}
-
 	// Metodo ricerca per città // da testare //
-	@GetMapping("/preSearchCity")
-	public String searchByCity(Model model) {
-		return "searchByCity";
+	@GetMapping("/preSearchCompanyByCity")
+	public String searchByCity() {
+		return "searchCompanyByCity";
 	}
 
 	@PostMapping("/searchByCity")
@@ -93,12 +92,5 @@ public class CompanyClientController {
 			return "ErrorPage";
 		}
 	}
-
-	@PostMapping("/companyClientByCity")
-	public String searchByCity(Model model, CompanyClient c) {
-		System.out.println("Sto effettuando la ricerca...");
-		companyClientRep.save(c);
-		return "companyClientByCity";
-	}
-
+	
 }

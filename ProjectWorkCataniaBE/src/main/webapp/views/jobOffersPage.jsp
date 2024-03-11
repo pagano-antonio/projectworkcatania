@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home Page</title>
+<title>Job Offers</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -192,34 +192,35 @@ p {
     </label>
     <div class="sidebar">
       <header>Menu</header>
-      <a href="#" class="active">
+      <a href="${pageContext.request.contextPath}/home" class="active">
         <i class="fas fa-qrcode"></i>
-      <span>Dashboard</span>  <!--   da togliere la dashboard nel caso non serva -->
+        <span>Home</span>
       </a>
       <a href="${pageContext.request.contextPath}/login"target="_blank">
         <i class="fas fa-link"></i>
         <span>Login</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preCandidatePage"target="_blank">
+      <a href="${pageContext.request.contextPath}/preAddJobOffer"target="_blank">
         <i class="fas fa-stream"></i>
-        <span>Candidate</span>
+        <span>Add Job Offer</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preJobOfferPage"target="_blank">
+      <a href="${pageContext.request.contextPath}/searchByTitle"target="_blank">
          <i class="fas fa-calendar"></i>
-        <span>Job Offers</span>
+        <span>Search Job Offer</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preCompaniesPage"target="_blank">
-        <i class="fas fa-link"></i>
-        <span>Companies</span>
+     <a href="${pageContext.request.contextPath}/preSearchByRal"target="_blank">
+         <i class="fas fa-calendar"></i>
+        <span>Search by Ral</span>
       </a>
+      
       
     </div>
 </body>
     
   <div class="frame">
-<p> Hey! </p>
-<h2>WELCOME</h2>
-  <p>in your Home Page</p>
+<p> Search or Add</p>
+<h2>HERE</h2>
+  <p>your Job Offer</p>
 
 </div>  
     

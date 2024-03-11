@@ -22,10 +22,20 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	public String goToHome() {
 		return "homePage";
 	}
+	
+	@GetMapping("/login") // PORTA ALLA LOGIN
+	public String goToLogin() {
+		return "loginPage";
+	}
 
 	@GetMapping("/preAddCandidate") 
 	public String insertCandidate() {
 		return "addCandidate";
+	}
+	
+	@GetMapping("/preCandidatePage") 
+	public String candidatePage() {
+		return "candidatePage";
 	}
 
 	@PostMapping("/addCandidate") // test okay del metodo!
@@ -58,6 +68,11 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListBySurname";
 	}
 	
+	@GetMapping("/preSearchCandidateByCity") 
+	public String preSearchByCity() {
+		return "searchCandidateByCity";
+	}
+	
 	@PostMapping("/searchCandidateByCity") //da testare!
 	public String searchByCity(Candidate candidate, Model model, String city) {
 		List<Candidate> candidateList = candidateRep.findByCity(city);
@@ -65,6 +80,12 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		model.addAttribute("candidateCityFound", candidateList);
 		return "candidateListByCity";
 	}
+	
+	@GetMapping("/preSearchCandidateByPhone") 
+	public String preSearchByPhone() {
+		return "searchCandidateByPhone";
+	}
+	
 	
 	@PostMapping("/searchCandidateByPhone") //da testare!
 	public String searchByPhone(Candidate candidate, Model model, BigInteger phone) {
