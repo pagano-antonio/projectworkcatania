@@ -9,15 +9,15 @@
 </head>
 <body>
  <div align="center">
-<form action="${pageContext.request.contextPath}CandidateRest/addCandidate" method="get">
+<form action="${pageContext.request.contextPath}/addCandidate" method="get">
 
 		
 	 	<label for="name">Nome:</label><br>
   		<input type="text" id="name" name="name" ><br><br>
   		<label for="surname" >Cognome:</label><br>
   		<input type="text" id="surname" name="surname"><br><br>
-  		<label for="adress">Indirizzo:</label><br>
-  		<input type="text" id="adress" name="adress" ><br><br>
+  		<label for="address">Indirizzo:</label><br>
+  		<input type="text" id="address" name="address" ><br><br>
   		<label for="city">Città di residenza:</label><br>
   		<input type="text" id="city" name="city" ><br><br>
   		<label for="birthday" >Data di nascita:</label><br>
@@ -27,7 +27,7 @@
   		<label for="phone">Numero di telefono:</label><br>
   		<input type="number" id="phone" name="phone"><br><br>
   		<label for="email">Email:</label><br>
-  		<input type="number" id="email" name="email"><br><br>
+  		<input type="text" id="email" name="email"><br><br>
 	  	<input type="Submit" value="Invia" style="color:#3f37c9; font-size:20px;">
 	  	
 	  	</form>
