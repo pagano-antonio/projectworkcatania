@@ -31,7 +31,6 @@ public class CandidateSkillController {
 		candidateSkillRep.save(candidateSkill);	
         return "addCandidateSkillOk";
     }
-	
 
 	@GetMapping("/deleteCandidateSkill")
 	public String deleteCandidateSkill(CandidateSkill candidateSkill, Model model) {

@@ -19,8 +19,11 @@ La Tua Home Page
 <a href="${pageContext.request.contextPath}/CandidateSkillController/preAddCandidateSkill"target="_blank">
 <button type="button">Add Candidate Skill</button></a>
 
-<a href="${pageContext.request.contextPath}/pageSearchByTitle" class="button"> search job title from title</a>
-<a href="${pageContext.request.contextPath}/pageSearchRal" class="button"> search between annual incomes</a>
+<a href="${pageContext.request.contextPath}/pageSearchByTitle" target="_blank"> 
+<Button type="button">Search job title from title</Button></a>
+
+<a href="${pageContext.request.contextPath}/pageSearchRal" target="_blank"> 
+<button type="button">Search between annual incomes</button></a>
 
 </div>
 
