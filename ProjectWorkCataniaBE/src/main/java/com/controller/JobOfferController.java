@@ -1,12 +1,14 @@
 package com.controller;
 
+
+import java.sql.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.model.JobOffer;
 import com.repository.JobOfferRepository;
 
@@ -84,5 +86,15 @@ public class JobOfferController {
 	return "resultRal";	
 	}
 
-
+	@GetMapping("/searchBetweenDates")
+	public String betweenDates (Model model) {
+		return "betweenDatesForm";			
+	}
+	
+	@PostMapping("/resultBetweenDates")
+	public String resultDates (Model model, Date startDate, Date endDate) {
+		List <JobOffer> resultDate = (List <JobOffer>) jobOffRep.findByStartDateGreaterThanEqualAndEndDateLessThanEqual(startDate, endDate);
+		model.addAttribute("DateList", resultDate);
+		return "resultDate";
+	}
 }

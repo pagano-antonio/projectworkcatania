@@ -1,5 +1,6 @@
 package com.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,4 +14,5 @@ public interface JobOfferRepository extends JpaRepository <JobOffer, Integer> {
 	
 	List<JobOffer> findByTitle (String title);
 	List <JobOffer> findByMinRalGreaterThanEqualAndMaxRalLessThanEqual(Integer minRal, Integer maxRal);
+	List <JobOffer> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(Date startDate, Date endDate);
 }
