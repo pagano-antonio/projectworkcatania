@@ -53,13 +53,6 @@ public class CandidateCommercialDataRest {
 		return "deleteCommercialDataOk";
 	}
 	
-	@GetMapping("/searchCommercialDataByIdCandidate")
-	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
-		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
-		System.out.println("Ho trovato l'id Candidato: " + idCandidateCommercial);
-		model.addAttribute("candidateList", candidateList);
-		System.out.println(candidateList);
-		return "ResultsIdCandidate";
-	}
+	
 	
 }
