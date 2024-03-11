@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci candidato</title>
+<title>Insert Candidate Skill</title>
 </head>
 <body>
  <div align="center">
 <form action="${pageContext.request.contextPath}/CandidateSkillController/addCandidateSkill" method="get">
 
 		
-	 	<label for="candidate.idCandidate">Id Candidato:</label><br>
+	 	<label for="candidate.idCandidate">Id Candidate:</label><br>
   		<input type="number" id="candidate.idCandidate" name="candidate.idCandidate" ><br><br>
   		<label for="skill.idSkill" >Id Skill:</label><br>
   		<input type="number" id="skill.idSkill" name="skill.idSkill"><br><br>

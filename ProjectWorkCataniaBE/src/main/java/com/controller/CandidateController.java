@@ -23,12 +23,12 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "homePage";
 	}
 
-	@GetMapping("/preAddCandidate") // test okay!
+	@GetMapping("/preAddCandidate") 
 	public String insertCandidate() {
 		return "addCandidate";
 	}
 
-	@GetMapping("/addCandidate")
+	@GetMapping("/addCandidate") // test okay del metodo!
 	public String addOrUpdateCandidate(Candidate candidate, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		candidateRep.save(candidate);

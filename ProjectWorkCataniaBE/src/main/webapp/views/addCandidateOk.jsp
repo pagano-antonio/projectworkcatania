@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Candidato Aggiunto con successo!
+New candidate correctly insert!
 </body>
 </html>

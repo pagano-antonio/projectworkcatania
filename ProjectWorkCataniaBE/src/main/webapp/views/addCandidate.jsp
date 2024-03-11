@@ -12,19 +12,19 @@
 <form action="${pageContext.request.contextPath}/addCandidate" method="get">
 
 		
-	 	<label for="name">Nome:</label><br>
+	 	<label for="name">Name:</label><br>
   		<input type="text" id="name" name="name" ><br><br>
-  		<label for="surname" >Cognome:</label><br>
+  		<label for="surname" >Surname:</label><br>
   		<input type="text" id="surname" name="surname"><br><br>
-  		<label for="address">Indirizzo:</label><br>
+  		<label for="address">Address:</label><br>
   		<input type="text" id="address" name="address" ><br><br>
-  		<label for="city">Città di residenza:</label><br>
+  		<label for="city">City:</label><br>
   		<input type="text" id="city" name="city" ><br><br>
-  		<label for="birthday" >Data di nascita:</label><br>
+  		<label for="birthday" >Birth date:</label><br>
   		<input type="date" id="birthday" name="birthday" ><br><br>
-  		<label for="birthPlace">Città di Nascita:</label><br>
+  		<label for="birthPlace">City of Birth:</label><br>
   		<input type="text" id="birthPlace" name="birthPlace" ><br><br>
-  		<label for="phone">Numero di telefono:</label><br>
+  		<label for="phone">Phone number:</label><br>
   		<input type="number" id="phone" name="phone"><br><br>
   		<label for="email">Email:</label><br>
   		<input type="text" id="email" name="email"><br><br>
