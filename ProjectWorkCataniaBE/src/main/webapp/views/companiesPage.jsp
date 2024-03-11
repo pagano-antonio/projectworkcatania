@@ -197,19 +197,19 @@ p {
         <span>Home</span>
       </a>
       <a href="${pageContext.request.contextPath}/login"target="_blank">
-        <i class="fas fa-link"></i>
+        <i class="fas fa-user"></i>
         <span>Login</span>
       </a>
       <a href="${pageContext.request.contextPath}/preAddCompanyClient"target="_blank">
-        <i class="fas fa-stream"></i>
+        <i class="fas fa-building"></i>
         <span>Add Company</span>
       </a>
       <a href="${pageContext.request.contextPath}/preSearchCompanyByName"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-building"></i>
         <span>Search Company</span>
       </a>
       <a href="${pageContext.request.contextPath}/preSearchCompanyByCity"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-city"></i>
         <span>Search By City</span>
       </a>
       

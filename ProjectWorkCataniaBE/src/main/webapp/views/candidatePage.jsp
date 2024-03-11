@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home Page</title>
+<title>Candidate</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -197,23 +197,23 @@ p {
         <span>Home</span>
       </a>
       <a href="${pageContext.request.contextPath}/login"target="_blank">
-        <i class="fas fa-link"></i>
+        <i class="fas fa-user"></i>
         <span>Login</span>
       </a>
       <a href="${pageContext.request.contextPath}/preAddCandidate"target="_blank">
-        <i class="fas fa-stream"></i>
-        <span>Add</span>
+        <i class="fas fa-user-plus"></i>
+        <span>Add Candidate</span>
       </a>
        <a href="${pageContext.request.contextPath}/preSearchCandidateByCity"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-city"></i>
         <span>Search By City</span>
       </a>
        <a href="${pageContext.request.contextPath}/preSearchCandidateBySurname"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-calendar-check"></i>
         <span>By Surname</span>
       </a>
        <a href="${pageContext.request.contextPath}/preSearchCandidateByPhone"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-phone"></i>
         <span>By Phone</span>
       </a>
       

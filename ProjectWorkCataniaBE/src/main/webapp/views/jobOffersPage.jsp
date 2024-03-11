@@ -197,23 +197,27 @@ p {
         <span>Home</span>
       </a>
       <a href="${pageContext.request.contextPath}/login"target="_blank">
-        <i class="fas fa-link"></i>
+        <i class="fas fa-user"></i>
         <span>Login</span>
       </a>
       <a href="${pageContext.request.contextPath}/preAddJobOffer"target="_blank">
-        <i class="fas fa-stream"></i>
+        <i class="fas fa-briefcase"></i>
         <span>Add Job Offer</span>
       </a>
       <a href="${pageContext.request.contextPath}/searchByTitle"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-clipboard"></i>
         <span>Search Job Offer</span>
       </a>
      <a href="${pageContext.request.contextPath}/preSearchByRal"target="_blank">
-         <i class="fas fa-calendar"></i>
+         <i class="fas fa-money-bill"></i>
         <span>Search by Ral</span>
       </a>
+       <a href="${pageContext.request.contextPath}/searchBetweenDates"target="_blank">
+         <i class="fas fa-calendar-day"></i>
+        <span>Search by Dates</span>
+      </a>
       
-      
+         
     </div>
 </body>
     
