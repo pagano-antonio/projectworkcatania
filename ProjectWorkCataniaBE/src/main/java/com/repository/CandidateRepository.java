@@ -14,6 +14,9 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer> {
 	List<Candidate> findBySurname(String surname);
 	List<Candidate> findByCity(String city);
 	List<Candidate> findByPhone(BigInteger phone);
-	List<Candidate> findByCandidateSkills_Skill_description(String description); 
+	List<Candidate> findByCandidateSkills_Skill_description(String description);
+	List<Candidate> findByEducations_EducationDegreeType_description(String description);
+	List<Candidate> findByJobInterviews_stateJobInterview_description(String description);// potrebbe anche essere title?
+	List<Candidate> findByJobInterviews_outcome(Integer outcome);
 
 }

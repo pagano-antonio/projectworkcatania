@@ -35,7 +35,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "addCandidateOk";
 	}
 
-	@GetMapping("/searchById")
+	@GetMapping("/searchById") //da testare!
 	public String searchById(Model model, Integer idCandidate) {
 		if (candidateRep.findById(idCandidate).isPresent()) {
 			Candidate candidate = (Candidate) candidateRep.findById(idCandidate).get();
@@ -50,7 +50,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "searchCandidateBySurname";
 	}
 	
-	@GetMapping("/searchCandidateBySurname")
+	@GetMapping("/searchCandidateBySurname") //da testare!
 	public String searchBySurname(Candidate candidate, Model model, String surname) {
 		List<Candidate> candidateList = candidateRep.findBySurname(surname);
 		System.out.println("Sto cercando una candidato");
@@ -58,7 +58,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListBySurname";
 	}
 	
-	@GetMapping("/searchCandidateByCity")
+	@GetMapping("/searchCandidateByCity") //da testare!
 	public String searchByCity(Candidate candidate, Model model, String city) {
 		List<Candidate> candidateList = candidateRep.findByCity(city);
 		System.out.println("Sto cercando una candidato");
@@ -66,7 +66,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListByCity";
 	}
 	
-	@GetMapping("/searchCandidateByPhone")
+	@GetMapping("/searchCandidateByPhone") //da testare!
 	public String searchByPhone(Candidate candidate, Model model, BigInteger phone) {
 		Candidate candidateFound = (Candidate) candidateRep.findByPhone(phone);
 		System.out.println("Sto cercando una candidato");
@@ -75,15 +75,39 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	}
 
 	
-	@GetMapping("/searchCandidateBySkill")
+	@GetMapping("/searchCandidateBySkill")//da testare!
 	public String searchBySkill(Candidate candidate, Model model, String description) {
 		List<Candidate> candidateList = candidateRep.findByCandidateSkills_Skill_description(description);
-		System.out.println("Sto cercando una candidato");
+		System.out.println("Sto cercando un candidato");
 		model.addAttribute("candidateSkillFound", candidateList);
 		return "candidateListBySkill";
 	}
 	
-	@GetMapping("/deleteCandidate")
+	@GetMapping("/searchByEducationDegreeType") //da testare!
+	public String searchByEducation(Candidate candidate, Model model, String description) {
+		List<Candidate> candidateList = candidateRep.findByEducations_EducationDegreeType_description(description);
+		System.out.println("Sto cercando un candidato");
+		model.addAttribute("candidateEducationFound", candidateList);
+		return "candidateListByEducation";
+	}
+	
+	@GetMapping("/searchByStateJobInterview")
+	public String searchByStateJobInterview(Candidate candidate, Model model, String description) {
+		List<Candidate> candidateList = candidateRep.findByJobInterviews_stateJobInterview_description(description);
+		System.out.println("Sto cercando un candidato");
+		model.addAttribute("candidateStateJobFound", candidateList);
+		return "candidateListByStateJobInterview";
+	}
+	
+	@GetMapping("/searchByJobInterviewOutcome") //da testare!
+	public String searchByJobInterviewOutcome(Candidate candidate, Model model, Integer outcome) {
+		List<Candidate> candidateList = candidateRep.findByJobInterviews_outcome(outcome);
+		System.out.println("Sto cercando un candidato");
+		model.addAttribute("candidateOutcomeJobFound", candidateList);
+		return "candidateListByJobInterviewOutcome";
+	}
+	
+	@GetMapping("/deleteCandidate") //da testare!
 	public String deleteCandidate(Candidate candidate, Model model) {
 		System.out.println("Sto cancellando il candidato!");
 		candidateRep.delete(candidate);
