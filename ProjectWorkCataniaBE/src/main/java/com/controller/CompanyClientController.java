@@ -29,14 +29,14 @@ public class CompanyClientController {
 		return "searchByIdCompanyClient";
 	}
 
-	@GetMapping("/addCompanyClient")
+	@PostMapping("/addCompanyClient")
 	public String addOrUpdateCompanyClient(CompanyClient companyClient, Model model) {
 		System.out.println("Sto inserendo/aggiornando i dati di una azienda!");
 		companyClientRep.save(companyClient);
 		return "addCompanyClientOk";
 	}
 
-	@GetMapping("/searchByIdCompany")
+	@PostMapping("/searchByIdCompany")
 	public String searchByIdCompany(Model model, Integer idCompanyClient) {
 		if (companyClientRep.findById(idCompanyClient).isPresent()) {
 			CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).get();
@@ -46,7 +46,7 @@ public class CompanyClientController {
 			return "ErrorPage";
 	}
 
-	@GetMapping("/deleteCompanyClient")
+	@PostMapping("/deleteCompanyClient")
 	public String deleteCompanyClient(CompanyClient companyClient, Model model) {
 		System.out.println("Sto cancellando i dati dell'azienda!");
 		companyClientRep.delete(companyClient);

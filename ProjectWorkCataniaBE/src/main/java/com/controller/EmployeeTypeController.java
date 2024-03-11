@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.model.EmployeeType;
@@ -27,14 +28,14 @@ public class EmployeeTypeController {
         return "searchById";
 	} 
 	
-	@GetMapping("/addEmployeeType")
+	@PostMapping("/addEmployeeType")
     public String addOrUpdateEmployeeType(EmployeeType employeeType, Model model) {
 		System.out.println("Sto inserendo/modificando!");
 		employeeTypeRep.save(employeeType);	
         return "addEmployeeTypeOk";
     }
 		
-	@GetMapping("/searchById")
+	@PostMapping("/searchById")
 	public String searchById(Model model, Integer idEmployeeType) {
 		if(employeeTypeRep.findById(idEmployeeType).isPresent()) {
 		EmployeeType employeeType = (EmployeeType)employeeTypeRep.findById(idEmployeeType).get();
@@ -44,7 +45,7 @@ public class EmployeeTypeController {
 			return "ErrorPage";
 	}
 	
-	@GetMapping("/deleteEmployeeType")
+	@PostMapping("/deleteEmployeeType")
 	public String deleteEmployeeType(EmployeeType employeeType, Model model) {
 		System.out.println("Sto cancellando!");
 		employeeTypeRep.delete(employeeType);

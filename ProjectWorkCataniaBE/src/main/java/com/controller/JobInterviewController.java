@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.model.JobInterview;
@@ -28,14 +29,14 @@ public class JobInterviewController {
         return "searchByIdJobInterview";
 	} 
 	
-	@GetMapping("/addJobInterview")
+	@PostMapping("/addJobInterview")
     public String addOrUpdateJobInterview(JobInterview jobInterview, Model model) {
 		System.out.println("Sto inserendo/modificando!");
 		jobInterviewRep.save(jobInterview);	
         return "addJobInterviewOk";
     }
 		
-	@GetMapping("/searchById")
+	@PostMapping("/searchById")
 	public String searchById(Model model, Integer idJobInterview) {
 		if(jobInterviewRep.findById(idJobInterview).isPresent()) {
 		JobInterview jobInterview = (JobInterview)jobInterviewRep.findById(idJobInterview).get();
@@ -45,7 +46,7 @@ public class JobInterviewController {
 			return "ErrorPage";
 	}
 	
-	@GetMapping("/deleteJobInterview")
+	@PostMapping("/deleteJobInterview")
 	public String deleteJobInterview(JobInterview jobInterview, Model model) {
 		System.out.println("Sto cancellando!");
 		jobInterviewRep.delete(jobInterview);

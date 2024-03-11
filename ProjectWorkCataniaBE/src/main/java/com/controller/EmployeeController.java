@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.model.Employee;
@@ -27,14 +28,14 @@ public class EmployeeController {
         return "searchByIdEmployee";
 	} 
 
-	@GetMapping("/addEmployee")
+	@PostMapping("/addEmployee")
     public String addOrUpdateEmplyee(Employee employee, Model model) {
 		System.out.println("Sto inserendo/aggiornando un impiegato!");
 		employeeRep.save(employee);	
         return "addEmployeeOk";
     }
 	
-	@GetMapping("/searchByIdEmployee")
+	@PostMapping("/searchByIdEmployee")
 	public String searchByIdContract(Model model, Integer idEmployee) {
 		if(employeeRep.findById(idEmployee).isPresent()) {
 		Employee employee = (Employee)employeeRep.findById(idEmployee).get();
@@ -44,9 +45,8 @@ public class EmployeeController {
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteEmployee")
-	public String deleteContractType(Employee employee, Model model) { // da testare, anche sugli altri rest
-																		//e vedere se sceglie il delete o deleteById
+	@PostMapping("/deleteEmployee")
+	public String deleteContractType(Employee employee, Model model) { 
 		System.out.println("Sto cancellando la tipologia di contratto!");
 		employeeRep.delete(employee);
 		return "deleteEmployeeOk";

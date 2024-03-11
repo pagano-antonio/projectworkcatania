@@ -24,7 +24,7 @@ public class CandidateSkillController {
         return "addCandidateSkill";
 	} 
 	
-	@GetMapping("/addCandidateSkill") // test okay!
+	@PostMapping("/addCandidateSkill") // test okay!
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		System.out.println(candidateSkill);
@@ -32,7 +32,7 @@ public class CandidateSkillController {
         return "addCandidateSkillOk";
     }
 
-	@GetMapping("/deleteCandidateSkill")
+	@PostMapping("/deleteCandidateSkill")
 	public String deleteCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto cancellando il candidato!");
 		candidateSkillRep.delete(candidateSkill);

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.model.Education;
@@ -27,14 +28,14 @@ public class EducationController {
         return "searchByIdEducation";
 	} 
 	
-	@GetMapping("/addEducation")
+	@PostMapping("/addEducation")
     public String addOrUpdateEducation(Education education, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		educationRep.save(education);	
         return "addEducationOk";
     }
 		
-	@GetMapping("/searchById")
+	@PostMapping("/searchById")
 	public String searchById(Model model, Integer idEducation) {
 		if(educationRep.findById(idEducation).isPresent()) {
 		Education education = (Education)educationRep.findById(idEducation).get();
@@ -44,7 +45,7 @@ public class EducationController {
 			return "ErrorPage";
 	}
 	
-	@GetMapping("/deleteCandidate")
+	@PostMapping("/deleteCandidate")
 	public String deleteCandidate(Education education, Model model) {
 		System.out.println("Sto cancellando il candidato!");
 		educationRep.delete(education);
