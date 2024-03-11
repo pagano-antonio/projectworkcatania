@@ -5,28 +5,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>List of results</title>
 </head>
 <body>
 
 <table>
 <thead>
         <tr>  
-            <th>title</th>
-            <th>Company name</th>
-            <th>min ral</th>
-            <th>max rax </th>
+            <th>Title</th>
+            <th>Company Name</th>
+            <th>Min Ral</th>
+            <th>Max Ral </th>
             
                      
 </thead>
     <tbody>  	   	
-        <c:forEach items="${toby}" var="s">
+        <c:forEach items="${RalList}" var="ralList">
          
             <tr>
-            	<td>${s.title}</td>
-            	<td>${s.companyClient.name}</td>
-                <td>${s.minRal}</td>
-                <td>${s.maxRal}</td>
+            	<td>${ralList.title}</td>
+            	<td>${ralList.companyClient.name}</td>
+                <td>${ralList.minRal}</td>
+                <td>${ralList.maxRal}</td>
                                                       
                </tr>
                  

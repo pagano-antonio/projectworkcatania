@@ -44,21 +44,21 @@
 <table>
 <thead>
         <tr>  
-            <th>title</th>
-            <th>description</th>
-            <th>company name </th>
-            <th>contract type </th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Company Name </th>
+            <th>Contract Type </th>
                      
 </thead>
 
     <tbody>  	   	
-        <c:forEach items="${JobOfferByTitle}" var="j">
+        <c:forEach items="${JobOfferByTitle}" var="listJobs">
          
             <tr>
-                <td>${j.title}</td>
-                <td>${j.description}</td>
-                <td>${j.companyClient.name}</td>
-                <td>${j.contractType.title}</td>
+                <td>${listJobs.title}</td>
+                <td>${listJobs.description}</td>
+                <td>${listJobs.companyClient.name}</td>
+                <td>${listJobs.contractType.title}</td>
                                                       
                </tr>
                  

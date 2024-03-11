@@ -18,7 +18,7 @@ public class JobOfferController {
 	@Autowired
 	JobOfferRepository jobOffRep;
 	
-	@GetMapping("/pageSearchByTitle") //sarebbe il vostro pre-inserimento
+	@GetMapping("/pageSearchByTitle") //pre-inserimento
 	public String searchTitle (Model model) {
 		return "searchByTitleForm";
 	}
@@ -35,11 +35,11 @@ public class JobOfferController {
 		return "searchRalForm";
 	}
 	
-	@PostMapping("/pageResultRal")
+	@PostMapping("/pageResultRal") // test tutto okay, grande wendina!
 	public String resultRal (Model model,Integer minRal, Integer maxRal) {
-	List <JobOffer>	sral =(List<JobOffer>)jobOffRep.findByMinRalGreaterThanEqualAndMaxRalLessThanEqual(minRal, maxRal);
-	System.out.println(sral.size());
-	model.addAttribute("toby", sral);
+	List <JobOffer>	ralList =(List<JobOffer>)jobOffRep.findByMinRalGreaterThanEqualAndMaxRalLessThanEqual(minRal, maxRal);
+	System.out.println(ralList.size());
+	model.addAttribute("RalList", ralList);
 	return "resultRal";	
 	}
 
