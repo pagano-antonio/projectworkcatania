@@ -191,18 +191,20 @@ body {
 
 </style>
 <body>
-
+<form action="${pageContext.request.contextPath}/searchByEmailAndPassword" method="post">
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
+		
 			<form class="login">
+			
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email">
+					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password">
+					<input type="password" class="login__input" placeholder="Password" id="password" name="email">
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Log In</span>
@@ -222,6 +224,6 @@ body {
 		</div>		
 	</div>
 </div>
-
+</form>
 </body>
 </html>
