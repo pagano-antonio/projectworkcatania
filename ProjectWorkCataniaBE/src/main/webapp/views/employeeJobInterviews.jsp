@@ -185,7 +185,6 @@ p {
 <body>
 
 <body>
-<c:forEach var="employee" items="${employeeFound}">
     <input type="checkbox" id="check">
     <label for="check">
       <i class="fas fa-bars" id="btn"></i>
@@ -205,21 +204,39 @@ p {
          <i class="fas fa-clipboard"></i>
         <span>Add Interview</span>
       </a>
-       <a href="${pageContext.request.contextPath}/JobInterviewController/searchByIdEmployee?idEmployee=${employee.idEmployee}" target="_blank">
-        <i class="fas fa-calendar"></i>
-        <span>Your Interviews</span>
-      </a>
     </div>
-    </c:forEach>
 </body>
 
-<c:forEach var="employee" items="${employeeFound}">
-  <div class="frame">
-<p>Welcome</p>
-<h2>${employee.name}<br>${employee.surname}<br></h2>
-  <p>in your Page</p>
-</div>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Surname</th>
+<th>Date</th>
+<th>Title</th>
+<th>State Job Interview</th>
+<th>Outcome</th>
+<th>Notes</th>
+
+</tr>
+
+<c:forEach var="job" items="${jobInterviewFound}">
+<tr>
+
+<td>${job.candidate.name}</td>
+<td>${job.candidate.surname}</td>
+<td>${job.date}</td>
+<td>${job.stateJobInterview.title}</td>
+<td>${job.stateJobInterview.description}</td>
+<td>${job.outcome}</td>
+<td>${job.notes}</td>
+
+
+</tr>
 </c:forEach>
+</table>
+
 
 
 </body>

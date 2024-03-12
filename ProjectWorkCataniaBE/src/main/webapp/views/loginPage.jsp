@@ -204,7 +204,7 @@ body {
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" id="password" name="email">
+					<input type="password" class="login__input" placeholder="Password" id="password" name="password">
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Log In</span>
