@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Job Offer Ok</title>
+<title>Add Job Interview</title>
 </head>
 <body>
 

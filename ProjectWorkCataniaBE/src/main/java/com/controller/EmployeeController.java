@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,11 +32,23 @@ public class EmployeeController {
 	} 
 	
 	@GetMapping("/preSignUp")
-    public String preAddorSignUp(Model model){//metodo che porta alla pagina di iscrizione 
+    public String preSignUp(Model model){//metodo che porta alla pagina di iscrizione 
 		List<EmployeeType> employeeType = employeeTypeRep.findAll();
-		model.addAttribute("description", employeeType);
+		List<Employee> employee = employeeRep.findAll();
+		model.addAttribute("descriptions", employeeType);
+		model.addAttribute("employee", employee);
 		return "signUpPage";
 	} 
+	
+	
+	@GetMapping("/preUpdateEmployee")
+	public String preUpdateEmployee(Model model, @RequestParam("idEmployee") Integer idEmployee) {
+	    List<EmployeeType> employeeType = employeeTypeRep.findAll();
+	    Employee employeeToUpdate = employeeRep.findById(idEmployee).orElse(null); // retrieve the Employee object with the given id
+	    model.addAttribute("descriptions", employeeType);
+	    model.addAttribute("employeeToUpdate", employeeToUpdate); // add the Employee object to the model
+	    return "updateEmployee";
+	}
 	
 	@GetMapping("/preSearchByIdEmployee") // potrebbe non servire da controllare le Jsp che servono
     public String preSearchByIdEmployee() {
@@ -46,9 +59,6 @@ public class EmployeeController {
     public String addOrUpdateEmplyee(Employee employee, Model model) {
 		System.out.println("Sto inserendo/aggiornando un impiegato!");
 		employeeRep.save(employee);
-//		List<EmployeeType> employeeType = employeeTypeRep.findAll();
-//		model.addAttribute("description", employeeType);
-		
         return "loginPage";
     }
 	

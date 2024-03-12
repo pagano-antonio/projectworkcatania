@@ -197,7 +197,7 @@ p {
         <i class="fas fa-qrcode"></i>
         <span>Log Out</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preSignUp"target="_blank">
+      <a href="${pageContext.request.contextPath}/preUpdateEmployee?idEmployee=${employee.idEmployee}"target="_blank">
         <i class="fas fa-user"></i>
         <span>Update Account</span>
       </a>

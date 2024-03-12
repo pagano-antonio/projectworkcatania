@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,7 @@
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -20,7 +20,7 @@
 }
 
 body {
-	background-image: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);		
+	background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);		
 }
 
 .container {
@@ -31,7 +31,7 @@ body {
 }
 
 .screen {		
-	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	background: linear-gradient(90deg, #8042d6 30%, #efddfb 60%);		
 	position: relative;	
 	height: 600px;
 	width: 360px;	
@@ -72,7 +72,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #6C63AC;	
+	background: linear-gradient(270deg, #52d6f4, #A890FE 50%);	
 	top: -172px;
 	right: 0;	
 	border-radius: 32px;
@@ -81,7 +81,7 @@ body {
 .screen__background__shape3 {
 	height: 540px;
 	width: 190px;
-	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	background: linear-gradient(270deg, #A890FE, #52d6f4);
 	top: -24px;
 	right: 0;	
 	border-radius: 32px;
@@ -90,7 +90,7 @@ body {
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #7E7BB9;	
+	background: linear-gradient(270deg, #52d6f4, #A890FE 50%);	
 	top: 420px;
 	right: 50px;	
 	border-radius: 60px;
@@ -219,13 +219,12 @@ body {
 					<input type="text" class="login__input" placeholder="Username" id="username" name="username">
 				</div>
 				<div class="login__field">
-				<label for="idEmployeeType">Employee</label><br>
   				<select name="employeeType.idEmployeeType">
   				<option value="">Employee Type:</option>
-  				<c:forEach var="employeeType" items="${description}">
-    			<option value="${employeeType.idEmployeeType}">${employeeType.description}</option>
+  				<c:forEach var="description" items="${descriptions}">
+    			<option value="${description.idEmployeeType}">${description.description}</option>
   				</c:forEach>
-    			</select>
+				</select>
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Sign Up</span>

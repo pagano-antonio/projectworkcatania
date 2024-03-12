@@ -1,10 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Search By Date</title>
+<meta charset="ISO-8859-1">
+<title>Update Your Account</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -185,27 +189,49 @@ body {
 	transform: scale(1.5);	
 }
 </style>
-
-
-</head>
 <body>
-<form action="resultBetweenDates" method="post">
-   <div class="container">
+<form action="${pageContext.request.contextPath}/addEmployee" method="post">
+<div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
 			<form class="login">
 			
+			
+			<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input readonly class="login__input" placeholder="Employee Id" id="idEmployee" name="idEmployee" value="${employeeToUpdate.idEmployee}" >
+				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="Start Date" id="startDate" name="startDate">
+					<input type="text" class="login__input" placeholder="Email" id="email" name="email" value="${employeeToUpdate.email}" >
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="date" class="login__input" placeholder="End Date" id="endDate" name="endDate">
+					<input type="password" class="login__input" placeholder="Password" id="password" name="password" value="${employeeToUpdate.password}">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" value="${employeeToUpdate.name}">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" value="${employeeToUpdate.surname}">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Username" id="username" name="username" value="${employeeToUpdate.username}">
+				</div>
+				<div class="login__field">
+  				<select name="employeeType.idEmployeeType">
+  				<option value="">Employee Type:</option>
+  				<c:forEach var="description" items="${descriptions}">
+    			<option value="${description.idEmployeeType}">${description.description}</option>
+  				</c:forEach>
+				</select>
 				</div>
 				<button class="button login__submit">
-					<span class="button__text">Search</span>
+					<span class="button__text">Update</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>
@@ -222,18 +248,6 @@ body {
 		</div>		
 	</div>
 </div>
-
-
-<!--         <table> -->
-<!--             <tr> -->
-<!--                 <th>Look between period of time</th> -->
-<!--                 <td><input type="date" id="starDate" name="startDate" placeholder="Start date"></td> -->
-<!--                 <td><input type="date" id="endDate" name="endDate" placeholder="End date"></td> -->
-<!--             </tr> -->
-<!--         </table> -->
-<!--         <input type="submit" value="Submit"> -->
-  
-    </form>
-
+</form>
 </body>
 </html>

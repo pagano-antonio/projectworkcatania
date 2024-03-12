@@ -40,7 +40,7 @@ public class JobOfferController {
     public String addOrUpdateJobOffer(JobOffer jobOffer, Model model) {
 		System.out.println("Sto inserendo/aggiornando un'offerta di lavoro!");
 		jobOffRep.save(jobOffer);	
-        return "addJobOfferOk";
+        return "jobOffersPage";
     }
 	
 	@GetMapping("/searchByIdOffer")
