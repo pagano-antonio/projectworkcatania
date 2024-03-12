@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Home Page</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
 
@@ -34,7 +34,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   width: 100vw;
+  width: 100vw;background: linear-gradient(90deg, #C7C5F4, #776BCC);
   height: 100vh;
   background-image: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);
   &::after {
