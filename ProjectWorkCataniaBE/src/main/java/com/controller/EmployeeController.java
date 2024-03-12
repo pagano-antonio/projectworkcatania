@@ -23,6 +23,11 @@ public class EmployeeController {
         return "addEmployee";
 	} 
 	
+	@GetMapping("/preSignUp")
+    public String preAddorSignUp() {//metodo che porta alla pagina di iscrizione 
+        return "signUpPage";
+	} 
+	
 	@GetMapping("/preSearchByIdEmployee") // potrebbe non servire da controllare le Jsp che servono
     public String preSearchByIdEmployee() {
         return "searchByIdEmployee";
