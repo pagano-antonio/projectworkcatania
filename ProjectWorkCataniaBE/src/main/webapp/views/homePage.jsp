@@ -294,6 +294,10 @@ p {
         <i class="fas fa-qrcode"></i>
       <span>Dashboard</span>  <!--   da togliere la dashboard nel caso non serva -->
       </a>
+      <a href="${pageContext.request.contextPath}/preSignUp"target="_blank">
+        <i class="fas fa-user-plus"></i>
+        <span>Sign Up</span>
+      </a>
       <a href="${pageContext.request.contextPath}/login"target="_blank">
         <i class="fas fa-user"></i>
         <span>Login</span>
