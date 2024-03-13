@@ -200,26 +200,49 @@ body {
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" id="password" name="password">
+					<input type="text" class="login__input" placeholder="Job Title" id="title" name="title">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Name" id="name" name="name">
+					<input type="text" class="login__input" placeholder="Description" id="description" name="description">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname">
+					<input type="date" class="login__input" placeholder="Start Date" id="startDate" name="startDate">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Username" id="username" name="username">
+					<input type="date" class="login__input" placeholder="End Date" id="endDate" name="endDate">
 				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Min Ral" id="minRal" name="minRal">
+				</div>
+					<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Max Ral" id="maxRal" name="maxRal">
+				</div>
+				<div class="login__field">
+  				<select name="contractType.idContractType">
+  				<option value="">Contract Type</option>
+  				<c:forEach var="contract" items="${contractType}">
+    			<option value="${contract.idContractType}">${contract.title}</option>
+  				</c:forEach>
+				</select>
+				</div>
+				
+				<div class="login__field">
+  				<select name="companyClient.idCompanyClient">
+  				<option value="">Company</option>
+  				<c:forEach var="company" items="${companyClient}">
+    			<option value="${company.companyClient.idCompanyClient}">${company.name}</option>
+  				</c:forEach>
+				</select>
+				</div>
+				
+				
 				<button class="button login__submit">
-					<span class="button__text">Sign Up</span>
+					<span class="button__text">Add Job Offer</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>

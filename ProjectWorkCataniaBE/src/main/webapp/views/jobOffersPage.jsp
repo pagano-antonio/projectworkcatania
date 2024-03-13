@@ -204,7 +204,7 @@ p {
         <i class="fas fa-briefcase"></i>
         <span>Add Job Offer</span>
       </a>
-      <a href="${pageContext.request.contextPath}/searchByTitle"target="_blank">
+      <a href="${pageContext.request.contextPath}/pageSearchByTitle"target="_blank">
          <i class="fas fa-clipboard"></i>
         <span>Search Job Offer</span>
       </a>

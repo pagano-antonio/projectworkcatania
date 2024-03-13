@@ -9,7 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.model.CompanyClient;
+import com.model.ContractType;
+import com.model.Employee;
+import com.model.EmployeeType;
 import com.model.JobOffer;
+import com.repository.CompanyClientRepository;
+import com.repository.ContractTypeRepository;
 import com.repository.JobOfferRepository;
 
 @Controller
@@ -20,6 +26,12 @@ public class JobOfferController {
 	@Autowired
 	JobOfferRepository jobOffRep;
 	
+	@Autowired
+	ContractTypeRepository contractTypeRep;
+	
+	@Autowired
+	CompanyClientRepository companyClientRep;
+	
 	@GetMapping("/preJobOfferPage") // per andare nel menù ricerca offerte lavoro
 	public String jobOfferPage() {
 		return "jobOffersPage";
@@ -27,7 +39,11 @@ public class JobOfferController {
 	
 	
 	@GetMapping("/preAddJobOffer") // per pulsante home se ci sarà
-    public String insertAddJobOffer() {
+    public String insertAddJobOffer(Model  model) {
+		List<ContractType> contractType = contractTypeRep.findAll();
+		List<CompanyClient> companyClient = companyClientRep.findAll();
+		model.addAttribute("contract", contractType);
+		model.addAttribute("company", companyClient);
         return "addJobOffer";
 	} 
 	
