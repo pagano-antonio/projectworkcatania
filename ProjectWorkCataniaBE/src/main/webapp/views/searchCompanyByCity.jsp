@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Job Offer</title>
+<title>Search Company By City</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
@@ -188,61 +188,23 @@ body {
 .social-login__icon:hover {
 	transform: scale(1.5);	
 }
-
 </style>
 <body>
-<form action="${pageContext.request.contextPath}/addJobOffer" method="post">
+<form action="${pageContext.request.contextPath}/searchByCity" method="post">
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
 			<form class="login">
 			
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Job Title" id="title" name="title">
+			
+			<div class="login__field">
+					<i class="login__icon fas fa-building"></i>
+					<input type="text" class="login__input" placeholder="City" id="city" name="city" >
 				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Description" id="description" name="description">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="Start Date" id="startDate" name="startDate">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="End Date" id="endDate" name="endDate">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Min Ral" id="minRal" name="minRal">
-				</div>
-					<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Max Ral" id="maxRal" name="maxRal">
-				</div>
-				<div class="login__field">
-  				<select name="contractType.idContractType">
-  				<option value="">Contract Type</option>
-  				<c:forEach var="contract" items="${contract}">
-    			<option value="${contract.idContractType}">${contract.title}</option>
-  				</c:forEach>
-				</select>
-				</div>
-				
-				<div class="login__field">
-  				<select name="companyClient.idCompanyClient">
-  				<option value="">Company</option>
-  				<c:forEach var="company" items="${company}">
-    			<option value="${company.idCompanyClient}">${company.name}</option>
-  				</c:forEach>
-				</select>
-				</div>
-				
-				
+			
 				<button class="button login__submit">
-					<span class="button__text">Add Job Offer</span>
+					<span class="button__text">Search</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>

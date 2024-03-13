@@ -38,7 +38,7 @@ public class CompanyClientController {
 	public String addOrUpdateCompanyClient(CompanyClient companyClient, Model model) {
 		System.out.println("Sto inserendo/aggiornando i dati di una azienda!");
 		companyClientRep.save(companyClient);
-		return "addCompanyClientOk";
+		return "companiesPage";
 	}
 
 	@PostMapping("/searchByIdCompany")
@@ -61,7 +61,7 @@ public class CompanyClientController {
 	// Metodo ricerca per nome // da testare //
 	@GetMapping("/preSearchCompanyByName")
 	public String searchByName() {
-		return "SearchCompanyClientByName";
+		return "searchCompanyByName";
 	}
 
 	@PostMapping("/searchCompanyByName")
@@ -69,7 +69,7 @@ public class CompanyClientController {
 		List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByName(name);
 		if (companyClientList != null) {
 			model.addAttribute("CompanyClientFound", companyClientList);
-			return "ListCompanyClientByName";
+			return "listCompanyByName";
 		} else {
 			return "ErrorPage";
 		}
@@ -82,11 +82,11 @@ public class CompanyClientController {
 	}
 
 	@PostMapping("/searchByCity")
-	public String searchByCity(Model model, String name) {
-		List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCity(name);
+	public String searchByCity(Model model, String city) {
+		List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCity(city);
 		if (companyClientList != null) {
-			model.addAttribute("CompanyClientFound", companyClientList);
-			return "companyClientByCity";
+			model.addAttribute("CompanyClientCity", companyClientList);
+			return "listCompanyByCity";
 		} else {
 			return "ErrorPage";
 		}

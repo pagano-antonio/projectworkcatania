@@ -33,7 +33,7 @@ public class JobOfferController {
 	CompanyClientRepository companyClientRep;
 	
 	@GetMapping("/preJobOfferPage") // per andare nel menù ricerca offerte lavoro
-	public String jobOfferPage() {
+	public String jobOfferPage(Model model) {
 		return "jobOffersPage";
 	}
 	
