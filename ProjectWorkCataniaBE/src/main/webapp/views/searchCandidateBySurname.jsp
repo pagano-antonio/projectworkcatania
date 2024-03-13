@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Candidate</title>
+<title>Search Candidate By Surname</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
@@ -190,48 +189,20 @@ body {
 }
 </style>
 <body>
-<form action="${pageContext.request.contextPath}/addCandidate" method="post">
+<form action="${pageContext.request.contextPath}/searchCandidateBySurname" method="post">
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
 			<form class="login">
 			
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname">
+				</div>
 			
-			<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input readonly class="login__input" placeholder="Name" id="name" name="name" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="Birth date" id="birthDay" name="birthDay" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Birth Place" id="birthPlace" name="birthPlace">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Address" id="address" name="address">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="City" id="city" name="city" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Phone Number" id="phone" name="phone" >
-				</div>
 				<button class="button login__submit">
-					<span class="button__text">Add Candidate</span>
+					<span class="button__text">Search</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>

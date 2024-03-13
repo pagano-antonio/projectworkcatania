@@ -42,7 +42,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	public String addOrUpdateCandidate(Candidate candidate, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		candidateRep.save(candidate);
-		return "addCandidateOk";
+		return "candidatePage";
 	}
 
 	@PostMapping("/searchById") //da testare!
@@ -89,7 +89,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	
 	@PostMapping("/searchCandidateByPhone") //da testare!
 	public String searchByPhone(Candidate candidate, Model model, BigInteger phone) {
-		Candidate candidateFound = (Candidate) candidateRep.findByPhone(phone);
+		List<Candidate> candidateFound = (List<Candidate>) candidateRep.findByPhone(phone);
 		System.out.println("Sto cercando una candidato");
 		model.addAttribute("candidatePhoneFound", candidateFound);
 		return "candidateListByPhone";
