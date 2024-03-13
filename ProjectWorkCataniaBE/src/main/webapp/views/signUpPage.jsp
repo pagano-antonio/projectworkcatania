@@ -8,7 +8,7 @@
 <title>Sign Up Employee</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-</head>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -40,7 +40,7 @@ body {
 
 .screen__content {
 	z-index: 1;
-	position: relative;	
+	position: absolute;	
 	height: 100%;
 }
 
@@ -99,7 +99,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 33px; /*serve per sistemare le righe di input*/
 }
 
 .login__field {
@@ -190,14 +190,14 @@ body {
 }
 
 </style>
+</head>
 <body>
-<form action="${pageContext.request.contextPath}/addEmployee" method="post">
+
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
-			<form class="login">
-			
+		<form action="${pageContext.request.contextPath}/addEmployee" method="post" class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
@@ -244,6 +244,6 @@ body {
 		</div>		
 	</div>
 </div>
-</form>
+
 </body>
 </html>
