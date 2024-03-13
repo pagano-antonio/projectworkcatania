@@ -7,7 +7,7 @@
 <title>Login Employee</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-</head>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -103,7 +103,7 @@ body {
 
 .login__field {
 	padding: 20px 0px;	
-	position: relative;	
+	position: relative;
 }
 
 .login__icon {
@@ -161,41 +161,42 @@ body {
 	color: #7875B5;
 }
 
-.social-login {	
-	position: absolute;
-	height: 140px;
-	width: 160px;
-	text-align: center;
-	bottom: 0px;
-	right: 0px;
-	color: #fff;
-}
+/* .social-login {	 */
+/* 	position: absolute; */
+/* 	height: 140px; */
+/* 	width: 160px; */
+/* 	text-align: center; */
+/* 	bottom: 0px; */
+/* 	right: 0px; */
+/* 	color: #fff; */
+/* } */
 
-.social-icons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+/* .social-icons { */
+/* 	display: flex; */
+/* 	align-items: center; */
+/* 	justify-content: center; */
+/* } */
 
-.social-login__icon {
-	padding: 20px 10px;
-	color: #fff;
-	text-decoration: none;	
-	text-shadow: 0px 0px 8px #7875B5;
-}
+/* .social-login__icon { */
+/* 	padding: 20px 10px; */
+/* 	color: #fff; */
+/* 	text-decoration: none;	 */
+/* 	text-shadow: 0px 0px 8px #7875B5; */
+/* } */
 
-.social-login__icon:hover {
-	transform: scale(1.5);	
+/* .social-login__icon:hover { */
+/* 	transform: scale(1.5);	 */
 }
 </style>
+</head>
 <body>
-<form action="${pageContext.request.contextPath}/searchByEmailAndPassword" method="post">
+
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
-			<form class="login">
-			
+			<!--<form class="login">-->
+			<form action="${pageContext.request.contextPath}/searchByEmailAndPassword" method="post" class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
@@ -209,10 +210,10 @@ body {
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>
-			<div class="social-login">
-				<div class="social-icons">
-				</div>
-			</div>
+<!-- 			<div class="social-login"> -->
+<!-- 				<div class="social-icons"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 		</div>
 		<div class="screen__background">
 			<span class="screen__background__shape screen__background__shape4"></span>
@@ -222,6 +223,5 @@ body {
 		</div>		
 	</div>
 </div>
-</form>
 </body>
 </html>
