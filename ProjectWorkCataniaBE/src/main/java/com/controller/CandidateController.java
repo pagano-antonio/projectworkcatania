@@ -8,8 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.Candidate;
+import com.model.Employee;
+import com.model.EmployeeType;
 import com.repository.CandidateRepository;
 
 @Controller 
@@ -31,6 +34,13 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 	@GetMapping("/preAddCandidate") 
 	public String insertCandidate() {
 		return "addCandidate";
+	}
+
+	@GetMapping("/preUpdateCandidate")
+	public String preUpdateCandidate(Model model, @RequestParam("idCandidate") Integer idCandidate) {
+	    Candidate candidateToUpdate = candidateRep.findById(idCandidate).orElse(null); // retrieve the Employee object with the given id
+	    model.addAttribute("candidateToUpdate", candidateToUpdate); // add the Employee object to the model
+	    return "updateCandidate";
 	}
 	
 	@GetMapping("/preCandidatePage") 

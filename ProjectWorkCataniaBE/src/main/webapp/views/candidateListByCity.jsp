@@ -223,6 +223,7 @@ p {
 <th>City</th>
 <th>Email</th>
 <th>Phone Number</th>
+<th>Update</th>
 
 </tr>
 
@@ -237,6 +238,14 @@ p {
 <td>${candidate.city}</td>
 <td>${candidate.email}</td>
 <td>${candidate.phone}</td>
+
+<td>
+
+	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="get">
+    	<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
+    	<button type="submit">Aggiorna</button>
+		</form>
+</td>
 
 
 </tr>

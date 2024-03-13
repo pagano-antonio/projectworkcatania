@@ -78,18 +78,16 @@ public class EmployeeController {
 			System.out.println("Email " + email + " password " + password);
 			List<Employee> employeeList =(List<Employee>) employeeRep.findByEmailAndPassword(email, password);
 		    System.out.println(employeeList.toString());
-		    //employeeList.get(0).getIdEmployee();
-		    //System.out.println(employeeList.get(0).getIdEmployee());
 		    model.addAttribute("employeeFound",employeeList);
 		    return "loginEmployeeOk";
 	}
 	
 	
-	@PostMapping("/deleteEmployee")
+	@GetMapping("/deleteEmployee")
 	public String deleteContractType(Employee employee, Model model) { 
 		System.out.println("Sto cancellando la tipologia di contratto!");
 		employeeRep.delete(employee);
-		return "deleteEmployeeOk";
+		return "loginPage";
 	}
 	
 }

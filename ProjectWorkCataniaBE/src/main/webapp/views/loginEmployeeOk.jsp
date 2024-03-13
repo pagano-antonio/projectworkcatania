@@ -209,6 +209,10 @@ p {
         <i class="fas fa-calendar"></i>
         <span>Your Interviews</span>
       </a>
+      <a href="${pageContext.request.contextPath}deleteEmployee?idEmployee=${employee.idEmployee}" target="_blank">
+        <i class="fas fa-trash"></i>
+        <span>Delete Account</span>
+      </a>
     </div>
     </c:forEach>
 </body>
