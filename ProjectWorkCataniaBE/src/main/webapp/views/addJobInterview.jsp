@@ -197,7 +197,7 @@ body {
 		<div class="screen__content">
 		
 			
-			<form action="${pageContext.request.contextPath}/addJobOffer" method="post" class="login">
+			<form action="${pageContext.request.contextPath}/JobInterviewController/addJobInterview" method="post" class="login">
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-calendar"></i>
@@ -216,7 +216,7 @@ body {
   				<select name="candidate.idCandidate">
   				<option value="">Candidate</option>
   				<c:forEach var="candidate" items="${candidate}">
-    			<option value="${candidate.idCandidate}">${candidate.name}</option>
+    			<option value="${candidate.idCandidate}">${candidate.surname}</option>
   				</c:forEach>
 				</select>
 				</div>

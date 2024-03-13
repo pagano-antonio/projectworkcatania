@@ -8,7 +8,6 @@
 <title>Add Candidate</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-</head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -33,8 +32,8 @@ body {
 .screen {		
 	background: linear-gradient(90deg, #8042d6 30%, #efddfb 60%);		
 	position: relative;	
-	height: 600px;
-	width: 360px;	
+	height: 730px;
+	width: 460px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
@@ -99,7 +98,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 6px;
 }
 
 .login__field {
@@ -134,7 +133,7 @@ body {
 .login__submit {
 	background: #fff;
 	font-size: 14px;
-	margin-top: 30px;
+	margin-top: 16px;
 	padding: 16px 20px;
 	border-radius: 26px;
 	border: 1px solid #D4D3E8;
@@ -189,14 +188,15 @@ body {
 	transform: scale(1.5);	
 }
 </style>
+</head>
 <body>
-<form action="${pageContext.request.contextPath}/addCandidate" method="post">
+
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
-			<form class="login">
 			
+			<form action="${pageContext.request.contextPath}/addCandidate" method="post" class="login">
 			
 			<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
@@ -227,7 +227,7 @@ body {
 					<input type="text" class="login__input" placeholder="Email" id="email" name="email" >
 				</div>
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-phone"></i>
 					<input type="text" class="login__input" placeholder="Phone Number" id="phone" name="phone" >
 				</div>
 				<button class="button login__submit">
@@ -248,6 +248,5 @@ body {
 		</div>		
 	</div>
 </div>
-</form>
 </body>
 </html>

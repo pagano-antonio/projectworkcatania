@@ -204,6 +204,10 @@ p {
         <i class="fas fa-user-plus"></i>
         <span>Add Candidate</span>
       </a>
+      <a href="${pageContext.request.contextPath}/CandidateSkillController/preAddCandidateSkill"target="_blank">
+        <i class="fas fa-user-plus"></i>
+        <span>Add Skill</span>
+      </a>
        <a href="${pageContext.request.contextPath}/preSearchCandidateByCity"target="_blank">
          <i class="fas fa-city"></i>
         <span>Search By City</span>

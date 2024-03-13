@@ -55,7 +55,7 @@ public class JobInterviewController {
     public String addOrUpdateJobInterview(JobInterview jobInterview, Model model) {
 		System.out.println("Sto inserendo/modificando!");
 		jobInterviewRep.save(jobInterview);	
-        return "addJobInterviewOk";
+        return "loginPage";
     }
 		
 	@PostMapping("/searchById")

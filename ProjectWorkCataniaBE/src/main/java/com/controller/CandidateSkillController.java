@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.model.Candidate;
 import com.model.CandidateSkill;
+import com.model.Employee;
+import com.model.Skill;
+import com.model.StateJobInterview;
+import com.repository.CandidateRepository;
 import com.repository.CandidateSkillRepository;
+import com.repository.SkillRepository;
 
 @Controller
 @RequestMapping("CandidateSkillController")
@@ -18,9 +24,17 @@ public class CandidateSkillController {
 
 	@Autowired
 	CandidateSkillRepository candidateSkillRep;
+	@Autowired
+	CandidateRepository candidateRep;
+	@Autowired
+	SkillRepository skillRep;
 	
 	@GetMapping("/preAddCandidateSkill")
     public String insertCandidateSkill(Model model) {
+		List<Candidate> candidate = candidateRep.findAll();
+		List<Skill> skill = skillRep.findAll();
+		model.addAttribute("candidate", candidate);
+		model.addAttribute("skill", skill);
         return "addCandidateSkill";
 	} 
 	
@@ -29,7 +43,7 @@ public class CandidateSkillController {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		System.out.println(candidateSkill);
 		candidateSkillRep.save(candidateSkill);	
-        return "addCandidateSkillOk";
+        return "candidatePage";
     }
 
 	@PostMapping("/deleteCandidateSkill")

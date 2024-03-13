@@ -185,17 +185,14 @@ body {
 	transform: scale(1.5);	
 }
 </style>
-
-
 </head>
 <body>
 
-    <form action="pageResultRal" method="post">
     <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
-			<form class="login">
+			<form action="${pageContext.request.contextPath}/searchByRal" method="post" class="login">
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>

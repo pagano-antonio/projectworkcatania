@@ -8,7 +8,6 @@
 <title>Add Company Client</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
