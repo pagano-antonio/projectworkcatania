@@ -7,7 +7,6 @@
 <title>Search Candidate By City</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-</head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -32,7 +31,7 @@ body {
 .screen {		
 	background: linear-gradient(90deg, #8042d6 30%, #efddfb 60%);		
 	position: relative;	
-	height: 600px;
+	height: 400px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
@@ -98,7 +97,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 126px;
 }
 
 .login__field {
@@ -188,16 +187,17 @@ body {
 	transform: scale(1.5);	
 }
 </style>
+</head>
 <body>
-<form action="${pageContext.request.contextPath}/searchCandidateByCity" method="post">
+
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 		
-			<form class="login">
+			<form action="${pageContext.request.contextPath}/searchCandidateByCity" method="post" class="login">
 			
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-city"></i>
 					<input type="text" class="login__input" placeholder="City" id="city" name="city">
 				</div>
 			
@@ -219,6 +219,5 @@ body {
 		</div>		
 	</div>
 </div>
-</form>
 </body>
 </html>

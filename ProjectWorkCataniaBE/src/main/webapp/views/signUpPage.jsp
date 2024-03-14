@@ -199,7 +199,7 @@ body {
 		
 		<form action="${pageContext.request.contextPath}/addEmployee" method="post" class="login">
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-envelope"></i>
 					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
 				</div>
 				<div class="login__field">

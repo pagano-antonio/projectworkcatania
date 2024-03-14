@@ -98,7 +98,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 93px;
+	padding-top: 133px;
 }
 
 .login__field {
