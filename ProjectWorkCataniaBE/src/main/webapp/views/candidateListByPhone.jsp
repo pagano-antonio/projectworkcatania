@@ -11,6 +11,78 @@
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
 
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 1100px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	font-family: Lato, sans-serif;
+}
+
+th{
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: white;
+	text-align: left;
+
+}
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #4542f5;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+/*Separatore due stili*/
+
 *{
   margin: 0;
   padding: 0;
@@ -77,7 +149,8 @@ a.active,a:hover{
 }
 label #btn,label #cancel{
   position: absolute;
-  left: 5px;
+  left: 10px; /* sposta il pulsante a sinistra di 10px */
+  top: 15px; /* sposta il pulsante verso l'alto di 15px */
   cursor: pointer;
   color: #d6adff;
   border-radius: 5px;
@@ -182,7 +255,6 @@ p {
 
 </style>
 </head>
-<body>
 
 <body>
     <input type="checkbox" id="check">
@@ -212,7 +284,11 @@ p {
 </body>
 
 
+<div class="container">
+
+
 <table>
+<thead>
 
 <tr>
 <th>Name</th>
@@ -223,8 +299,11 @@ p {
 <th>City</th>
 <th>Email</th>
 <th>Phone Number</th>
+<th>Update</th>
 
 </tr>
+</thead>
+<tbody>
 
 <c:forEach var="candidate" items="${candidatePhoneFound}">
 <tr>
@@ -238,12 +317,19 @@ p {
 <td>${candidate.email}</td>
 <td>${candidate.phone}</td>
 
+<td>
+
+	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="get">
+    	<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
+    	<button type="submit">Update</button>
+		</form>
+</td>
+
 
 </tr>
 </c:forEach>
+</tbody>
 </table>
-
-
-
+</div>
 </body>
 </html>

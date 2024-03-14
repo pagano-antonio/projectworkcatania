@@ -195,11 +195,11 @@ body {
 			<form action="${pageContext.request.contextPath}/searchByRal" method="post" class="login">
 			
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-money-bill"></i>
 					<input type="number" class="login__input" placeholder="Min Ral Income" id="minRal" name="minRal">
 				</div>
 				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
+					<i class="login__icon fas fa-money-bill"></i>
 					<input type="number" class="login__input" placeholder="Max Ral Income" id="maxRal" name="maxRal">
 				</div>
 				<button class="button login__submit">

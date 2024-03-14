@@ -77,7 +77,8 @@ a.active,a:hover{
 }
 label #btn,label #cancel{
   position: absolute;
-  left: 5px;
+  left: 10px; /* sposta il pulsante a sinistra di 10px */
+  top: 15px; /* sposta il pulsante verso l'alto di 15px */
   cursor: pointer;
   color: #d6adff;
   border-radius: 5px;
@@ -182,7 +183,7 @@ p {
 
 </style>
 </head>
-<body>
+
 
 <body>
 <c:forEach var="employee" items="${employeeFound}">

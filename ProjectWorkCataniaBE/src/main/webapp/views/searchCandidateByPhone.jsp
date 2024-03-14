@@ -197,7 +197,7 @@ body {
 		
 			
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-phone"></i>
 					<input type="number" class="login__input" placeholder="Phone number" id="phone" name="phone">
 				</div>
 			
