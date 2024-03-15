@@ -7,5 +7,6 @@ import com.model.Skill;
 
 @Repository
 public interface SkillRepository extends JpaRepository<Skill, Integer>{
+	
 
 }

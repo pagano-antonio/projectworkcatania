@@ -300,6 +300,7 @@ p {
 <th>Email</th>
 <th>Phone Number</th>
 <th>Update</th>
+<th>Skill</th>
 
 </tr>
 </thead>
@@ -319,12 +320,38 @@ p {
 
 <td>
 
-	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="get">
+	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
     	<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
     	<button type="submit">Update</button>
 		</form>
 </td>
 
+<!-- <td> -->
+
+<%-- 	   	<form action="${pageContext.request.contextPath}/CandidateSkillController/candidateSkills" method="post"> --%>
+<%--    		<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}"> --%>
+<%--    		<input type="hidden" name="idCandidate" value="${candidateCityFound}"> --%>
+<!--     	<button type="submit">Skill</button> -->
+<!-- 		</form> -->
+		
+</td>
+
+
+<c:forEach var="candidateSkill" items="${candidateSkills}">
+  <table>
+    <thead>
+      <tr>
+        <th>Skill</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>${candidateSkill.skill.name}</td>
+        </tr>
+      </c:forEach>
+    </tbody>
+  </table>
 
 </tr>
 </c:forEach>

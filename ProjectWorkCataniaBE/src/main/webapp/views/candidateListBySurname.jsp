@@ -319,7 +319,7 @@ p {
 
 <td>
 
-	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="get">
+	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
     	<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
     	<button type="submit">Update</button>
 		</form>

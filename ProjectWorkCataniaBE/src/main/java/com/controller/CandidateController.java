@@ -36,7 +36,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "addCandidate";
 	}
 
-	@GetMapping("/preUpdateCandidate")
+	@PostMapping("/preUpdateCandidate")
 	public String preUpdateCandidate(Model model, @RequestParam("idCandidate") Integer idCandidate) {
 	    Candidate candidateToUpdate = candidateRep.findById(idCandidate).orElse(null); // retrieve the Employee object with the given id
 	    model.addAttribute("candidateToUpdate", candidateToUpdate); // add the Employee object to the model

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.Candidate;
 import com.model.CandidateSkill;
@@ -66,12 +67,22 @@ public class CandidateSkillController {
 	public String searchByIdCandidate(Model model, Integer idCandidate) {
 		List<CandidateSkill> candidateList = candidateSkillRep.findByCandidate_IdCandidate(idCandidate);
 		model.addAttribute("CandidateListFound", candidateList);
+		model.addAttribute("candidateFound", idCandidate);
 		return "updateCandidate";
 		}
+	
+//	@PostMapping("/candidateSkills")
+//	public String getCandidateSkills(Model model, @RequestParam("idCandidate") Integer idCandidate) {
+//	    List<CandidateSkill> candidateSkills = candidateSkillRep.findSkillByCandidate_idCandidate(idCandidate);
+//	    model.addAttribute("candidateSkills", candidateSkills);
+//	    return "candidateListByCity";
+//	}
+	
 	@PostMapping("/searchByIdSkill")
 	public String searchByIdSkill(Model model, Integer idSkill) {
 		List<CandidateSkill> candidateSkillList = candidateSkillRep.findBySkill_IdSkill(idSkill);
 		model.addAttribute("CandidateSkillListFound", candidateSkillList);
 		return "updateCandidate";
+		
 		}
 }

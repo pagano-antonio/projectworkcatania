@@ -46,6 +46,8 @@ public class SkillController {
 			return "ErrorPage";
 	}
 	
+	
+	
 	@PostMapping("/deleteSkill")
 	public String deleteSkill(Skill skill, Model model) {
 		System.out.println("Sto cancellando!");
