@@ -71,12 +71,12 @@ public class CandidateSkillController {
 		return "updateCandidate";
 		}
 	
-//	@PostMapping("/candidateSkills")
-//	public String getCandidateSkills(Model model, @RequestParam("idCandidate") Integer idCandidate) {
-//	    List<CandidateSkill> candidateSkills = candidateSkillRep.findSkillByCandidate_idCandidate(idCandidate);
-//	    model.addAttribute("candidateSkills", candidateSkills);
-//	    return "candidateListByCity";
-//	}
+	@PostMapping("/candidateSkills")
+	public String getCandidateSkills(Model model, @RequestParam("idCandidate") Integer idCandidate) {
+	    List<CandidateSkill> candidateSkills = candidateSkillRep.findSkillByCandidate_idCandidate(idCandidate);
+	    model.addAttribute("candidateSkills", candidateSkills);
+	    return "candidateListByCity";
+	}
 	
 	@PostMapping("/searchByIdSkill")
 	public String searchByIdSkill(Model model, Integer idSkill) {

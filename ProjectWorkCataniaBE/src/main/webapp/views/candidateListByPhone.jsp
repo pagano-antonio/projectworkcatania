@@ -276,9 +276,22 @@ p {
          <i class="fas fa-building"></i>
         <span>By City</span>
       	</a>
-       <a href="${pageContext.request.contextPath}/preSearchCandidateBySurname"target="_blank">
+      	 <a href="${pageContext.request.contextPath}/preSearchCandidateBySurname"target="_blank">
          <i class="fas fa-calendar-check"></i>
         <span>By Surname</span>
+        </a>
+      	 <a href="${pageContext.request.contextPath}/preSearchCandidateBySkill"target="_blank">
+         <i class="fas fa-clipboard"></i>
+        <span>By Skill</span>
+      </a>
+           <a href="${pageContext.request.contextPath}/preSearchCandidateByEducation"target="_blank">
+         <i class="fas fa-school"></i>
+        <span>By Education</span>
+      </a>
+       <a href="${pageContext.request.contextPath}/preSearchCandidateByWorkExp"target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>By Experience</span>
+      </a>
       </a>
     </div>
 </body>

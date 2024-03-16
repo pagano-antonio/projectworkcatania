@@ -280,6 +280,18 @@ p {
          <i class="fas fa-phone"></i>
         <span>By Phone</span>
       </a>
+      <a href="${pageContext.request.contextPath}/preSearchCandidateByWorkExp"target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>By Experience</span>
+        </a>
+       <a href="${pageContext.request.contextPath}/preSearchCandidateBySkill"target="_blank">
+         <i class="fas fa-clipboard"></i>
+        <span>By Skill</span>
+      </a>
+        <a href="${pageContext.request.contextPath}/preSearchCandidateByEducation"target="_blank">
+         <i class="fas fa-school"></i>
+        <span>By Education</span>
+      </a>
     </div>
 </body>
 

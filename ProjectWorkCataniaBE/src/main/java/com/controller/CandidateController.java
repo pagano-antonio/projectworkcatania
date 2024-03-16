@@ -105,13 +105,22 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListByPhone";
 	}
 
+	@GetMapping("/preSearchCandidateBySkill") 
+	public String preSearchBySkill() {
+		return "searchCandidateBySkill";
+	}
 	
 	@PostMapping("/searchCandidateBySkill")//da testare!
-	public String searchBySkill(Candidate candidate, Model model, String description) {
-		List<Candidate> candidateList = candidateRep.findByCandidateSkills_Skill_description(description);
+	public String searchBySkill(Candidate candidate, Model model, String title) {
+		List<Candidate> candidateList = candidateRep.findByCandidateSkills_Skill_title(title);
 		System.out.println("Sto cercando un candidato");
 		model.addAttribute("candidateSkillFound", candidateList);
 		return "candidateListBySkill";
+	}
+	
+	@GetMapping("/preSearchCandidateByEducation") 
+	public String preSearchByEducation() {
+		return "searchCandidateByEducation";
 	}
 	
 	@PostMapping("/searchByEducationDegreeType") //da testare!
@@ -130,7 +139,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListByStateJobInterview";
 	}
 	
-	@GetMapping("/searchByJobInterviewOutcome") //da testare!
+	@PostMapping("/searchByJobInterviewOutcome") //da testare!
 	public String searchByJobInterviewOutcome(Candidate candidate, Model model, Integer outcome) {
 		List<Candidate> candidateList = candidateRep.findByJobInterviews_outcome(outcome);
 		System.out.println("Sto cercando un candidato");
@@ -138,12 +147,18 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "candidateListByJobInterviewOutcome";
 	}
 	
+	@GetMapping("/preSearchCandidateByWorkExp") 
+	public String preSearchByWorkExp() {
+		return "searchCandidateByWorkExp";
+	}
+	
 	@PostMapping("/searchByWorkExperiencesCompany")// da testare!
 	public String searchByCompany(Candidate candidate, Model model, String company) {
 		List<Candidate> candidateList = candidateRep.findByWorkExperiences_Company(company);
 		System.out.println("Sto cercando un candidato");
+		System.out.println(company);
 		model.addAttribute("candidateCompanyFound", candidateList);
-		return "candidateListByWorkExperiencesCompany";
+		return "candidateListByWorkExp";
 	}
 	
 	@PostMapping("/deleteCandidate") //da testare!
