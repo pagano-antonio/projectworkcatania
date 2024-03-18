@@ -32,7 +32,7 @@ body {
 .screen {		
 	background: linear-gradient(90deg, #8042d6 30%, #efddfb 60%);		
 	position: relative;	
-	height: 450px;
+	height: 400px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
@@ -98,7 +98,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 133px;
+	padding-top: 126px;
 }
 
 .login__field {
@@ -199,8 +199,16 @@ body {
 			
 			
 				
-    			<input type="hidden" name="idCandidateSkill" value="${candidateSkillidCandidateSkill}">
+    			<input type="hidden" name="idCandidateSkill" value="${idCandidateSkill}">
 			
+				<div class="login__field">
+  				<select name="candidate.idCandidate">
+  				<option value="">Candidate</option>
+  				<c:forEach var="candidate" items="${candidate}">
+    			<option value="${candidate.idCandidate}">${candidate.surname}</option>
+  				</c:forEach>
+				</select>
+				</div>	
 					
 				<div class="login__field">
 				<select name="skill.idSkill">
