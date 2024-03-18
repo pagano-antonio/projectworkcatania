@@ -363,6 +363,15 @@ p {
 		<td>${candidateSkill.candidate.phone}</td>
         <td>${candidateSkill.skill.title}</td>
         <td>${candidateSkill.skill.description}</td>
+        
+        <td>
+
+	   	<form action="${pageContext.request.contextPath}/CandidateSkillController/preUpdateSkill" method="get">
+    	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button type="submit">Update</button>
+		</form>
+</td>
+        
         </tr>
     </tbody>
      </c:forEach>

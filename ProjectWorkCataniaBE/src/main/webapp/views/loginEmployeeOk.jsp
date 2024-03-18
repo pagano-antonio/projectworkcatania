@@ -219,7 +219,7 @@ p {
 </body>
 
 <c:forEach var="employee" items="${employeeFound}">
-  <div class="frame">
+ <div class="frame">
 <p>Welcome</p>
 <h2>${employee.name}<br>${employee.surname}<br></h2>
   <p>in your Page</p>

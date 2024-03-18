@@ -76,7 +76,7 @@ public class EmployeeController {
 	public String searchByEmailAndPassword(Model model, String email, String password) {
 			System.out.println("Sto facendo il login...");
 			System.out.println("Email " + email + " password " + password);
-			List<Employee> employeeList =(List<Employee>) employeeRep.findByEmailAndPassword(email, password);
+			List<Employee> employeeList=(List<Employee>) employeeRep.findByEmailAndPassword(email, password);
 		    System.out.println(employeeList.toString());
 		    model.addAttribute("employeeFound",employeeList);
 		    return "loginEmployeeOk";

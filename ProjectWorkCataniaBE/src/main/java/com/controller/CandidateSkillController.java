@@ -37,6 +37,16 @@ public class CandidateSkillController {
         return "addCandidateSkill";
 	} 
 	
+	
+	@GetMapping("/preUpdateSkill")
+    public String updateCandidateSkill(Model model) {
+		List<Candidate> candidate = candidateRep.findAll();
+		List<Skill> skill = skillRep.findAll();
+		model.addAttribute("candidate", candidate);
+		model.addAttribute("skill", skill);
+        return "updateCandidateSkill";
+	} 
+	
 	@PostMapping("/addCandidateSkill") // test okay!
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Candidate</title>
+<title>Update Candidate Skill</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
@@ -195,45 +195,19 @@ body {
 	<div class="screen">
 		<div class="screen__content">
 		
-		<form action="${pageContext.request.contextPath}/addCandidate" method="post" class="login">
+		<form action="${pageContext.request.contextPath}CandidateSkillController/addCandidateSkill" method="post" class="login">
 			
-					<input hidden class="login__input" placeholder="Candidate Id" id="idCandidate" name="idCandidate" value="${candidateToUpdate.idCandidate}" >
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Name" id="name" name="name" value="${candidateToUpdate.name}" >
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" value="${candidateToUpdate.surname}">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-calendar"></i>
-					<input type="date" class="login__input" placeholder="Birth Date" id="birthDay" name="birthDay" value="${candidateToUpdate.birthday}">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-city"></i>
-					<input type="text" class="login__input" placeholder="Birth Place" id="birthPlace" name="birthPlace" value="${candidateToUpdate.birthPlace}">
-				</div>
+			
+				<input hidden class="login__input" placeholder="Candidate Id" id="idCandidate" name="idCandidate" value="${candidate.idCandidate}" >
 				
 				<div class="login__field">
-					<i class="login__icon fas fa-building"></i>
-					<input type="text" class="login__input" placeholder="Address" id="address" name="address" value="${candidateToUpdate.address}">
+				<select name="skill.idSkill">
+  				<option value="">Skill</option>
+  				<c:forEach var="skill" items="${skill}">
+    			<option value="${skill.idSkill}">${skill.title}</option>
+  				</c:forEach>
+				</select>
 				</div>
-				
-				<div class="login__field">
-					<i class="login__icon fas fa-city"></i>
-					<input type="text" class="login__input" placeholder="City" id="city" name="city" value="${candidateToUpdate.city}">
-				</div>
-				
-				<div class="login__field">
-					<i class="login__icon fas fa-envelope"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email" value="${candidateToUpdate.email}">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-phone"></i>
-					<input type="number" class="login__input" placeholder="Phone Number" id="phone" name="phone" value="${candidateToUpdate.phone}">
-				</div>
-				
 				
 				<button class="button login__submit">
 					<span class="button__text">Update</span>

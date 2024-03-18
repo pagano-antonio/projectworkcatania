@@ -195,9 +195,9 @@ body {
 		<div class="screen__content">
 		
 			
-			<form action="${pageContext.request.contextPath}/CandidateSkillController/addCandidateSkill" method="post" class="login">
+			<form action="${pageContext.request.contextPath}CandidateSkillController/addCandidateSkill" method="post" class="login">
 			
-			<div class="login__field">
+				<div class="login__field">
   				<select name="candidate.idCandidate">
   				<option value="">Candidate</option>
   				<c:forEach var="candidate" items="${candidate}">
