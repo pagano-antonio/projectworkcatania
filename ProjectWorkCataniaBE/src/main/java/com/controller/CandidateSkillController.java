@@ -39,10 +39,11 @@ public class CandidateSkillController {
 	
 	
 	@GetMapping("/preUpdateSkill")
-    public String updateCandidateSkill(Model model) {
-		List<Candidate> candidate = candidateRep.findAll();
+    public String updateCandidateSkill(Model model, Integer idCandidateSkill) {
+		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
 		List<Skill> skill = skillRep.findAll();
-		model.addAttribute("candidate", candidate);
+		System.out.println(idCandidateSkill);
+		model.addAttribute("candidateSkill", candidateSkill);
 		model.addAttribute("skill", skill);
         return "updateCandidateSkill";
 	} 

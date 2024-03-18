@@ -32,8 +32,8 @@ body {
 .screen {		
 	background: linear-gradient(90deg, #8042d6 30%, #efddfb 60%);		
 	position: relative;	
-	height: 730px;
-	width: 460px;	
+	height: 450px;
+	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
@@ -98,7 +98,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 6px;
+	padding-top: 133px;
 }
 
 .login__field {
@@ -195,11 +195,13 @@ body {
 	<div class="screen">
 		<div class="screen__content">
 		
-		<form action="${pageContext.request.contextPath}CandidateSkillController/addCandidateSkill" method="post" class="login">
+		<form action="${pageContext.request.contextPath}/CandidateSkillController/addCandidateSkill" method="post" class="login">
 			
 			
-				<input hidden class="login__input" placeholder="Candidate Id" id="idCandidate" name="idCandidate" value="${candidate.idCandidate}" >
 				
+    			<input type="hidden" name="idCandidateSkill" value="${candidateSkillidCandidateSkill}">
+			
+					
 				<div class="login__field">
 				<select name="skill.idSkill">
   				<option value="">Skill</option>
