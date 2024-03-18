@@ -200,7 +200,7 @@ body {
 			
 			<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input readonly class="login__input" placeholder="Name" id="name" name="name" >
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" >
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>

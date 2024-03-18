@@ -73,7 +73,7 @@ public class CandidateSkillController {
 	public String getCandidateSkills(Model model, Integer idCandidate, String title) {
 		System.out.println(idCandidate);
 	    List<CandidateSkill> candidateSkills = candidateSkillRep.findByCandidate_IdCandidate(idCandidate);
-	    System.out.println(title);
+	    System.out.println(candidateSkills.size());
 	    model.addAttribute("candidateSkills", candidateSkills);
 	    return "candidateListByCity";
 	}

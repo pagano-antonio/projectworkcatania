@@ -203,7 +203,7 @@ body {
 					<input readonly class="login__input" placeholder="Employee Id" id="idEmployee" name="idEmployee" value="${employeeToUpdate.idEmployee}" >
 				</div>
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
+					<i class="login__icon fas fa-envelope"></i>
 					<input type="text" class="login__input" placeholder="Email" id="email" name="email" value="${employeeToUpdate.email}" >
 				</div>
 				<div class="login__field">

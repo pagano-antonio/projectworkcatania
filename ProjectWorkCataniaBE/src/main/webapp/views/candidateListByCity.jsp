@@ -253,6 +253,7 @@ p {
   margin: 0;
 }
 
+
 </style>
 </head>
 
@@ -302,7 +303,7 @@ p {
 
 <table>
 <thead>
-
+<c:forEach var="candidate" items="${candidateCityFound}">
 <tr>
 <th>Name</th>
 <th>Surname</th>
@@ -312,14 +313,13 @@ p {
 <th>City</th>
 <th>Email</th>
 <th>Phone Number</th>
-<th>Update</th>
-<th>Skill</th>
+<th colspan="2">Buttons</th>
+
 
 </tr>
-</thead>
 <tbody>
 
-<c:forEach var="candidate" items="${candidateCityFound}">
+
 <tr>
 
 <td>${candidate.name}</td>
@@ -333,6 +333,8 @@ p {
 
 <td>
 
+
+
 	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
     	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
     	<button type="submit">Update</button>
@@ -343,33 +345,31 @@ p {
 
 	   	<form action="${pageContext.request.contextPath}CandidateSkillController/candidateSkills" method="post">
    		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
-   		<input type="hidden" name="candidateSkill.idCandidate" value="${candidate}">
     	<button type="submit">Skill</button> 
 		</form> 
 		
 </td>
+</c:forEach>
 
-
-<c:forEach var="candidateSkill" items="${candidateSkills}">
+</table>
   <table>
-    <thead>
-      <tr>
-        <th>Skill</th>
-      </tr>
-    </thead>
+  <c:forEach var="candidateSkill" items="${candidateSkills}">
+  
     <tbody>
-      
         <tr>
-          <td>${candidateSkill.skill.title}</td>
+        <td>${candidateSkill.candidate.name}</td>
+        <td>${candidateSkill.candidate.surname}</td>
+		<td>${candidateSkill.candidate.email}</td>
+		<td>${candidateSkill.candidate.phone}</td>
+        <td>${candidateSkill.skill.title}</td>
+        <td>${candidateSkill.skill.description}</td>
         </tr>
     </tbody>
+     </c:forEach>
   </table>
-  </c:forEach>
+ 
 
-</tr>
-</c:forEach>
-</tbody>
-</table>
+
 </div>
 </body>
 </html>
