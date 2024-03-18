@@ -254,6 +254,69 @@ p {
 }
 
 
+.button-48 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 0.8em 1.3em; /*dimensioni bottoni*/
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /*ombreggiatura sotto bottone*/
+  
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #caf0f8; /* Nuovo colore di sfondo su hover */
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #FFFFFF;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
 </style>
 </head>
 
@@ -337,7 +400,7 @@ p {
 
 	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
     	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
-    	<button type="submit">Update</button>
+    	<button class="button-48" role="button"><span class="text">Update</span></button>
 		</form>
 </td>
 
@@ -345,7 +408,7 @@ p {
 
 	   	<form action="${pageContext.request.contextPath}CandidateSkillController/candidateSkills" method="post">
    		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
-    	<button type="submit">Skill</button> 
+    	<button class="button-48" role="button"><span class="text">Skill</span></button>
 		</form> 
 		
 </td>
@@ -369,7 +432,7 @@ p {
 
 	   	<form action="${pageContext.request.contextPath}/CandidateSkillController/preUpdateSkill" method="get">
     	<input type="hidden" name="candidateSkill.idCandidateSkill" value="${candidateSkill.idCandidateSkill}">
-    	<button type="submit">Update</button>
+    	<button class="button-48" role="button"><span class="text">Update</span></button>
 		</form>
 </td>
         

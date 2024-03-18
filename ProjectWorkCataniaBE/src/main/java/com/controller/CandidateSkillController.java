@@ -42,7 +42,6 @@ public class CandidateSkillController {
     public String updateCandidateSkill(Model model, Integer idCandidateSkill) {
 		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
 		List<Skill> skill = skillRep.findAll();
-		System.out.println(idCandidateSkill);
 		model.addAttribute("candidateSkill", candidateSkill);
 		model.addAttribute("skill", skill);
         return "updateCandidateSkill";
