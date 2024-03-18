@@ -196,11 +196,11 @@ body {
 		<div class="screen__content">
 		
 			
-			<form action="${pageContext.request.contextPath}/preAddCompanyClient" method="post" class="login">
+			<form action="${pageContext.request.contextPath}/addCompanyClient" method="post" class="login">
 			
 			<div class="login__field">
 					<i class="login__icon fas fa-clipboard"></i>
-					<input readonly class="login__input" placeholder="Name" id="name" name="name" >
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" >
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>

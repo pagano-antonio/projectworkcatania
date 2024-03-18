@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +35,7 @@ public class SkillController {
     public String addOrUpdateSkill(Skill skill, Model model) {
 		System.out.println("Sto inserendo/modificando!");
 		skillRep.save(skill);	
-        return "addSkillOk";
+        return "loginPage";
     }
 		
 	@PostMapping("/searchById")
@@ -46,7 +48,17 @@ public class SkillController {
 			return "ErrorPage";
 	}
 	
+	@GetMapping("/preSearchSkillByTitle")
+    public String preSearchSkillByTitle(Model model) {
+        return "searchSkillsByTitle";
+	} 
 	
+	@PostMapping("/searchByTitle")
+	public String searchByTitle(Model model, String title) {
+		List <Skill>skill = (List<Skill>)skillRep.findByTitle(title);
+		model.addAttribute("SkillFound", skill);
+		return "listOfSkills";
+	}
 	
 	@PostMapping("/deleteSkill")
 	public String deleteSkill(Skill skill, Model model) {

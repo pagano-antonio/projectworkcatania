@@ -206,6 +206,14 @@ p {
          <i class="fas fa-clipboard"></i>
         <span>Add Interview</span>
       </a>
+      <a href="${pageContext.request.contextPath}SkillController/preAddSkill"target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>Add Skill</span>
+      </a>
+      <a href="${pageContext.request.contextPath}SkillController/preSearchSkillByTitle"target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>Search Skill</span>
+      </a>
        <a href="${pageContext.request.contextPath}/JobInterviewController/searchByIdEmployee?idEmployee=${employee.idEmployee}" target="_blank">
         <i class="fas fa-calendar"></i>
         <span>Your Interviews</span>

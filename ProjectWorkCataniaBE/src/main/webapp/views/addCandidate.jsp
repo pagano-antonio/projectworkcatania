@@ -198,7 +198,7 @@ body {
 			
 			<form action="${pageContext.request.contextPath}/addCandidate" method="post" class="login">
 			
-			<div class="login__field">
+				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" placeholder="Name" id="name" name="name" >
 				</div>
