@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.Candidate;
 import com.model.CandidateSkill;
-import com.model.Employee;
 import com.model.Skill;
-import com.model.StateJobInterview;
 import com.repository.CandidateRepository;
 import com.repository.CandidateSkillRepository;
 import com.repository.SkillRepository;
@@ -72,8 +70,10 @@ public class CandidateSkillController {
 		}
 	
 	@PostMapping("/candidateSkills")
-	public String getCandidateSkills(Model model, @RequestParam("idCandidate") Integer idCandidate) {
-	    List<CandidateSkill> candidateSkills = candidateSkillRep.findSkillByCandidate_idCandidate(idCandidate);
+	public String getCandidateSkills(Model model, Integer idCandidate, String title) {
+		System.out.println(idCandidate);
+	    List<CandidateSkill> candidateSkills = candidateSkillRep.findByCandidate_IdCandidate(idCandidate);
+	    System.out.println(title);
 	    model.addAttribute("candidateSkills", candidateSkills);
 	    return "candidateListByCity";
 	}

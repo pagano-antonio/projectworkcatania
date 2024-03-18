@@ -1,6 +1,5 @@
 package com.rest;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -39,7 +38,7 @@ public class CandidateCommercialDataRest {
 	@GetMapping("/searchByIdCommercialData")
 	public String searchByIdCommercialData(Model model, Integer id) {
 		if(candidateCommercialDataRep.findById(id).isPresent()) {
-		CandidateCommercialData commercialData = (CandidateCommercialData)candidateCommercialDataRep.findById(id).get();
+		CandidateCommercialData commercialData = candidateCommercialDataRep.findById(id).get();
 		model.addAttribute("CommercialDataFound", commercialData);
 		return "updateCandidateCommercialData";
 		} else 

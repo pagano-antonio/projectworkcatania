@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.Candidate;
+import com.model.CandidateSkill;
 import com.model.Employee;
 import com.model.EmployeeType;
 import com.repository.CandidateRepository;
@@ -88,6 +89,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		List<Candidate> candidateList = candidateRep.findByCity(city);
 		System.out.println("Sto cercando una candidato");
 		model.addAttribute("candidateCityFound", candidateList);
+		model.addAttribute("candidate", city);
 		return "candidateListByCity";
 	}
 	
@@ -110,7 +112,7 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "searchCandidateBySkill";
 	}
 	
-	@PostMapping("/searchCandidateBySkill")//da testare!
+	@PostMapping("/searchCandidateBySkill")//test Okay!
 	public String searchBySkill(Candidate candidate, Model model, String title) {
 		List<Candidate> candidateList = candidateRep.findByCandidateSkills_Skill_title(title);
 		System.out.println("Sto cercando un candidato");
@@ -160,6 +162,8 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		model.addAttribute("candidateCompanyFound", candidateList);
 		return "candidateListByWorkExp";
 	}
+	
+	
 	
 	@PostMapping("/deleteCandidate") //da testare!
 	public String deleteCandidate(Candidate candidate, Model model) {

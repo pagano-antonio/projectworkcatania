@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.model.Candidate;
 import com.model.CandidateCommercialData;
 import com.repository.CandidateCommercialDataRepository;
 
@@ -40,8 +39,16 @@ public class CandidateCommercialDataController {
 	
 	@PostMapping("/searchByIdCommercialData")
 	public String searchByIdCommercialData(Model model, Integer id) {
-		if(candidateCommercialDataRep.findById(id).isPresent()) {
-		CandidateCommercialData commercialData = (CandidateCommercialData)candidateCommercialDataRep.findById(id).get();
+//		AtomicReference<String> response = new AtomicReference<>("ErrorPage");
+//		candidateCommercialDataRep.findById(id).ifPresent( commercialData -> {
+//			model.addAttribute("CommercialDataFound", commercialData);
+//			response.set("updateCandidateCommercialData");
+//		});
+//		return response.get();
+
+
+		if(candidateCommercialDataRep.existsById(id)) {
+		CandidateCommercialData commercialData = candidateCommercialDataRep.findById(id).get();
 		model.addAttribute("CommercialDataFound", commercialData);
 		return "updateCandidateCommercialData";
 		} else 
@@ -58,7 +65,7 @@ public class CandidateCommercialDataController {
 
 	@PostMapping("/searchCommercialDataByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
-		List<CandidateCommercialData> candidateList = (List<CandidateCommercialData>)candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
+		List<CandidateCommercialData> candidateList = candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
 		System.out.println("Ho trovato l'id Candidato: " + idCandidateCommercial);
 		model.addAttribute("candidateList", candidateList);
 		System.out.println(candidateList);

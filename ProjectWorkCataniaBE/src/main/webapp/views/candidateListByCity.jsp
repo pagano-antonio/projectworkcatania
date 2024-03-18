@@ -341,9 +341,9 @@ p {
 
  <td>
 
-	   	<form action="${pageContext.request.contextPath}/CandidateSkillController/candidateSkills" method="post">
+	   	<form action="${pageContext.request.contextPath}CandidateSkillController/candidateSkills" method="post">
    		<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
-   		<input type="hidden" name="idCandidate" value="${candidateCityFound}">
+   		<input type="hidden" name="city" value="${candidate}">
     	<button type="submit">Skill</button> 
 		</form> 
 		
@@ -360,7 +360,7 @@ p {
     <tbody>
       
         <tr>
-          <td>${candidateSkill.skill.name}</td>
+          <td>${candidateSkill.skill.title}</td>
         </tr>
       </c:forEach>
     </tbody>
