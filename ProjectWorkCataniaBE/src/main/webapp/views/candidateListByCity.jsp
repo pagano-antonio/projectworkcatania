@@ -334,7 +334,7 @@ p {
 <td>
 
 	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
-    	<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
+    	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
     	<button type="submit">Update</button>
 		</form>
 </td>
@@ -342,8 +342,8 @@ p {
  <td>
 
 	   	<form action="${pageContext.request.contextPath}CandidateSkillController/candidateSkills" method="post">
-   		<input type="hidden" name="idCandidate" value="${candidate.getIdCandidate()}">
-   		<input type="hidden" name="city" value="${candidate}">
+   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+   		<input type="hidden" name="candidateSkill.idCandidate" value="${candidate}">
     	<button type="submit">Skill</button> 
 		</form> 
 		
@@ -362,9 +362,9 @@ p {
         <tr>
           <td>${candidateSkill.skill.title}</td>
         </tr>
-      </c:forEach>
     </tbody>
   </table>
+  </c:forEach>
 
 </tr>
 </c:forEach>
