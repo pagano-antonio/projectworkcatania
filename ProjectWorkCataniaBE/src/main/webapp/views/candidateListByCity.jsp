@@ -427,15 +427,14 @@ p {
 		<td>${candidateSkill.candidate.phone}</td>
         <td>${candidateSkill.skill.title}</td>
         <td>${candidateSkill.skill.description}</td>
-        <td>${candidateSkill.idCandidateSkill}</td>
+<%--         <td>${candidateSkill.idCandidateSkill}</td> --%>
         
-        <td>
-
-	   	<form action="${pageContext.request.contextPath}/CandidateSkillController/preUpdateSkill" method="get">
-    	<input type="hidden" name="candidateSkill.idCandidateSkill" value="${candidateSkill.idCandidateSkill}">
-    	<button class="button-48" role="button"><span class="text">Update</span></button>
-		</form>
-</td>
+<!--         <td> -->
+<%-- 		<form action="${pageContext.request.contextPath}/CandidateSkillController/searchById" method="post"> --%>
+<%--     	<input type="hidden" name="idCandidateSkill" value="${candidateSkill.idCandidateSkill}"> --%>
+<!--     	<button class="button-48" role="button"><span class="text">Update</span></button> -->
+<!-- 		</form> -->
+<!-- 		</td> -->
         
         </tr>
     </tbody>

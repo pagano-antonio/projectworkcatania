@@ -208,7 +208,7 @@ body {
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-calendar"></i>
-					<input type="date" class="login__input" placeholder="Birth Date" id="birthDay" name="birthDay" value="${candidateToUpdate.birthday}">
+					<input type="date" class="login__input" placeholder="Birth Date" id="birthday" name="birthday" value="${candidateToUpdate.birthday}">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-city"></i>

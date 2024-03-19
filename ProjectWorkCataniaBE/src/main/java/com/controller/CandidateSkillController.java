@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model.Candidate;
 import com.model.CandidateSkill;
@@ -51,12 +51,12 @@ public class CandidateSkillController {
 	
 	@PostMapping("/addCandidateSkill") // test okay!
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
-		System.out.println("Sto inserendo/modificando un candidato!");
-		System.out.println(candidateSkill);
+		System.out.println("Sto inserendo/modificando una skilla al candidato!");
 		candidateSkillRep.save(candidateSkill);	
         return "candidatePage";
     }
 
+	
 	@PostMapping("/deleteCandidateSkill")
 	public String deleteCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto cancellando il candidato!");
@@ -68,8 +68,15 @@ public class CandidateSkillController {
 	public String searchById(Model model, Integer idCandidateSkill) {
 		if(candidateSkillRep.findById(idCandidateSkill).isPresent()) {
 		CandidateSkill candidate = (CandidateSkill)candidateSkillRep.findById(idCandidateSkill).get();
+		System.out.println(idCandidateSkill);
 		model.addAttribute("CandidateFound", candidate);
-		return "updateCandidate";
+		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
+		List<Candidate> candidate2 = candidateRep.findAll();
+		List<Skill> skill = skillRep.findAll();
+		model.addAttribute("candidateSkill", candidateSkill);
+		model.addAttribute("candidate", candidate2);
+		model.addAttribute("skill", skill);
+		return "updateCandidateSkill";
 		} else 
 			return "ErrorPage";
 	}
