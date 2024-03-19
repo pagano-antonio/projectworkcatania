@@ -278,6 +278,52 @@ p {
   margin: 0;
 }
 
+/*Animated text h2*/
+.title-word {
+    animation: color-animation 4s linear infinite;
+    
+  }
+  
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #d6adff;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #17494D;
+    --color-2: #DBAD4A;
+    --color-3: #17494D;
+  }
+  
+  .title-word-3 {
+    --color-1: #E4A9A8;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+   .title-word-5 {
+   	--color-1: #a759f5;
+    --color-2: #6b9080;
+    --color-3: #6b9080;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+
 </style>
 </head>
 <body>
@@ -322,13 +368,18 @@ p {
 <h4 class="wordCarousel">
 
     <div>
-        <!-- Use classes 2,3,4, or 5 to match the number of words -->
+        
         <ul class="flip5">
-            <li>Welcome</li>
-            <li>Hos geldiniz</li>
-            <li>Bienvenido</li>
-            <li>Benvenuto</li>
-            <li>Mireserdhet</li>
+<!--             <li>Welcome</li> -->
+<!--             <li>Hos geldiniz</li> -->
+<!--             <li>Bienvenido</li> -->
+<!--             <li>Benvenuto</li> -->
+<!--             <li>Mireserdhet</li> -->
+ 			<li class="title-word title-word-1">Welcome</li>
+            <li class="title-word title-word-2">Hos geldiniz</li>
+            <li class="title-word title-word-3">Bienvenido</li>
+           	<li class="title-word title-word-4">Benvenuto</li>
+            <li class="title-word title-word-5">Mireserdhet</li>
         </ul>
     </div>
 </h4>

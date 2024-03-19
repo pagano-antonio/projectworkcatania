@@ -179,6 +179,45 @@ p {
   margin: 0;
 }
 
+/*Animated text h2*/
+.title-word {
+    animation: color-animation 4s linear infinite;
+    
+  }
+  
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+  }
+  
+  .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
 
 </style>
 </head>
@@ -238,7 +277,12 @@ p {
     
   <div class="frame">
 <p>Search or Add</p>
-<h2>HERE</h2>
+  <h2 class="title">
+      <span class="title-word title-word-1">H</span>
+      <span class="title-word title-word-2">E</span>
+      <span class="title-word title-word-3">R</span>
+      <span class="title-word title-word-4">E</span>
+    </h2>
   <p>your Candidate</p>
 
 </div>  
