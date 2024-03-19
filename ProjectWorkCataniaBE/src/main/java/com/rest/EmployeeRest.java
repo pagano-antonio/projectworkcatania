@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,7 @@ public class EmployeeRest {
         return "searchByIdEmployee";
 	} 
 
-	@GetMapping("/addEmployee")
+	@PostMapping("/addEmployee")
     public String addOrUpdateEmplyee(Employee employee, Model model) {
 		System.out.println("Sto inserendo/aggiornando un impiegato!");
 		employeeRep.save(employee);	
@@ -43,7 +45,7 @@ public class EmployeeRest {
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteEmployee")
+	@DeleteMapping("/deleteEmployee")
 	public String deleteContractType(Employee employee, Model model) { // da testare, anche sugli altri rest
 																		//e vedere se sceglie il delete o deleteById
 		System.out.println("Sto cancellando la tipologia di contratto!");

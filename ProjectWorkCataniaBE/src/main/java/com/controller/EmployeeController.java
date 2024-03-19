@@ -44,13 +44,13 @@ public class EmployeeController {
 	@GetMapping("/preUpdateEmployee")
 	public String preUpdateEmployee(Model model, @RequestParam("idEmployee") Integer idEmployee) {
 	    List<EmployeeType> employeeType = employeeTypeRep.findAll();
-	    Employee employeeToUpdate = employeeRep.findById(idEmployee).orElse(null); // retrieve the Employee object with the given id
+	    Employee employeeToUpdate = employeeRep.findById(idEmployee).orElse(null); 
 	    model.addAttribute("descriptions", employeeType);
-	    model.addAttribute("employeeToUpdate", employeeToUpdate); // add the Employee object to the model
+	    model.addAttribute("employeeToUpdate", employeeToUpdate); 
 	    return "updateEmployee";
 	}
 	
-	@GetMapping("/preSearchByIdEmployee") // potrebbe non servire da controllare le Jsp che servono
+	@GetMapping("/preSearchByIdEmployee") 
     public String preSearchByIdEmployee() {
         return "searchByIdEmployee";
 	} 
@@ -67,7 +67,7 @@ public class EmployeeController {
 		if(employeeRep.findById(idEmployee).isPresent()) {
 		Employee employee = (Employee)employeeRep.findById(idEmployee).get();
 		model.addAttribute("EmployeeFound", employee);
-		return "updateEmployee"; // sulla pagina JSP di aggiorna ci sarà anche il pulsante Elimina
+		return "updateEmployee"; 
 		} else 
 			return "ErrorPage";
 	}	
@@ -77,9 +77,14 @@ public class EmployeeController {
 			System.out.println("Sto facendo il login...");
 			System.out.println("Email " + email + " password " + password);
 			List<Employee> employeeList=(List<Employee>) employeeRep.findByEmailAndPassword(email, password);
-		    System.out.println(employeeList.toString());
-		    model.addAttribute("employeeFound",employeeList);
-		    return "loginEmployeeOk";
+			System.out.println(employeeList.toString());
+			if (employeeList != null && !employeeList.isEmpty()) {
+		        model.addAttribute("employeeFound", employeeList);
+		        return "loginEmployeeOk";
+		    } else {
+		        return "errorPage";
+		    }
+	
 	}
 	
 	

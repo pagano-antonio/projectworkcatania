@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +30,7 @@ public class ContractTypeRest {
 	} 
 	
 	
-	@GetMapping("/addContractType")
+	@PostMapping("/addContractType")
     public String addOrUpdateContractType(ContractType contractType, Model model) {
 		System.out.println("Sto inserendo/aggiornando una tipologia di contratto!");
 		contractTypeRep.save(contractType);	
@@ -45,7 +47,7 @@ public class ContractTypeRest {
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteContractType")
+	@DeleteMapping("/deleteContractType")
 	public String deleteContractType(ContractType contractType, Model model) {
 		System.out.println("Sto cancellando la tipologia di contratto!");
 		contractTypeRep.delete(contractType);

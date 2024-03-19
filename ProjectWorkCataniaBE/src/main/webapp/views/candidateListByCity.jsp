@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Candidate List By City</title>
+<title>Candidate List</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -271,7 +271,7 @@ p {
   margin: 0;
   opacity: 1;
   outline: 0;
-  padding: 0.8em 1.3em; /*dimensioni bottoni*/
+  padding: 0.4em 0.9em; /*dimensioni bottoni*/
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -336,7 +336,7 @@ p {
       </a>
       <a href="${pageContext.request.contextPath}/preSearchCandidateByCity"target="_blank">
         <i class="fas fa-building"></i>
-        <span>Back to Search</span>
+        <span>Search By City</span>
       </a>
    	 	<a href="${pageContext.request.contextPath}/preSearchCandidateBySurname"target="_blank">
          <i class="fas fa-calendar-check"></i>
@@ -377,12 +377,10 @@ p {
 <th>City</th>
 <th>Email</th>
 <th>Phone Number</th>
-<th colspan="2">Buttons</th>
-
+<th colspan="3">Buttons</th>
 
 </tr>
 <tbody>
-
 
 <tr>
 
@@ -397,25 +395,42 @@ p {
 
 <td>
 
-
-
 	   	<form action="${pageContext.request.contextPath}/preUpdateCandidate" method="post">
     	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
     	<button class="button-48" role="button"><span class="text">Update</span></button>
-		</form>
-</td>
+		</form><br>
 
- <td>
 
 	   	<form action="${pageContext.request.contextPath}CandidateSkillController/candidateSkills" method="post">
    		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
     	<button class="button-48" role="button"><span class="text">Skill</span></button>
-		</form> 
+		</form><br>
+		
+
+	   	<form action="${pageContext.request.contextPath}EducationController/searchByIdCandidate" method="post">
+   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button class="button-48" role="button"><span class="text">Education</span></button>
+		</form><br>
+		
+<td>
+	   	<form action="${pageContext.request.contextPath}WorkExperienceController/searchByIdCandidate" method="post">
+   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button class="button-48" role="button"><span class="text">Experiences</span></button>
+		</form><br>
+		
+
+	   	<form action="${pageContext.request.contextPath}CandidateCommercialDataController/searchCommercialDataByIdCandidate" method="post">
+   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button class="button-48" role="button"><span class="text">Commercial Data</span></button>
+		</form><br>
 		
 </td>
+
+
 </c:forEach>
 
 </table>
+<!-- prima tabella skill -->
   <table>
   <c:forEach var="candidateSkill" items="${candidateSkills}">
   
@@ -441,7 +456,71 @@ p {
      </c:forEach>
   </table>
  
+<!-- seconda tabella education -->
 
+<table>
+  <c:forEach var="education" items="${EducationFound}">
+  
+    <tbody>
+        <tr>
+        <td>${education.candidate.name}</td>
+        <td>${education.candidate.surname}</td>
+        <td>${education.educationDegreeType.description}</td>
+        <td>${education.schoolName}</td>
+		<td>${education.place}</td>
+		<td>${education.date}</td>
+        <td>${education.finalGrade}</td>
+
+        
+        </tr>
+    </tbody>
+     </c:forEach>
+  </table>
+ 
+ 
+<!--  terza tabella work experience -->
+<table>
+  <c:forEach var="work" items="${WorkExperienceFound}">
+  
+    <tbody>
+        <tr>
+        <td>${work.candidate.name}</td>
+        <td>${work.candidate.surname}</td>
+        <td>${work.title}</td>
+        <td>${work.description}</td>
+		<td>${work.startDate}</td>
+		<td>${work.endDate}</td>
+        <td>${work.company}</td>
+        <td>${work.city}</td>
+
+
+        
+        </tr>
+    </tbody>
+     </c:forEach>
+  </table>
+
+<!-- quarta tabella commercial data -->
+
+<table>
+  <c:forEach var="data" items="${commercial}">
+  
+    <tbody>
+        <tr>
+        <td>${data.candidate.name}</td>
+        <td>${data.candidate.surname}</td>
+        <td>${data.currentRal}</td>
+		<td>${data.proposedRal}</td>
+		<td>${data.businessCost}</td>
+        <td>${data.subsidyFlag}</td>
+        <td>${data.notes}</td>
+
+
+        
+        </tr>
+    </tbody>
+     </c:forEach>
+  </table>
 
 </div>
 </body>

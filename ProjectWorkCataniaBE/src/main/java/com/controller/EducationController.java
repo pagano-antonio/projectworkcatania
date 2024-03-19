@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,6 +46,18 @@ public class EducationController {
 		} else 
 			return "ErrorPage";
 	}
+	
+	@PostMapping("/searchByIdCandidate")
+	public String searchByIdCandidate(Model model, Integer idCandidate) {
+		if(educationRep.findById(idCandidate).isPresent()) {
+			System.out.println(idCandidate);
+		List<Education>education = educationRep.findByCandidate_idCandidate(idCandidate);
+		model.addAttribute("EducationFound", education);
+		return "candidateListByCity";
+		} else 
+			return "ErrorPage";
+	}
+	
 	
 	@PostMapping("/deleteCandidate")
 	public String deleteCandidate(Education education, Model model) {

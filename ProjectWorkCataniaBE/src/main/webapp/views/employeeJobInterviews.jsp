@@ -11,6 +11,78 @@
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <style>
 
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 1100px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	font-family: Lato, sans-serif;
+}
+
+th{
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: white;
+	text-align: left;
+
+}
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #4542f5;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+/*Separatore due stili*/
+
 *{
   margin: 0;
   padding: 0;
@@ -77,7 +149,8 @@ a.active,a:hover{
 }
 label #btn,label #cancel{
   position: absolute;
-  left: 5px;
+  left: 10px; /* sposta il pulsante a sinistra di 10px */
+  top: 15px; /* sposta il pulsante verso l'alto di 15px */
   cursor: pointer;
   color: #d6adff;
   border-radius: 5px;
@@ -180,6 +253,71 @@ p {
   margin: 0;
 }
 
+/*stile bottoni*/
+/*html bottoni: <button class="button-48" role="button"><span class="text">Update</span></button> */
+.button-48 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 0.4em 0.9em; /*dimensioni bottoni*/
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /*ombreggiatura sotto bottone*/
+  
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #caf0f8; /* Nuovo colore di sfondo su hover */
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #FFFFFF;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
 </style>
 </head>
 <body>
@@ -208,7 +346,11 @@ p {
 </body>
 
 
+<div class="container">
+
+
 <table>
+<thead>
 
 <tr>
 <th>Name</th>
@@ -218,8 +360,11 @@ p {
 <th>State Job Interview</th>
 <th>Outcome</th>
 <th>Notes</th>
+<th colspan="3">Buttons</th>
 
 </tr>
+</thead>
+<tbody>
 
 <c:forEach var="job" items="${jobInterviewFound}">
 <tr>
@@ -233,11 +378,30 @@ p {
 <td>${job.notes}</td>
 
 
+
+
+<td>
+
+	   	<form action="${pageContext.request.contextPath}/preUpdate" method="post">
+    	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button class="button-48" role="button"><span class="text">Update</span></button>
+		</form><br>
+
+
+	   	<form action="${pageContext.request.contextPath}CandidateSkillController/delete" method="post">
+   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+    	<button class="button-48" role="button"><span class="text">Delete</span></button>
+		</form><br>
+</td>	
 </tr>
+
 </c:forEach>
+
+
 </table>
 
+	
 
 
-</body>
+</div>
 </html>

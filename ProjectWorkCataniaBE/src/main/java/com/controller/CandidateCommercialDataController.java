@@ -64,11 +64,11 @@ public class CandidateCommercialDataController {
 	
 
 	@PostMapping("/searchCommercialDataByIdCandidate")
-	public String searchByIdCandidate(Model model, Integer idCandidateCommercial) {
-		List<CandidateCommercialData> candidateList = candidateCommercialDataRep.findByIdCandidateCommercial(idCandidateCommercial);
-		System.out.println("Ho trovato l'id Candidato: " + idCandidateCommercial);
-		model.addAttribute("candidateList", candidateList);
+	public String searchByIdCandidate(Model model, Integer idCandidate) {
+		List<CandidateCommercialData> candidateList = candidateCommercialDataRep.findByCandidate_idCandidate(idCandidate);
+		System.out.println("Ho trovato l'id Candidato: " + idCandidate);
+		model.addAttribute("commercial", candidateList);
 		System.out.println(candidateList);
-		return "resultsIdCandidate";
+		return "candidateListByCity";
 	}
 }

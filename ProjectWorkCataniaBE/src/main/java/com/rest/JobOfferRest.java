@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +27,7 @@ public class JobOfferRest {
         return "searchByIdOffer";
 	} 
 
-	@GetMapping("/addJobOffer")
+	@PostMapping("/addJobOffer")
     public String addOrUpdateJobOffer(JobOffer jobOffer, Model model) {
 		System.out.println("Sto inserendo/aggiornando un'offerta di lavoro!");
 		jobOfferRep.save(jobOffer);	
@@ -37,12 +39,12 @@ public class JobOfferRest {
 		if(jobOfferRep.findById(idJobOffer).isPresent()) {
 		JobOffer jobOffer = (JobOffer)jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOfferFound", jobOffer);
-		return "updateJobOffer"; // sulla pagina JSP di aggiorna ci sarà anche il pulsante Elimina
+		return "updateJobOffer"; 
 		} else 
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteJobOffer")
+	@DeleteMapping("/deleteJobOffer")
 	public String deleteContractType(JobOffer jobOffer, Model model) { // da testare, anche sugli altri rest
 																		//e vedere se sceglie il delete o deleteById
 		System.out.println("Sto cancellando l'offerta di lavoro");

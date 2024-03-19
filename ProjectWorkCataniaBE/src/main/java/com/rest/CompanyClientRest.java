@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +29,7 @@ public class CompanyClientRest {
 	} 
 	
 	
-	@GetMapping("/addCompanyClient")
+	@PostMapping("/addCompanyClient")
     public String addOrUpdateCompanyClient(CompanyClient companyClient, Model model) {
 		System.out.println("Sto inserendo/aggiornando i dati di una azienda!");
 		companyClientRep.save(companyClient);	
@@ -44,7 +46,7 @@ public class CompanyClientRest {
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteCompanyClient")
+	@DeleteMapping("/deleteCompanyClient")
 	public String deleteCompanyClient(CompanyClient companyClient, Model model) {
 		System.out.println("Sto cancellando i dati dell'azienda!");
 		companyClientRep.delete(companyClient);

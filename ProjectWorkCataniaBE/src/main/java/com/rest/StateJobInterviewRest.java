@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +27,7 @@ public class StateJobInterviewRest {
         return "searchByIdJobInterview";
 	} 
 
-	@GetMapping("/addJobInterview")
+	@PostMapping("/addJobInterview")
     public String addOrUpdateJobInterview(StateJobInterview stateJobInterview, Model model) {
 		System.out.println("Sto inserendo/aggiornando lo stato del colloquio!");
 		stateJobInterviewRep.save(stateJobInterview);	
@@ -42,7 +44,7 @@ public class StateJobInterviewRest {
 			return "ErrorPage";
 	}	
 	
-	@GetMapping("/deleteJobInterview")
+	@DeleteMapping("/deleteJobInterview")
 	public String deleteContractType(StateJobInterview stateJobInterview, Model model) { // da testare, anche sugli altri rest
 																		//e vedere se sceglie il delete o deleteById
 		System.out.println("Sto cancellando lo stato del colloquio!");
