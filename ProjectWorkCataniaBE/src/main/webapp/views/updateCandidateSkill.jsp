@@ -196,11 +196,10 @@ body {
 		<div class="screen__content">
 		
 		<form action="${pageContext.request.contextPath}/CandidateSkillController/addCandidateSkill" method="post" class="login">
+			<c:set var="candidateSkill" value="${CandidateFound}"/>
 			
-				<div class="login__field">
-				<i class="login__icon fas fa-user"></i>
-    			<input readonly class="login__input" name="idCandidateSkill" placeholder="${idCandidateSkill}" value="${idCandidateSkill}">
-				</div>
+    			<input type="hidden" name="idCandidateSkill" value="${candidateSkill.idCandidateSkill}">
+				
 			
 			
 				<div class="login__field">

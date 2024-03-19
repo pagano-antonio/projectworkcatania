@@ -38,17 +38,6 @@ public class CandidateSkillController {
 	} 
 	
 	
-	@GetMapping("/preUpdateSkill")
-    public String updateCandidateSkill(Model model, Integer idCandidateSkill) {
-		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
-		List<Candidate> candidate = candidateRep.findAll();
-		List<Skill> skill = skillRep.findAll();
-		model.addAttribute("candidateSkill", candidateSkill);
-		model.addAttribute("candidate", candidate);
-		model.addAttribute("skill", skill);
-        return "updateCandidateSkill";
-	} 
-	
 	@PostMapping("/addCandidateSkill") // test okay!
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando una skilla al candidato!");
@@ -70,10 +59,8 @@ public class CandidateSkillController {
 		CandidateSkill candidate = (CandidateSkill)candidateSkillRep.findById(idCandidateSkill).get();
 		System.out.println(idCandidateSkill);
 		model.addAttribute("CandidateFound", candidate);
-		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
 		List<Candidate> candidate2 = candidateRep.findAll();
 		List<Skill> skill = skillRep.findAll();
-		model.addAttribute("candidateSkill", candidateSkill);
 		model.addAttribute("candidate", candidate2);
 		model.addAttribute("skill", skill);
 		return "updateCandidateSkill";
