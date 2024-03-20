@@ -382,14 +382,14 @@ p {
 
 <td>
 
-	   	<form action="${pageContext.request.contextPath}/preUpdate" method="post">
-    	<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+	   	<form action="${pageContext.request.contextPath}/JobInterviewController/searchById" method="post">
+    	<input type="hidden" name="idJobInterview" value="${job.idJobInterview}">
     	<button class="button-48" role="button"><span class="text">Update</span></button>
 		</form><br>
 
 
-	   	<form action="${pageContext.request.contextPath}CandidateSkillController/delete" method="post">
-   		<input type="hidden" name="idCandidate" value="${candidate.idCandidate}">
+	   	<form action="${pageContext.request.contextPath}/JobInterviewController/deleteJobInterview" method="post">
+   		<input type="hidden" name="idJobInterview" value="${job.idJobInterview}">
     	<button class="button-48" role="button"><span class="text">Delete</span></button>
 		</form><br>
 </td>	

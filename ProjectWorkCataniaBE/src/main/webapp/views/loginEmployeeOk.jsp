@@ -181,6 +181,29 @@ p {
   margin: 0;
 }
 
+
+/*Animated text h2*/
+.title-word {
+    animation: color-animation 4s linear infinite;
+    
+  }
+  
+   .title-word-5 {
+   	--color-1: #a759f5;
+    --color-2: #219ebc;
+    --color-3: #E4A9A8;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+ 
 </style>
 </head>
 
@@ -229,7 +252,7 @@ p {
 <c:forEach var="employee" items="${employeeFound}">
  <div class="frame">
 <p>Welcome</p>
-<h2>${employee.name}<br>${employee.surname}<br></h2>
+<h2 class="title-word title-word-5">${employee.name}<br>${employee.surname}<br></h2>
   <p>in your Page</p>
 </div>
 </c:forEach>

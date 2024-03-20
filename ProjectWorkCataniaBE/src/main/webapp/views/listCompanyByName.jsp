@@ -272,7 +272,7 @@ p {
         <i class="fas fa-building"></i>
         <span>Back to Search</span>
       </a>
-   	 	<a href="${pageContext.request.contextPath}/preSearchCandidateByCity"target="_blank">
+   	 	<a href="${pageContext.request.contextPath}/preSearchCompanyByCity"target="_blank">
          <i class="fas fa-city"></i>
         <span>By City</span>
       	</a>

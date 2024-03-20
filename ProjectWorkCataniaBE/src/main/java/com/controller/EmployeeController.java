@@ -32,7 +32,7 @@ public class EmployeeController {
 	} 
 	
 	@GetMapping("/preSignUp")
-    public String preSignUp(Model model){//metodo che porta alla pagina di iscrizione 
+    public String preSignUp(Model model){
 		List<EmployeeType> employeeType = employeeTypeRep.findAll();
 		List<Employee> employee = employeeRep.findAll();
 		model.addAttribute("descriptions", employeeType);

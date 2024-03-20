@@ -36,7 +36,7 @@ public class JobInterviewController {
 	StateJobInterviewRepository stateJobRep;
 	
 	@GetMapping("/preAddJobInterview")
-    public String insertJobInterview(Model model) {
+    public String insertJobInterview(Model model, Integer idJobInterview) {
 		List<Candidate> candidate = candidateRep.findAll();
 		List<StateJobInterview> stateJob = stateJobRep.findAll();
 		List<Employee> employee = employeeRep.findAll();
@@ -45,6 +45,8 @@ public class JobInterviewController {
 		model.addAttribute("employee", employee);
         return "addJobInterview";
 	} 
+	
+	
 	
 	@GetMapping("/preSearchByIdJobInterview")
     public String preSearchByIdJobInterview(Model model) {
@@ -62,6 +64,13 @@ public class JobInterviewController {
 	public String searchById(Model model, Integer idJobInterview) {
 		if(jobInterviewRep.findById(idJobInterview).isPresent()) {
 		JobInterview jobInterview = (JobInterview)jobInterviewRep.findById(idJobInterview).get();
+		System.out.println(idJobInterview);
+		List<Candidate> candidate = candidateRep.findAll();
+		List<StateJobInterview> stateJob = stateJobRep.findAll();
+		List<Employee> employee = employeeRep.findAll();
+		model.addAttribute("candidate", candidate);
+		model.addAttribute("stateJob", stateJob);
+		model.addAttribute("employee", employee);
 		model.addAttribute("JobInterviewFound", jobInterview);
 		return "updateJobInterview";
 		} else 
@@ -81,7 +90,7 @@ public class JobInterviewController {
 	public String deleteJobInterview(JobInterview jobInterview, Model model) {
 		System.out.println("Sto cancellando!");
 		jobInterviewRep.delete(jobInterview);
-		return "deleteJobInterviewOk";
+		return "loginPage";
 	}
 
 }
