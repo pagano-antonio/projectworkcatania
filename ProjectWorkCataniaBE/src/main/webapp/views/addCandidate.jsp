@@ -208,7 +208,7 @@ body {
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="Birth date" id="birthDay" name="birthDay" >
+					<input type="date" class="login__input" placeholder="Birth date" id="birthday" name="birthday" >
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
