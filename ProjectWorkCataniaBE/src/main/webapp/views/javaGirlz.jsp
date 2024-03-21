@@ -483,13 +483,13 @@ body {
   </div>
   <div>
     <div class="content">
-      <h2>Sara</h2>
+      <h2>Sara Brambilla</h2>
       <span>Back End & Front End Dev</span>
     </div>
   </div>
   <div>
     <div class="content">
-      <h2>Rosalia</h2>
+      <h2>Rosalia Acanfora</h2>
       <span>Scrum Master</span>
     </div>
   </div>
@@ -501,7 +501,7 @@ body {
   </div>
   <div>
    <div class="content">
-      <h2>Wendy</h2>
+      <h2>Wendy Sheme</h2>
       <span>Back End Dev & Designer</span>
       </div>
     </div>
