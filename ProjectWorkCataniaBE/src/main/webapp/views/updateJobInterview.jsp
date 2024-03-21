@@ -215,7 +215,7 @@ body {
 				</div>
 			
 				<div class="login__field">
-  				<select name="candidate.idCandidate">
+  				<select name="stateJobInterview.idStateJobInterview">
   				<option value="">State of Job Interview</option>
   				<c:forEach var="stateJob" items="${stateJob}">
     			<option value="${stateJob.idStateJobInterview}">${stateJob.title}</option>
@@ -234,7 +234,7 @@ body {
 				
 				
 				<div class="login__field">
-  				<select name="employee.idEmployeeType">
+  				<select name="employee.idEmployee">
   				<option value="">Employee:</option>
   				<c:forEach var="description" items="${employee}">
     			<option value="${description.idEmployee}">${description.surname}</option>
