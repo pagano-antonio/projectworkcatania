@@ -1,9 +1,0 @@
-
-‘
-java:S3655'"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ý­ÔÒþÿÿÿÿJ$f219df6b-9255-45c8-b32f-62cad0efd337
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$ae55e929-57a3-479c-b1e3-89fd81cbeeeb
-f	java:S106"+Replace this use of System.out by a logger.(åî§šJ$646556d9-b087-443b-aec7-d1836723cc1e
-u
-java:S1905'"4Remove this unnecessary cast to "StateJobInterview".(ý­ÔÒþÿÿÿÿJ$4ddf6f05-47bc-4eb2-a697-9bd14ffec5b5
-k	java:S1061"+Replace this use of System.out by a logger.(ÛÅÀÈøÿÿÿÿJ$8236be40-170e-4efd-b50c-38310dde00b6

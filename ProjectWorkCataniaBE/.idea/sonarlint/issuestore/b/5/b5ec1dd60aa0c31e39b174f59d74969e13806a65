@@ -1,9 +1,0 @@
-
-‘
-java:S3655+"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(½™â¸ùÿÿÿÿJ$48b1436a-5a0a-4f77-b970-80957f00e8c6
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$f3e1b89b-958e-4f7b-8ea0-5eebf358a523
-k	java:S106"+Replace this use of System.out by a logger.(ýÈ¸‡øÿÿÿÿJ$a625530b-b21e-4f53-89cc-da7a97cebf69
-k	java:S106#"+Replace this use of System.out by a logger.(®¤ãžøÿÿÿÿJ$ca3f9d67-3173-4314-bd81-83193a7834f4
-r
-java:S1905+"1Remove this unnecessary cast to "WorkExperience".(½™â¸ùÿÿÿÿJ$a36cf001-f619-4844-8281-562f6ef1b6ff

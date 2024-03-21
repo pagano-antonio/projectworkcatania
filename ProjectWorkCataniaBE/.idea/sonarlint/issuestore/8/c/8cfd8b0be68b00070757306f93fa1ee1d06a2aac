@@ -1,9 +1,0 @@
-
-‘
-java:S3655)"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(—‘ÀìøÿÿÿÿJ$f9f1c1d3-5e42-4cff-bbdc-4b85f88d5ef6
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$1c484a6f-0ebe-4138-82af-83680c4170ad
-k	java:S106!"+Replace this use of System.out by a logger.(öûš™ûÿÿÿÿJ$1f8d9fa0-9fe5-46cf-8c1a-787f3f76dfdf
-p
-java:S1905)"/Remove this unnecessary cast to "EmployeeType".(—‘ÀìøÿÿÿÿJ$8076cec9-ae67-40e8-8eee-12e43ac27977
-k	java:S1062"+Replace this use of System.out by a logger.(ÚŽŽŸýÿÿÿÿJ$ccf6122a-e386-4d39-ad44-7d74f49e76a9

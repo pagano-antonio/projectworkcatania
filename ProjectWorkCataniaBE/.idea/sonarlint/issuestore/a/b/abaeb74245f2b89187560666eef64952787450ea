@@ -1,11 +1,0 @@
-
-Œ
-java:S1192/"PDefine a constant instead of duplicating this literal "updateCandidate" 3 times.(Å¤ğÛJ$96c6d914-1b4c-47ea-9291-5c7c4b0e5452
-Œ
-java:S3655-"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÂìıJ$7f45cc70-aba0-4329-a78a-96d0dc25a384
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$dc5e09a0-1c73-4d14-b53b-3526455adbd6
-k	java:S106"+Replace this use of System.out by a logger.(û–ñµÿÿÿÿÿJ$ef0ac5ca-2458-4552-ba7e-68ba58a80bbc
-f	java:S106%"+Replace this use of System.out by a logger.(Š£‡—J$f6a06992-debb-4097-be0d-520cbea33569
-m
-java:S1905-"1Remove this unnecessary cast to "CandidateSkill".(ÂìıJ$4fd52e51-9bf5-4ee9-b2d7-49cc28636bf1

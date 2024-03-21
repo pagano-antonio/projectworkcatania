@@ -1,9 +1,0 @@
-
-Œ
-java:S3655+"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(…ëûJ$bccb7175-20ba-4dca-9d34-74ea6ab071a7
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$7f3e927a-e0c7-47dd-bb8c-6f50d5693194
-e	java:S106#"+Replace this use of System.out by a logger.(¹Øß~J$6076582a-e1a6-4316-b26c-680136a6c0b9
-k
-java:S1905+"/Remove this unnecessary cast to "ContractType".(…ëûJ$940f5ede-ae77-46e1-8594-132bf23df0fd
-k	java:S1064"+Replace this use of System.out by a logger.(ŒŠ©µøÿÿÿÿJ$d45ea0f4-a03c-47f2-b5fa-985ae23d232d

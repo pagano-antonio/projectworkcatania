@@ -214,9 +214,8 @@ body {
 					<input type="date" class="login__input" placeholder="Date" id="date" name="date" value="${jobInterview.date}" >
 				</div>
 			
-			
 				<div class="login__field">
-  				<select name="stateJobInterview.idStateJobInterview"> 
+  				<select name="stateJobInterview.idStateJobInterview">
   				<option value="">State of Job Interview</option>
   				<c:forEach var="stateJob" items="${stateJob}">
     			<option value="${stateJob.idStateJobInterview}">${stateJob.title}</option>

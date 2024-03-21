@@ -1,9 +1,0 @@
-
-Œ
-java:S3655&"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Æ‹©çJ$ac08dc3f-f02e-4158-8f7f-392c268b1b03
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$13413014-2799-48e7-9a54-b3eea7bab483
-k	java:S106"+Replace this use of System.out by a logger.(îöçıÿÿÿÿJ$a9e0252a-ccf6-49ce-aec0-06ec931ae2d9
-r
-java:S1905&"6Remove this unnecessary cast to "EducationDegreeType".(Æ‹©çJ$b306dee7-42a4-4440-9118-38f8a34f74e9
-k	java:S106/"+Replace this use of System.out by a logger.(•ÅÉĞùÿÿÿÿJ$8ac36da4-b4ab-4920-8571-9562be0cf729
