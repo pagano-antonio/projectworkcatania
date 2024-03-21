@@ -336,9 +336,9 @@ p {
     </label>
     <div class="sidebar">
       <header>Menu</header>
-      <a href="#" class="active">
-        <i class="fas fa-qrcode"></i>
-      <span>Dashboard</span>  <!--   da togliere la dashboard nel caso non serva -->
+      <a href="${pageContext.request.contextPath}/javaGirlz"target="_blank">
+        <i class="fas fa-heart"></i>
+        <span>Java Girlz</span>
       </a>
       <a href="${pageContext.request.contextPath}/preSignUp"target="_blank">
         <i class="fas fa-user-plus"></i>
@@ -370,11 +370,6 @@ p {
     <div>
         
         <ul class="flip5">
-<!--             <li>Welcome</li> -->
-<!--             <li>Hos geldiniz</li> -->
-<!--             <li>Bienvenido</li> -->
-<!--             <li>Benvenuto</li> -->
-<!--             <li>Mireserdhet</li> -->
  			<li class="title-word title-word-1">Welcome</li>
             <li class="title-word title-word-2">Hos geldiniz</li>
             <li class="title-word title-word-3">Bienvenido</li>

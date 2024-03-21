@@ -32,10 +32,17 @@ public class CandidateController {   // ricordarsi di fare i nomi e le mappature
 		return "loginPage";
 	}
 
+	
 	@GetMapping("/preAddCandidate") 
 	public String insertCandidate() {
 		return "addCandidate";
 	}
+	
+	@GetMapping("/javaGirlz") // PORTA ALLA JAVAGIRLZ
+	public String whoAreWe() {
+		return "javaGirlz";
+	}
+
 
 	@PostMapping("/preUpdateCandidate")
 	public String preUpdateCandidate(Model model, @RequestParam("idCandidate") Integer idCandidate) {
