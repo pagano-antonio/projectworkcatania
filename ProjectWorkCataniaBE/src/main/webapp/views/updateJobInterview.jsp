@@ -231,7 +231,7 @@ body {
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" placeholder="Notes" id="notes" name="notes" value="${jobInterview.notes}">
 				</div>
-				
+		
 				
 				<div class="login__field">
   				<select name="employee.idEmployee">

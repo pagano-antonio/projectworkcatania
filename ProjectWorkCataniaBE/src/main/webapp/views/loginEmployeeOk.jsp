@@ -249,10 +249,11 @@ p {
     </c:forEach>
 </body>
 
+
 <c:forEach var="employee" items="${employeeFound}">
  <div class="frame">
 <p>Welcome</p>
-<h2 class="title-word title-word-5">${employee.name}<br>${employee.surname}<br></h2> <%--scritta colorata --%>
+<h2 class="title-word title-word-5">${employee.name}<br>${employee.surname}<br></h2> 
   <p>in your Page</p>
 </div>
 </c:forEach>
