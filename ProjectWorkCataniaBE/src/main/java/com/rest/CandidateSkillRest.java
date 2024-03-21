@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class CandidateSkillRest {
         return "addCandidateSkill";
 	} 
 	
-	@GetMapping("/addCandidateSkill")
+	@PostMapping("/addCandidateSkill")
     public String addOrUpdateCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto inserendo/modificando un candidato!");
 		candidateSkillRep.save(candidateSkill);	
@@ -32,7 +33,7 @@ public class CandidateSkillRest {
     }
 	
 
-	@GetMapping("/deleteCandidateSkill")
+	@DeleteMapping("/deleteCandidateSkill")
 	public String deleteCandidateSkill(CandidateSkill candidateSkill, Model model) {
 		System.out.println("Sto cancellando il candidato!");
 		candidateSkillRep.delete(candidateSkill);

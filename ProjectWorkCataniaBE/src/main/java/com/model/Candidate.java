@@ -2,7 +2,7 @@ package com.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -21,6 +21,7 @@ import jakarta.persistence.TemporalType;
 public class Candidate implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	
 	@Id
 	private int idCandidate;
 

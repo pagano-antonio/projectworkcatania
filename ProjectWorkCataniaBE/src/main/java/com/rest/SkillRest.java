@@ -2,7 +2,9 @@ package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +30,7 @@ public class SkillRest {
         return "searchByIdSkill";
 	} 
 	
-	@GetMapping("/addSkill")
+	@PostMapping("/addSkill")
     public String addOrUpdateSkill(Skill skill, Model model) {
 		System.out.println("Sto inserendo/modificando!");
 		skillRep.save(skill);	
@@ -45,7 +47,7 @@ public class SkillRest {
 			return "ErrorPage";
 	}
 	
-	@GetMapping("/deleteSkill")
+	@DeleteMapping("/deleteSkill")
 	public String deleteSkill(Skill skill, Model model) {
 		System.out.println("Sto cancellando!");
 		skillRep.delete(skill);

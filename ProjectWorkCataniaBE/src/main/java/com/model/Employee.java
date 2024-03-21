@@ -17,6 +17,8 @@ import jakarta.persistence.OneToMany;
 @Entity
 @NamedQuery(name = "Employee.findAll", query = "SELECT e FROM Employee e")
 public class Employee implements Serializable {
+
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -121,5 +123,10 @@ public class Employee implements Serializable {
 
 		return jobInterview;
 	}
-
+	@Override
+	public String toString() {
+		return "Employee [idEmployee=" + idEmployee + ", email=" + email + ", name=" + name + ", password=" + password
+				+ ", surname=" + surname + ", username=" + username + ", employeeType=" + employeeType
+				+ ", jobInterviews=" + jobInterviews + "]";
+	}
 }
