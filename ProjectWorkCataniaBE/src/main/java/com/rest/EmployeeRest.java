@@ -1,7 +1,10 @@
 package com.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +15,8 @@ import com.model.Employee;
 import com.repository.EmployeeRepository;
 
 @RestController
-@RequestMapping("EmployeeRest") // tutto da testare
+@CrossOrigin //dovrebbe servire a collegare il rest al FE
+@RequestMapping("EmployeeRest") 
 public class EmployeeRest {
 	
 	@Autowired
@@ -23,7 +27,7 @@ public class EmployeeRest {
         return "addEmployee";
 	} 
 	
-	@GetMapping("/preSearchByIdEmployee") // potrebbe non servire da controllare le Jsp che servono
+	@GetMapping("/preSearchByIdEmployee") 
     public String preSearchByIdEmployee() {
         return "searchByIdEmployee";
 	} 
@@ -44,6 +48,21 @@ public class EmployeeRest {
 		} else 
 			return "ErrorPage";
 	}	
+	
+	@GetMapping("/searchByEmailAndPassword")
+	public String searchByEmailAndPassword(Model model, String email, String password) {
+			System.out.println("Sto facendo il login...");
+			System.out.println("Email " + email + " password " + password);
+			List<Employee> employeeList=(List<Employee>) employeeRep.findByEmailAndPassword(email, password);
+			System.out.println(employeeList.toString());
+			if (employeeList != null && !employeeList.isEmpty()) {
+		        model.addAttribute("employeeFound", employeeList);
+		        return "loginEmployeeOk";
+		    } else {
+		        return "errorPage";
+		    }
+	
+	}
 	
 	@DeleteMapping("/deleteEmployee")
 	public String deleteContractType(Employee employee, Model model) { // da testare, anche sugli altri rest
