@@ -1,0 +1,9 @@
+
+‘
+java:S3655("PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÅÐ´£ûÿÿÿÿJ$77701d92-d44d-4862-8281-a2eb2df578e5
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$9340dd80-b396-4717-982f-8f156cb20633
+k	java:S106 "+Replace this use of System.out by a logger.(û–ñµÿÿÿÿÿJ$8047120e-ec3a-463b-9d2d-80dcf00285cf
+m
+java:S1905(",Remove this unnecessary cast to "Candidate".(ÅÐ´£ûÿÿÿÿJ$6901e83d-8697-4da4-8fee-94644cfabdf6
+f	java:S1061"+Replace this use of System.out by a logger.(Š£‡—J$fd76a3eb-167c-41a9-b8d1-c0b42d95ee4d

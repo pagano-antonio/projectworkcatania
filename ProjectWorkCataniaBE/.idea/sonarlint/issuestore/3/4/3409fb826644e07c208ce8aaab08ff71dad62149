@@ -1,0 +1,20 @@
+
+Œ
+java:S1192>"PDefine a constant instead of duplicating this literal "updateCandidate" 3 times.(Å¤ğÛJ$0952c6b3-01c1-4b66-9cb1-d35060c8f037
+Œ
+java:S3655<"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÂìıJ$f4eeb27c-aabb-4ceb-8561-9b6b47ccb8bc
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$552f9332-c44a-4a65-8e89-89cda35550a8
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$7194ff84-0ab2-4308-8458-79f6bed89ff5
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$e753d499-5dd3-4657-97f3-47c2633291b1
+k	java:S106,"+Replace this use of System.out by a logger.(û–ñµÿÿÿÿÿJ$3c930737-b5b0-4962-b56f-eec76674e0b1
+k	java:S106-"+Replace this use of System.out by a logger.(½‘îƒùÿÿÿÿJ$26a0f456-77ff-4d6a-875b-3aaf643c013b
+f	java:S1064"+Replace this use of System.out by a logger.(Š£‡—J$9a2084b3-9581-40ef-b86b-b502ebc9a75f
+m
+java:S1905<"1Remove this unnecessary cast to "CandidateSkill".(ÂìıJ$78a4905d-4a3c-4d79-93c0-39078d9f8468
+k
+java:S1128"/Remove this unused import 'com.model.Employee'.(å¬¯—J$88e77f23-3b49-45e4-af02-c1d43c7b8f64
+t
+java:S1128"8Remove this unused import 'com.model.StateJobInterview'.(ÌŠşêJ$e4797f7b-ac45-4131-80ed-0c49cecf2c88

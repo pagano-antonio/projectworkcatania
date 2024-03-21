@@ -1,0 +1,14 @@
+
+‘
+java:S3655,"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŸõËşÿÿÿÿJ$b82f6fe2-64f5-4706-a088-fac5460e184a
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$0bce1f16-34fb-4dc2-9739-83c732494a45
+k	java:S106$"+Replace this use of System.out by a logger.(öûš™ûÿÿÿÿJ$bc38ef5b-e115-4ec3-a35f-a9e213a51f8a
+q
+java:S1905,"0Remove this unnecessary cast to "JobOfferSkill".(ŸõËşÿÿÿÿJ$35a3ba36-5af9-4c9c-b73c-9170c86e211f
+k	java:S1065"+Replace this use of System.out by a logger.(ÚŸıÿÿÿÿJ$454c8131-79ef-4a93-8804-e21f098936bb
+h
+java:S1128
+",Remove this unused import 'com.model.Skill'.(¬Â±ÛJ$507dbd5d-aced-46b0-9f6f-a9044f96cbe3
+|
+java:S1128";Remove this unused import 'com.repository.SkillRepository'.(ˆáÂËıÿÿÿÿJ$2ea665b0-1dd1-48bc-86d4-efc92d612e8d

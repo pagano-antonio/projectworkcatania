@@ -1,0 +1,9 @@
+
+Œ
+java:S3655&"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(³½ö¿J$6fd09296-34e7-4cbb-bdfb-14d88e98d7bc
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$f54da2ab-7733-49e7-844f-821147d08f0d
+k	java:S106"+Replace this use of System.out by a logger.(¼þÌ€þÿÿÿÿJ$5317b1d5-1297-4653-adfa-bed63bc7ccc7
+g
+java:S1905&"+Remove this unnecessary cast to "JobOffer".(³½ö¿J$f966beb1-eb86-49de-9706-740c5b20257b
+k	java:S1060"+Replace this use of System.out by a logger.(ÂšõèûÿÿÿÿJ$30c19afc-eeca-4fb1-895a-991812357a3e

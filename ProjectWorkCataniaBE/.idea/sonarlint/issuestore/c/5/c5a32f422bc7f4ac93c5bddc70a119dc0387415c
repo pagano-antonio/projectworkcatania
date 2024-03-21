@@ -1,0 +1,9 @@
+
+‘
+java:S3655("PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹´¶ÜþÿÿÿÿJ$0c0d49af-f52e-4c59-b15c-c172b5c7b45b
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$d4c69255-e109-41b4-acf2-6dc5365acb70
+f	java:S106 "+Replace this use of System.out by a logger.(¿ƒŠ—J$d7d6c0de-6d13-4c5a-ba03-65f19569412a
+q
+java:S1905("0Remove this unnecessary cast to "CompanyClient".(‹´¶ÜþÿÿÿÿJ$f1254675-f92e-44e9-a932-6a07530a0dce
+k	java:S1061"+Replace this use of System.out by a logger.(âï§óÿÿÿÿÿJ$1d4aca63-0fb1-41a1-99c6-527ba00af605

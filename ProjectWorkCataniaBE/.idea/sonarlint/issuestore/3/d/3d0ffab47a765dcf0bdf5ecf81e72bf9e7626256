@@ -1,0 +1,9 @@
+
+Œ
+java:S3655*"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(âåãõJ$6c61cf3c-0343-478a-862e-6d3b37bfc36f
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$6364371d-3605-40e4-8d41-b097325853f8
+k	java:S106""+Replace this use of System.out by a logger.(öûš™ûÿÿÿÿJ$24ddc390-e2af-4f4d-9495-428a95b27540
+d
+java:S1905*"(Remove this unnecessary cast to "Skill".(âåãõJ$98e897b3-2466-4af2-bac2-d865bd7bd878
+k	java:S1065"+Replace this use of System.out by a logger.(ÚŽŽŸýÿÿÿÿJ$5b9a7674-6bf9-46fa-b597-555bf0381bfc

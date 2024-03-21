@@ -1,0 +1,15 @@
+
+‹
+java:S11923"JDefine a constant instead of duplicating this literal "ErrorPage" 3 times.(¬¶õÏøÿÿÿÿJ$45ed66f6-986d-409f-a8ef-ffccb15a508c
+‘
+java:S3655/"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‹´¶ÜþÿÿÿÿJ$feec485e-0ecf-41f5-aa79-e5871a9d8b6f
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$955db388-7331-4607-80e1-7d2f8ba83fee
+f	java:S106'"+Replace this use of System.out by a logger.(¿ƒŠ—J$7792ff65-501b-4f69-83b4-3b39756ef909
+q
+java:S1905/"0Remove this unnecessary cast to "CompanyClient".(‹´¶ÜþÿÿÿÿJ$c1488dae-ffb4-4d95-a11b-5f95fb7ba6b9
+k	java:S1068"+Replace this use of System.out by a logger.(âï§óÿÿÿÿÿJ$df9c9b76-8d42-434f-a50f-e941a0cd6e6e
+h
+java:S1905E"'Remove this unnecessary cast to "List".(ß¶çµüÿÿÿÿJ$763ac966-c269-4ea7-a90e-221adea2eb4a
+h
+java:S1905V"'Remove this unnecessary cast to "List".(ü¹ìÊûÿÿÿÿJ$688c8494-eb6d-4df1-994d-5ecb170ca7b4

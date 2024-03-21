@@ -1,0 +1,16 @@
+
+‘
+java:S3655D"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ä½Ê«ùÿÿÿÿJ$d1e0f9cc-2d36-4b61-8054-bab503ef215b
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$a366202a-08a2-4453-ab00-424a36a0e2ce
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$e7abf6a3-29e5-4bef-b216-8b7517e150da
+k	java:S106<"+Replace this use of System.out by a logger.(çã¸âûÿÿÿÿJ$8f395979-7df5-4644-92a4-dc5bf30f3588
+l
+java:S1905D"+Remove this unnecessary cast to "Employee".(Ä½Ê«ùÿÿÿÿJ$06afec09-8b9c-45b5-bcbd-3cbdb507f9f4
+f	java:S106M"+Replace this use of System.out by a logger.(Éº¨ØJ$61fd1e16-b663-4f38-a844-9362d9df8c49
+f	java:S106N"+Replace this use of System.out by a logger.(Ç¹ÙñJ$2f941c4f-bb03-46e6-b9b7-7a216686c024
+h
+java:S1905O"'Remove this unnecessary cast to "List".(Õã©ÆúÿÿÿÿJ$82a568c6-d271-4bf1-8f58-2f209c649d50
+f	java:S106P"+Replace this use of System.out by a logger.(õîÉŸJ$5a36ae97-3cb8-4d24-b76b-ae6ca1ea4dcb
+k	java:S106X"+Replace this use of System.out by a logger.(ŒŠ©µøÿÿÿÿJ$8ac81fef-0995-4988-a44f-9f33b139f3ed

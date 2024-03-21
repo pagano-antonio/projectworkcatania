@@ -1,0 +1,28 @@
+
+›
+java:S1192t"ZDefine a constant instead of duplicating this literal "Sto cercando un candidato" 5 times.(’—’İøÿÿÿÿJ$58f878e6-4b0c-4fd9-afd8-8f9f9d92a678
+—
+java:S1192L"[Define a constant instead of duplicating this literal "Sto cercando una candidato" 3 times.(Ãùî´J$87be7c79-3b43-43d9-9e0d-0d123bdcca29
+‘
+java:S3655="PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÅĞ´£ûÿÿÿÿJ$86c23d2e-95af-41f5-b37f-358cb530d4dd
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$aaed486f-2ef3-4950-80a7-21448d5b806d
+k	java:S1065"+Replace this use of System.out by a logger.(û–ñµÿÿÿÿÿJ$2f4f2398-13cf-4e6d-bd98-7e5adb1b5046
+m
+java:S1905=",Remove this unnecessary cast to "Candidate".(ÅĞ´£ûÿÿÿÿJ$482ce6f6-5dfd-4122-bb5f-1d295a0febeb
+f	java:S106L"+Replace this use of System.out by a logger.(Ãùî´J$664bebf3-39a0-4e90-9f91-dafc5a465efe
+f	java:S106Y"+Replace this use of System.out by a logger.(Ãùî´J$0645c8bc-7ab7-46a0-a2fb-8ef15fdf7d3b
+c
+java:S1905f"'Remove this unnecessary cast to "List".(»·º¨J$0a35fb36-afcc-4805-90d4-6f5adaad71a1
+f	java:S106g"+Replace this use of System.out by a logger.(Ãùî´J$f9983e68-0eb8-4de7-b403-b73fec635c02
+k	java:S106t"+Replace this use of System.out by a logger.(’—’İøÿÿÿÿJ$008aaa27-4a38-4238-98ac-6ee127e57c1b
+l	java:S106"+Replace this use of System.out by a logger.(’—’İøÿÿÿÿJ$762a3803-0fb5-4efb-b5a5-229239b9a2c4
+l	java:S106‰"+Replace this use of System.out by a logger.(’—’İøÿÿÿÿJ$9c2d53b2-05b3-4acd-8a7a-e18738fb068f
+l	java:S106‘"+Replace this use of System.out by a logger.(’—’İøÿÿÿÿJ$216ace93-75f9-4720-a68e-b0cbac751522
+l	java:S106"+Replace this use of System.out by a logger.(’—’İøÿÿÿÿJ$1211e381-f3ea-4f46-835b-11521d56d6ea
+f	java:S106Ÿ"+Replace this use of System.out by a logger.(ºÒ"J$1f400be3-bb92-4699-9a10-8f75b7eec406
+g	java:S106¦"+Replace this use of System.out by a logger.(Š£‡—J$5b89d477-dc4f-47b1-9064-70d57c3b55b2
+k
+java:S1128"/Remove this unused import 'com.model.Employee'.(å¬¯—J$c3c2f15c-0125-4c0e-a907-26942f23699b
+t
+java:S1128"3Remove this unused import 'com.model.EmployeeType'.(±åü’ÿÿÿÿÿJ$d93e1c8e-14f8-4724-80fc-78164e013693
