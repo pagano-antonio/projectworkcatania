@@ -160,6 +160,14 @@ body {
 	margin-left: auto;
 	color: #7875B5;
 }
+/*colore messaggio errore */
+.login__input:valid {
+  border-bottom-color: #6A679E;
+}
+
+.login__input:invalid {
+  border-bottom-color: #D1D1D4;
+}
 
 /* .social-login {	 */
 /* 	position: absolute; */
@@ -198,11 +206,11 @@ body {
 			<form action="${pageContext.request.contextPath}/searchByEmailAndPassword" method="post" class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
+					<input type="text" class="login__input" placeholder="Email" id="email" name="email" required title="This field cannot be empty">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" id="password" name="password">
+					<input type="password" class="login__input" placeholder="Password" id="password" name="password" required title="This field cannot be empty">
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Log In</span>
