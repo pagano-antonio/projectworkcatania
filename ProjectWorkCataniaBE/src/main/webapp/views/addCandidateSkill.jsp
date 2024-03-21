@@ -196,7 +196,7 @@ body {
 		<div class="screen__content">
 		
 			
-			<form action="${pageContext.request.contextPath}CandidateSkillController/addCandidateSkill" method="post" class="login">
+			<form action="${pageContext.request.contextPath}/CandidateSkillController/addCandidateSkill" method="post" class="login">
 			
 				<div class="login__field">
   				<select name="candidate.idCandidate">
