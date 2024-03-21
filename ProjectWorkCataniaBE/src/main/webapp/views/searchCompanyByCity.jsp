@@ -201,7 +201,7 @@ body {
 			
 			<div class="login__field">
 					<i class="login__icon fas fa-city"></i>
-					<input type="text" class="login__input" placeholder="City" id="city" name="city" >
+					<input type="text" class="login__input" placeholder="City" id="city" name="city" required>
 				</div>
 			
 				<button class="button login__submit">

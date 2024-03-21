@@ -200,27 +200,27 @@ body {
 		<form action="${pageContext.request.contextPath}/addEmployee" method="post" class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-envelope"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email">
+					<input type="text" class="login__input" placeholder="Email" id="email" name="email" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" id="password" name="password">
+					<input type="password" class="login__input" placeholder="Password" id="password" name="password" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Name" id="name" name="name">
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname">
+					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Username" id="username" name="username">
+					<input type="text" class="login__input" placeholder="Username" id="username" name="username" required>
 				</div>
 				<div class="login__field">
   				<select name="employeeType.idEmployeeType">
-  				<option value="">Employee Type:</option>
+  				<option value="">Employee Type Required:</option>
   				<c:forEach var="description" items="${descriptions}">
     			<option value="${description.idEmployeeType}">${description.description}</option>
   				</c:forEach>

@@ -196,11 +196,11 @@ body {
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="date" class="login__input" placeholder="Start Date" id="startDate" name="startDate">
+					<input type="date" class="login__input" placeholder="Start Date" id="startDate" name="startDate" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="date" class="login__input" placeholder="End Date" id="endDate" name="endDate">
+					<input type="date" class="login__input" placeholder="End Date" id="endDate" name="endDate" required>
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Search</span>

@@ -199,7 +199,7 @@ body {
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname">
+					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" required>
 				</div>
 			
 				<button class="button login__submit">

@@ -196,11 +196,11 @@ body {
 		<div class="screen__content">
 		
 			
-			<form action="${pageContext.request.contextPath}/searchCompanyByName" method="post" class="login">
+			<form action="${pageContext.request.contextPath}/searchCompanyByName" method="post" class="login" >
 			
 			<div class="login__field">
 					<i class="login__icon fas fa-building"></i>
-					<input type="text" class="login__input" placeholder="Name" id="name" name="name" >
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" required>
 				</div>
 			
 				<button class="button login__submit">

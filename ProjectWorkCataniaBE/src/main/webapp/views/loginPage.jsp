@@ -160,14 +160,6 @@ body {
 	margin-left: auto;
 	color: #7875B5;
 }
-/*colore messaggio errore */
-.login__input:valid {
-  border-bottom-color: #6A679E;
-}
-
-.login__input:invalid {
-  border-bottom-color: #D1D1D4;
-}
 
 /* .social-login {	 */
 /* 	position: absolute; */

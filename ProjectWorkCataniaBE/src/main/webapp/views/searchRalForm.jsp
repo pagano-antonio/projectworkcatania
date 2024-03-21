@@ -196,11 +196,11 @@ body {
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-money-bill"></i>
-					<input type="number" class="login__input" placeholder="Min Ral Income" id="minRal" name="minRal">
+					<input type="number" class="login__input" placeholder="Min Ral Income" id="minRal" name="minRal" required>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-money-bill"></i>
-					<input type="number" class="login__input" placeholder="Max Ral Income" id="maxRal" name="maxRal">
+					<input type="number" class="login__input" placeholder="Max Ral Income" id="maxRal" name="maxRal" required>
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Search</span>

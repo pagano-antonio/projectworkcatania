@@ -198,7 +198,7 @@ body {
 			
 				<div class="login__field">
 					<i class="login__icon fas fa-school"></i>
-					<input type="text" class="login__input" placeholder="Degree type" id="edescription" name="description">
+					<input type="text" class="login__input" placeholder="Degree type" id="edescription" name="description" required >
 				</div>
 			
 				<button class="button login__submit">

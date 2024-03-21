@@ -199,7 +199,7 @@ body {
 			<form action="${pageContext.request.contextPath}/searchByTitle" method="post" class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-briefcase"></i>
-					<input type="text" class="login__input" placeholder="Job Title" id="title" name="title">
+					<input type="text" class="login__input" placeholder="Job Title" id="title" name="title" required title="This field cannot be empty">
 				</div>
 			
 				<button class="button login__submit">
