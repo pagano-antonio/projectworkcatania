@@ -49,13 +49,10 @@ public class EducationController {
 	
 	@PostMapping("/searchByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidate) {
-		if(educationRep.findById(idCandidate).isPresent()) {
 			System.out.println(idCandidate);
 		List<Education>education = educationRep.findByCandidate_idCandidate(idCandidate);
 		model.addAttribute("EducationFound", education);
 		return "candidateListByCity";
-		} else 
-			return "ErrorPage";
 	}
 	
 	

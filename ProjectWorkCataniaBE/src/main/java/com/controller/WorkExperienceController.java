@@ -46,17 +46,14 @@ public class WorkExperienceController {
 		model.addAttribute("WorkExperienceFound", workExperience);
 		return "updateWorkExperienceId";
 		} else 
-			return "ErrorPage";
+			return "errorPage";
 	}
 	
 	@PostMapping("/searchByIdCandidate")
 	public String searchByIdCandidate(Model model, Integer idCandidate) {
-		if(workExperienceRep.findById(idCandidate).isPresent()) {
 		List<WorkExperience> workExperience = workExperienceRep.findByCandidate_idCandidate(idCandidate);
 		model.addAttribute("WorkExperienceFound", workExperience);
 		return "candidateListByCity";
-		} else 
-			return "ErrorPage";
 	}
 	
 
