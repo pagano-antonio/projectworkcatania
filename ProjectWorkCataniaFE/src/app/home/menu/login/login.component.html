@@ -5,11 +5,11 @@
 		  <form (ngSubmit)="login()" class="login">
 			<div class="login__field">
 			  <i class="login__icon fas fa-user"></i>
-			  <input type="text" [(ngModel)]="user" placeholder="Username" name="user" required>
+			  <input type="text" [(ngModel)]="email" placeholder="Email" name="email"  id="email" required>
 			</div>
 			<div class="login__field">
 			  <i class="login__icon fas fa-lock"></i>
-			  <input type="text" [(ngModel)]="pwd" placeholder="Password" name="pwd" required>
+			  <input type="text" [(ngModel)]="password" placeholder="Password" name="password" id="password" required>
 			</div>
 			<button class="button login__submit" type="submit">
 			  <span class="button__text">Log In</span>

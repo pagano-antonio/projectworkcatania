@@ -186,7 +186,8 @@ body {
 
 /* .social-login__icon:hover { */
 /* 	transform: scale(1.5);	 */
-}
+/* } */
+
 </style>
 </head>
 <body>

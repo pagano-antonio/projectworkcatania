@@ -3,6 +3,8 @@ package com.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -23,13 +25,13 @@ public class Employee implements Serializable {
 
 	@Id
 	private int idEmployee;
-
+	
 	private String email;
 
 	private String name;
 
 	private String password;
-
+	
 	private String surname;
 
 	private String username;

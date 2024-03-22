@@ -18,6 +18,9 @@ export class HomeComponent {
   loginPage(){
     this.router.navigate(['/loginPage']);
   }
-
+  
+  signUpPage(){
+    this.router.navigate(['/signUpPage']);
+  }
 
 }

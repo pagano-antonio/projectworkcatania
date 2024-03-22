@@ -11,15 +11,14 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user: String = '';
-  pwd: String = '';
-  loginMessage: String = '';
-  loginStatus: boolean = false;
+  email!: string;
+  password!: string;
 
   constructor(private router: Router, private firstService: LoginserviceService) {}
 
   login() {
-    this.firstService.getEmployeeByEmailAndPassword();
-    console.log('ciao');
+    console.log('sto facendo login');
+    this.firstService.getEmployeeByEmailAndPassword(this.email, this.password).subscribe;
+    console.log('finito sono dentro');
   }
 }
