@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from '../home.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent {
+export class MenuComponent extends HomeComponent{
 
 }

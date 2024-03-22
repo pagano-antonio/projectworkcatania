@@ -38,11 +38,13 @@ public class Employee implements Serializable {
 
 	// bi-directional many-to-one association to EmployeeType
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "idEmployeeType")
 	private EmployeeType employeeType;
 
 	// bi-directional many-to-one association to JobInterview
 	@OneToMany(mappedBy = "employee")
+	@JsonIgnore
 	private List<JobInterview> jobInterviews;
 
 	public Employee() {

@@ -11,6 +11,11 @@ import { Router } from '@angular/router';
 
 export class HomeComponent {
   constructor(private router: Router) {}
+
+  homePage(){
+    this.router.navigate(['']);
+  }
+
   javaGirlz(){
     this.router.navigate(['/javaGirlz']);
   }

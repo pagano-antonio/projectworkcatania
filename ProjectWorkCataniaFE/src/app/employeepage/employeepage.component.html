@@ -1,1 +1,49 @@
-<p>employeepage works!</p>
+<div class="background">
+<input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>Menu</header>
+      <a target="_blank">
+        <i class="fas fa-qrcode"></i>
+        <span>Log Out</span>
+      </a>
+      <a href target="_blank">
+        <i class="fas fa-user"></i>
+        <span>Update Account</span>
+      </a>
+       <a href target="_blank">
+         <i class="fas fa-clipboard"></i>
+        <span>Add Interview</span>
+      </a>
+      <a href target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>Add Skill</span>
+      </a>
+      <a href target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>Search Skill</span>
+      </a>
+       <a href target="_blank">
+        <i class="fas fa-calendar"></i>
+        <span>Your Interviews</span>
+      </a>
+      <a href target="_blank">
+        <i class="fas fa-trash"></i>
+        <span>Delete Account</span>
+      </a>
+    </div>
+
+    <div class="frame">
+      
+      <p>Welcome</p>
+      <div *ngIf="employee">
+      <h2 class="title-word title-word-5">{{employee.name}}<br>{{employee.surname}}<br></h2> 
+    </div>
+        <p>in your Page</p>
+      </div>
+
+    </div>
+

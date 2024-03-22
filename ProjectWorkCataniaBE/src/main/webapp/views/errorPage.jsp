@@ -258,7 +258,7 @@ p {
       
     </div>
       
-    </div>
+   
 </body>
     
   <div class="frame">

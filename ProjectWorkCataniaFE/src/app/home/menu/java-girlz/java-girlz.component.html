@@ -7,23 +7,23 @@
     </label>
     <div class="sidebar">
       <header>Menu</header>
-      <a href="${pageContext.request.contextPath}/home"target="_blank">
+      <a (click)="homePage()">
         <i class="fas fa-qrcode"></i>
         <span>Home Page</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preSignUp"target="_blank">
+      <a (click)="signUpPage()">
         <i class="fas fa-user-plus"></i>
         <span>Sign Up</span>
       </a>
-      <a href="${pageContext.request.contextPath}/login"target="_blank">
+      <a (click)="loginPage()">
         <i class="fas fa-user"></i>
         <span>Login</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preCandidatePage"target="_blank">
+      <a href target="_blank">
         <i class="fas fa-briefcase"></i>
         <span>Candidate</span>
       </a>
-      <a href="${pageContext.request.contextPath}/preJobOfferPage"target="_blank">
+      <a href target="_blank">
          <i class="fas fa-clipboard-list"></i>
         <span>Job Offers</span>
       </a>
