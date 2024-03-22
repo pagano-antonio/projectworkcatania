@@ -1,21 +1,32 @@
-<div class="background">
+<div class ="background">
 	<div class="container">
-	  <div class="screen">
-		<div class="screen__content">
-		  <form (ngSubmit)="login()" class="login">
+		<div class="screen">
+			<div class="screen__content">
+				<div class = "login">
+				<form>	
 			<div class="login__field">
 			  <i class="login__icon fas fa-user"></i>
 			  <input type="text" [(ngModel)]="email" placeholder="Email" name="email"  id="email" required>
 			</div>
+			
 			<div class="login__field">
 			  <i class="login__icon fas fa-lock"></i>
-			  <input type="text" [(ngModel)]="password" placeholder="Password" name="password" id="password" required>
+			  <input type="password" [(ngModel)]="password" placeholder="Password" name="password" id="password" required>
 			</div>
-			<button class="button login__submit" type="submit">
-			  <span class="button__text">Log In</span>
-			  <i class="button__icon fas fa-chevron-right"></i>
-			</button>
-		  </form>
+
+			<button class="button login__submit" (click)="login()" type="button">
+				<span class="button__text">Log In</span>
+				<i class="button__icon fas fa-chevron-right"></i>
+			  </button>
+		
+			</form>	
+		</div>
+
+		  <div class="social-login">
+			<div class="social-icons">
+			</div>
+		</div>
+
 		</div>
 		<div class="screen__background">
 		  <span class="screen__background__shape screen__background__shape4"></span>
@@ -23,6 +34,7 @@
 		  <span class="screen__background__shape screen__background__shape2"></span>
 		  <span class="screen__background__shape screen__background__shape1"></span>
 		</div>
+		
 	  </div>
 	</div>
   </div>

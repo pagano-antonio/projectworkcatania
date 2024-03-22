@@ -15,7 +15,6 @@ export class EmployeepageComponent implements OnInit  {
 
   
   employee: Employee = new Employee;
-  idEmployee:string | null = null;
   name:string | null = null;
   surname:string | null = null;
 
@@ -26,7 +25,6 @@ export class EmployeepageComponent implements OnInit  {
   ngOnInit(): void {
     this.name = this.route.snapshot.paramMap.get('name'); 
     this.surname = this.route.snapshot.paramMap.get('surname');// Ottieni il nome
-    console.log(this.idEmployee);
     
     }
   }
