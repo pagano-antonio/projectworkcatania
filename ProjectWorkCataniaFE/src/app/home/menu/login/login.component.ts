@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginserviceService } from '../../../services/loginservice.service';
 import { FormsModule } from '@angular/forms';
-
-
+import { Employee } from '../../../model/employee';
 
 @Component({
   selector: 'app-login',
@@ -13,20 +12,26 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email!: string;
-  password!: string;
+  email: string= '';
+  password: string = '';
+  name: string = '';
+  surname: string = '';
+  employee: Employee = new Employee;
+
+  
 
 
-  constructor(private router: Router, private firstService: LoginserviceService) {}
+  constructor(private router: Router, private firstService: LoginserviceService, ) {}
   
   login() {
-    console.log('Sto facendo login...');
+    console.log('I am login in...');
 
     this.firstService.getEmployeeByEmailAndPassword(this.email, this.password)
-      .subscribe(data => {
-        console.log('Login successful!');
-
-        this.router.navigate(['/employeePage'], { state: { data } });
+      .subscribe(data=> {
+        console.log('Login successful');
+        console.log(this.employee);
+        console.log(data);
+        this.router.navigate(['/employeePage', data.name, data.surname]);
       });
   }
 

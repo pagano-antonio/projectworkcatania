@@ -13,5 +13,5 @@ export const routes: Routes = [
     {path: 'javaGirlz', component:JavaGirlzComponent},
     {path: 'loginPage', component:LoginComponent},
     {path: 'signUpPage', component:SignupComponent},
-    {path: 'employeePage', component:EmployeepageComponent},
+    {path: 'employeePage/:name/:surname', component:EmployeepageComponent},
 ]

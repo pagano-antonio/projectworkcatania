@@ -36,12 +36,21 @@ public class EmployeeRest {
         return "searchByIdEmployee";
 	} 
 
-	@PostMapping("/addEmployee")
-    public String addOrUpdateEmplyee(Employee employee, Model model) {
+//	@PostMapping("/addEmployee")
+//    public String addOrUpdateEmplyee(Employee employee, Model model) {
+//		System.out.println("Sto inserendo/aggiornando un impiegato!");
+//		employeeRep.save(employee);	
+//        return "addEmployeeOk";
+//    }
+	
+	
+	@PostMapping("/addEmployee")// per la sign up su Angular
+    public Employee addOrUpdateEmployee(Employee employee) { 
 		System.out.println("Sto inserendo/aggiornando un impiegato!");
-		employeeRep.save(employee);	
-        return "addEmployeeOk";
+		employee = employeeRep.save(employee);	
+        return employee;
     }
+	
 	
 	@GetMapping("/searchByIdEmployee")
 	public String searchByIdContract(Model model, Integer idEmployee) {
@@ -54,16 +63,16 @@ public class EmployeeRest {
 	}	
 	
 //			
-//			@GetMapping("/searchByEmailAndPassword") // metodo che richiama il JSON dovrebbe essere così, ritornando un oggetto e non una jsp
-//			public Employee searchByEmailAndPassword(@RequestParam(value = "email") String email,
-//					@RequestParam(value = "password") String password) {
-//					System.out.println("Sto facendo il login...");
-//					System.out.println("Email " + email + " password " + password);
-//					Employee employee = (Employee) employeeRep.findByEmailAndPassword(email, password);
-//					return employee;
-//					}
+//	@GetMapping("/searchByEmailAndPassword") // metodo che richiama il JSON dovrebbe essere così, ritornando un oggetto e non una jsp
+//	public Employee searchByEmailAndPassword(@RequestParam(value = "email") String email,
+//	@RequestParam(value = "password") String password) {
+//	System.out.println("Sto facendo il login...");
+//	System.out.println("Email " + email + " password " + password);
+//	Employee employee = (Employee) employeeRep.findByEmailAndPassword(email, password);
+//	return employee;
+//			}
 	
-	 @GetMapping("/searchByEmailAndPassword/{email}/{password}")
+	 @GetMapping("/searchByEmailAndPassword/{email}/{password}") // metodo rest per collegarci ad Angular su VSC!
 	    public ResponseEntity<Employee> searchByEmailAndPassword(
 	            @PathVariable("email") String email,
 	            @PathVariable("password") String password) {
@@ -76,8 +85,7 @@ public class EmployeeRest {
 	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	        }
 	    }		
-			
-			
+				
 	
 	@DeleteMapping("/deleteEmployee")
 	public String deleteContractType(Employee employee, Model model) { 

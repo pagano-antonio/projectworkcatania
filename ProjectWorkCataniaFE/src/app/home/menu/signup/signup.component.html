@@ -1,1 +1,46 @@
-<p>signup works!</p>
+<div class ="background">
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+		
+		<form action="${pageContext.request.contextPath}/addEmployee" method="post" class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-envelope"></i>
+					<input type="text" class="login__input" placeholder="Email" id="email" name="email" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" placeholder="Password" id="password" name="password" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Name" id="name" name="name" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Username" id="username" name="username" required>
+				</div>
+				/*manca employee type */
+				<button class="button login__submit">
+					<span class="button__text">Sign Up</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login">
+				<div class="social-icons">
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+<div>
+</div>

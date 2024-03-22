@@ -12,5 +12,9 @@ export class Employee {
 	public surname!: String;
 
 	public username!: String;
+ 
+
+
+ 
 
 }
