@@ -188,6 +188,31 @@ p {
     
   }
   
+   .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #DF8453;
+  }
+  
+   .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+  
    .title-word-5 {
    	--color-1: #a759f5;
     --color-2: #219ebc;
@@ -203,7 +228,7 @@ p {
     99%   {color: var(--color-3)}
     100%  {color: var(--color-1)}
   }
- 
+  
 </style>
 </head>
 
@@ -253,7 +278,8 @@ p {
 <c:forEach var="employee" items="${employeeFound}">
  <div class="frame">
 <p>Welcome</p>
-<h2 class="title-word title-word-5">${employee.name}<br>${employee.surname}<br></h2> 
+<h2 class="title-word title-word-5">${employee.name}<br></h2> 
+<h2 class="title-word title-word-2">${employee.surname}<br></h2>
   <p>in your Page</p>
 </div>
 </c:forEach>
