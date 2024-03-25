@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -17,6 +18,7 @@ import jakarta.persistence.TemporalType;
  * 
  */
 @Entity
+@Table(name = "candidate")
 @NamedQuery(name = "Candidate.findAll", query = "SELECT c FROM Candidate c")
 public class Candidate implements Serializable {
 	private static final long serialVersionUID = 1L;

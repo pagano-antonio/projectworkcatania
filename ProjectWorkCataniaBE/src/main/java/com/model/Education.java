@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -16,6 +17,7 @@ import jakarta.persistence.TemporalType;
  * 
  */
 @Entity
+@Table(name = "education")
 @NamedQuery(name = "Education.findAll", query = "SELECT e FROM Education e")
 public class Education implements Serializable {
 	private static final long serialVersionUID = 1L;
