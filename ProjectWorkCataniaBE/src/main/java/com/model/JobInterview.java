@@ -3,6 +3,8 @@ package com.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -39,6 +41,7 @@ public class JobInterview implements Serializable {
 
 	// bi-directional many-to-one association to Employee
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "idEmployee")
 	private Employee employee;
 

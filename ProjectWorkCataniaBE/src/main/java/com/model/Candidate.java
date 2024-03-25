@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -45,22 +47,27 @@ public class Candidate implements Serializable {
 	private String surname;
 
 	// bi-directional many-to-one association to CandidateCommercialData
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
 	private List<CandidateCommercialData> candidateCommercialData;
 
 	// bi-directional many-to-one association to CandidateSkill
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
 	private List<CandidateSkill> candidateSkills;
 
 	// bi-directional many-to-one association to Education
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
 	private List<Education> educations;
 
 	// bi-directional many-to-one association to JobInterview
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
 	private List<JobInterview> jobInterviews;
 
 	// bi-directional many-to-one association to WorkExperience
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
 	private List<WorkExperience> workExperiences;
 

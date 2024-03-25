@@ -12,6 +12,6 @@ export const routes: Routes = [
     {path:'menu', component:MenuComponent},
     {path: 'javaGirlz', component:JavaGirlzComponent},
     {path: 'loginPage', component:LoginComponent},
-    {path: 'jobInterviews', component:JobInterviewsComponent},
-    {path: 'employeePage/:name/:surname', component:EmployeepageComponent},
+    {path: 'jobInterviews/:idEmployee', component:JobInterviewsComponent},
+    {path: 'employeePage/:name/:surname/:idEmployee', component:EmployeepageComponent},
 ]

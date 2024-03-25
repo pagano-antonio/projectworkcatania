@@ -31,7 +31,7 @@ export class LoginComponent {
         console.log('Login successful');
         console.log(this.employee);
         console.log(data);
-        this.router.navigate(['/employeePage', data.name, data.surname]);
+        this.router.navigate(['/employeePage', data.name, data.surname, data.idEmployee]);
       });
   }
 

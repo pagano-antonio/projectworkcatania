@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.model.JobInterview;
 import com.repository.JobInterviewRepository;
 
 @RestController
+@CrossOrigin
 @RequestMapping("JobInterviewRest")
 public class JobInterviewRest {
 	
@@ -50,7 +52,8 @@ public class JobInterviewRest {
 	}
 	
 	@GetMapping("/searchByIdEmployee/{idEmployee}") // per recuperare lista job interviews su Angular
-	public List<JobInterview> searchByIdEmployee(@PathVariable("idEmployee")Integer idEmployee) {
+	public List<JobInterview> searchByIdEmployee(
+		@PathVariable ("idEmployee") Integer idEmployee) {
 		System.out.println("***********id Employee " + idEmployee);
 		List<JobInterview> jobInterview = (List<JobInterview>)jobInterviewRep.findByEmployee_idEmployeeOrderByDate(idEmployee);
 		return jobInterview;

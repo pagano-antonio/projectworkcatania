@@ -1,1 +1,75 @@
-<p>job-interviews works!</p>
+<div class="background">
+<input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>Menu</header>
+      <a href class="active" target="_blank">
+        <i class="fas fa-qrcode"></i>
+        <span>Log Out</span>
+      </a>
+      <a href="${pageContext.request.contextPath}/preSignUp"target="_blank">
+        <i class="fas fa-user"></i>
+        <span>Update Account</span>
+      </a>
+       <a href="${pageContext.request.contextPath}/preAddJobInterview"target="_blank">
+         <i class="fas fa-clipboard"></i>
+        <span>Add Interview</span>
+      </a>
+    </div>
+
+
+<div class="container">
+
+
+<table>
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Surname</th>
+<th>Date</th>
+<th>Title</th>
+<th>State Job Interview</th>
+<th>Outcome</th>
+<th>Notes</th>
+<th colspan="3">Buttons</th>
+
+</tr>
+</thead>
+<tbody>
+
+    <tr *ngFor="let job of jobInterviewFound">
+        <td>{{ job.candidate.name }}</td>
+        <td>{{ job.candidate.surname }}</td> 
+        <td>{{ job.date }}</td>
+        <td>{{ job.stateJobInterview.title }}</td>
+        <td>{{ job.stateJobInterview.description }}</td>
+        <td>{{ job.outcome }}</td>
+        <td>{{ job.notes }}</td>
+        <td>
+          <form action="" method="post">
+            <input type="hidden" name="idJobInterview" > 
+            <button class="button-48" role="button">
+              <span class="text">Update</span>
+            </button>
+          </form><br>
+          <form action="" method="post">
+            <input type="hidden" name="idJobInterview">
+            <button class="button-48" role="button">
+              <span class="text">Delete</span>
+            </button>
+          </form><br>
+        </td>
+      </tr>
+
+
+</table>
+
+	
+
+
+</div>
+</div>
