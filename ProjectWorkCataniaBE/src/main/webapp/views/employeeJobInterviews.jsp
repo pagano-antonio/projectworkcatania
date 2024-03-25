@@ -254,7 +254,7 @@ p {
 }
 
 /*stile bottoni*/
-/*html bottoni: <button class="button-48" role="button"><span class="text">Update</span></button> */
+
 .button-48 {
   appearance: none;
   background-color: #FFFFFF;

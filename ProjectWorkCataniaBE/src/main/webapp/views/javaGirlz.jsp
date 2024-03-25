@@ -312,9 +312,9 @@ body {
     box-shadow: 1px 5px 15px #1e0e3e;
     position: relative;
     overflow: hidden;
-
-    &:nth-of-type(1) {
-      background: url("https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-6/432398713_10228849522054495_2829122514784908234_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=bfHROFnIwQ4AX-K2OEX&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBaSHk8rqNn4Ut1vdiLei4g07V8fRuH-G8e3ORbSbabFQ&oe=6600440A")
+    
+    &:nth-of-type(1){
+      background: url("https://cdn.discordapp.com/attachments/1184836800758431836/1221744183908372550/io.jpg?ex=6613b0f0&is=66013bf0&hm=4a10bc7c682c9f9288e447f4a9045e9147ef8fa6d63245ee04cd4baa375c5fa5&")
         no-repeat 50% / cover;
     }
     &:nth-of-type(2) {

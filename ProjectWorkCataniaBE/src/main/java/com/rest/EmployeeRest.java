@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,16 +36,9 @@ public class EmployeeRest {
     public String preSearchByIdEmployee() {
         return "searchByIdEmployee";
 	} 
-
-//	@PostMapping("/addEmployee")
-//    public String addOrUpdateEmplyee(Employee employee, Model model) {
-//		System.out.println("Sto inserendo/aggiornando un impiegato!");
-//		employeeRep.save(employee);	
-//        return "addEmployeeOk";
-//    }
 	
 	
-	@PostMapping("/addEmployee")// per la sign up su Angular
+	@PostMapping("/addEmployee")
     public Employee addOrUpdateEmployee(Employee employee) { 
 		System.out.println("Sto inserendo/aggiornando un impiegato!");
 		employee = employeeRep.save(employee);	
@@ -57,12 +51,12 @@ public class EmployeeRest {
 		if(employeeRep.findById(idEmployee).isPresent()) {
 		Employee employee = (Employee)employeeRep.findById(idEmployee).get();
 		model.addAttribute("EmployeeFound", employee);
-		return "updateEmployee"; // sulla pagina JSP di aggiorna ci sarà anche il pulsante Elimina
+		return "updateEmployee"; 
 		} else 
 			return "ErrorPage";
 	}	
 	
-//			
+			
 //	@GetMapping("/searchByEmailAndPassword") // metodo che richiama il JSON dovrebbe essere così, ritornando un oggetto e non una jsp
 //	public Employee searchByEmailAndPassword(@RequestParam(value = "email") String email,
 //	@RequestParam(value = "password") String password) {
