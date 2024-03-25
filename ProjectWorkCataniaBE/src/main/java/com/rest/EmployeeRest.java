@@ -55,16 +55,7 @@ public class EmployeeRest {
 		} else 
 			return "ErrorPage";
 	}	
-	
 			
-//	@GetMapping("/searchByEmailAndPassword") // metodo che richiama il JSON dovrebbe essere così, ritornando un oggetto e non una jsp
-//	public Employee searchByEmailAndPassword(@RequestParam(value = "email") String email,
-//	@RequestParam(value = "password") String password) {
-//	System.out.println("Sto facendo il login...");
-//	System.out.println("Email " + email + " password " + password);
-//	Employee employee = (Employee) employeeRep.findByEmailAndPassword(email, password);
-//	return employee;
-//			}
 	
 	 @GetMapping("/searchByEmailAndPassword/{email}/{password}") // metodo rest per collegarci ad Angular su VSC!
 	    public ResponseEntity<Employee> searchByEmailAndPassword(
