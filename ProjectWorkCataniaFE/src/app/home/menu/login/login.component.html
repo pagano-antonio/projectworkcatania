@@ -15,7 +15,12 @@
 				<button class="button login__submit">
 					<span class="button__text" (click)="login()">Log In Now</span>
 					<!-- <i class="button__icon fas fa-chevron-right"></i> -->
-				</button>				
+				</button>
+				<div class = "alert.container">
+				<div *ngIf="errorMessage" class="alert alert-danger">
+					<p>{{ errorMessage }}</p>
+				</div>
+				</div>
 			</form>
 			<div class="social-login">
   <!-- <h3>Log in via</h3>
