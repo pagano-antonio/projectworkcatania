@@ -1,3 +1,4 @@
+import { EmployeeType } from "./EmployeeType";
 
 export class Employee {
     
@@ -12,6 +13,8 @@ export class Employee {
 	public surname!: String;
 
 	public username!: String;
+
+	public employeeType!: EmployeeType;
  
 
 

@@ -1,7 +1,7 @@
 package com.rest;
 
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.model.Employee;
-import com.model.EmployeeType;
 import com.repository.EmployeeRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -43,11 +41,12 @@ public class EmployeeRest {
 	} 
 	
 	
-	@PostMapping("/addEmployee")
-    public Employee addOrUpdateEmployee(@RequestBody Employee employee ) { 
-		System.out.println("Sto inserendo/aggiornando un impiegato!");
-		employee = employeeRep.save(employee);	
-        return employee;
+	@PostMapping("/addEmployee/") // rest per aggiungere in DB
+    public ResponseEntity<Employee> addOrUpdateEmployee(
+    		@RequestBody Employee employee) { 
+		System.out.println("Sto inserendo/aggiornando un impiegato!" + employee);
+		Employee responseEmployee = employeeRep.save(employee);
+        return ResponseEntity.ok(responseEmployee) ;
     }
 	
 	

@@ -5,6 +5,7 @@ import { LoginserviceService } from '../../services/loginservice.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { Employee } from '../../model/employee';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,6 +19,7 @@ export class SignUpComponent {
   employeeType = new EmployeeType;
   description:string | null = null;
   employeeTypes$: Observable<any> 
+  employee: Employee=new Employee();
   
   constructor(private route: ActivatedRoute, private router: Router, private firstService: LoginserviceService) {
     this.employeeTypes$ = this.firstService.getEmployeeTypes();
@@ -29,8 +31,17 @@ export class SignUpComponent {
     }
   
   signUpEmployee(){
-
-
-  }
-
+    console.log('Adding an Employee');
+    
+    this.firstService.postEmployee(this.employee).subscribe((data) =>{
+      if (data != null){
+        console.log(this.employee);
+        alert("Employee added successfully");
+        // Redirect to the login page after successful registration
+        this.router.navigate(['/login']);
+      }else{
+        alert("Error adding employee")
+      }
+    });
+  };
 }

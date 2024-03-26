@@ -37,10 +37,9 @@ getEmployeeTypes(): Observable<EmployeeType[]> { // Aggiungi questo metodo
 //     .catch(error => { console.log(error); return throwError('Something went wrong. Please try again.'); });
 // }
 
-// saveEmployee(){
-//    return this.hC.post<Employee>('http://localhost:8080/EmployeeRest/addEmployee);
-
-
-// }
+postEmployee(employee: Employee): Observable<Employee> {
+  return this.hC.post<Employee>('http://localhost:8080/EmployeeRest/addEmployee/', employee);
 }
+}
+
 
