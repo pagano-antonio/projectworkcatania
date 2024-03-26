@@ -13,5 +13,4 @@ public interface EmployeeRepository extends JpaRepository <Employee, Integer>{
 	List<Employee>findByEmailAndPassword(String email, String password);
 	
 	
-   
 }
