@@ -1,10 +1,7 @@
 package com.rest;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +12,6 @@ import com.model.EmployeeType;
 import com.repository.EmployeeTypeRepository;
 
 @RestController
-@CrossOrigin
 @RequestMapping("EmployeeTypeRest") // tutto da testare
 public class EmployeeTypeRest {
 
@@ -40,13 +36,6 @@ public class EmployeeTypeRest {
         return "addEmployeeTypeOk";
     }
 		
-	
-	@GetMapping("/preSignUp")// metodo rest per menù a tendina del sign up
-    public List<EmployeeType> preSignUp(){
-		List<EmployeeType> employeeType = employeeTypeRep.findAll();
-		return employeeType;
-	} 
-	
 	@GetMapping("/searchById")
 	public String searchById(Model model, Integer idEmployeeType) {
 		if(employeeTypeRep.findById(idEmployeeType).isPresent()) {

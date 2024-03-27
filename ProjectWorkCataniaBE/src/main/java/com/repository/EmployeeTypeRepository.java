@@ -9,6 +9,4 @@ import com.model.EmployeeType;
 @Repository
 public interface EmployeeTypeRepository extends JpaRepository <EmployeeType, Integer>{
 
-	
-
 }

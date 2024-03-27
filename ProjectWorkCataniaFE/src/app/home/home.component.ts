@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LoginserviceService } from '../services/loginservice.service';
-import { EmployeeType } from '../model/EmployeeType';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +9,8 @@ import { EmployeeType } from '../model/EmployeeType';
   styleUrl: './home.component.css'
 })
 
-
 export class HomeComponent {
-
-  
-  constructor(private route: ActivatedRoute, private router: Router, private firstService: LoginserviceService) {}
-
+  constructor(private router: Router) {}
 
   homePage(){
     this.router.navigate(['']);
@@ -31,8 +25,7 @@ export class HomeComponent {
   }
   
   signUpPage(){
-
-    this.router.navigate(['/signUp']);
+    this.router.navigate(['/signUpPage']);
   }
 
 }
