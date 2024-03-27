@@ -17,7 +17,4 @@ export class Employee {
 	public employeeType!: EmployeeType;
  
 
-
- 
-
 }

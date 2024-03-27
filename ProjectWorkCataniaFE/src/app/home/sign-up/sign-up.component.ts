@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { Employee } from '../../model/employee';
 
 
-
 @Component({
   selector: 'app-sign-up',
   standalone: true,

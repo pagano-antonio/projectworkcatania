@@ -1,8 +1,6 @@
 package com.rest;
 
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.model.Employee;
 import com.repository.EmployeeRepository;
-
-import jakarta.persistence.EntityNotFoundException;
 
 
 @RestController
@@ -71,7 +67,7 @@ public class EmployeeRest {
 	        } else {
 	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	        }
-    }		
+    }	
 				
 //	@GetMapping("/searchByEmailAndPassword/{email}/{password}") // metodo di ricerca con eccezione e che ritorna 
 //	public Employee searchByEmailAndPassword( //solo employee e non Response Entity
