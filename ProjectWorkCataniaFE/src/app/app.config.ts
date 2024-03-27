@@ -5,7 +5,13 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ToastrModule } from 'ngx-toastr';
+=======
+import { NgIf } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+>>>>>>> parent of b80f3fc (finita anche la parte della sign up e funziona con tutti gli errori)
 
 =======
 import { NgIf } from '@angular/common'; 

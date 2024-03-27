@@ -40,7 +40,7 @@ public class Employee implements Serializable {
 
 	// bi-directional many-to-one association to EmployeeType
 	@ManyToOne
-//	@JsonIgnore
+	@JsonIgnore
 	@JoinColumn(name = "idEmployeeType")
 	private EmployeeType employeeType;
 

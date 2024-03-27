@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginserviceService } from '../../../services/loginservice.service';
 import { FormsModule } from '@angular/forms';
@@ -9,8 +9,7 @@ import { Employee } from '../../../model/employee';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  encapsulation:  ViewEncapsulation.None // disabilita incapsulamento della vista
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   email: string= '';
@@ -35,10 +34,9 @@ export class LoginComponent {
         this.router.navigate(['/employeePage', data.name, data.surname, data.idEmployee]);
       });
   }
-<<<<<<< HEAD
+
   
 }
-=======
 
-}
->>>>>>> 555707c43ea8ff142b04dea17f72752d438098f2
+
+

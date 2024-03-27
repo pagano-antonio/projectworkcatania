@@ -28,13 +28,7 @@ getJobByIdEmployee(idEmployee:number){
 // }
 
 postEmployee(employee: Employee): Observable<Employee> {
-  return this.hC.post<Employee>('http://localhost:8080/EmployeeRest/addEmployee/', employee)
-  .pipe(
-    catchError(error => {
-      console.log(error);
-      return throwError('Something went wrong. Please try again.');
-    })
-  );
+  return this.hC.post<Employee>('http://localhost:8080/EmployeeRest/addEmployee/', employee);
 }
 }
 
