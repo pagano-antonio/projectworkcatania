@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginserviceService } from '../../../services/loginservice.service';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation:  ViewEncapsulation.None // disabilita incapsulamento della vista
 })
 export class LoginComponent {
   email: string= '';
@@ -43,7 +44,5 @@ export class LoginComponent {
       this.errorMessage = 'Please enter your email and password.';
     }
   }
-
-
   
 }

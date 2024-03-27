@@ -87,7 +87,6 @@ public class EmployeeController {
 	
 	}
 	
-	
 	@GetMapping("/deleteEmployee")
 	public String deleteContractType(Employee employee, Model model) { 
 		System.out.println("Sto cancellando la tipologia di contratto!");

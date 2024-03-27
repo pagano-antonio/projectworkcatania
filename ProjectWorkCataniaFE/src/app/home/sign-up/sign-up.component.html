@@ -2,38 +2,39 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-		
-		<form class="login">
+
+		<div class="login">
 				<div class="login__field">
 					<i class="login__icon fas fa-envelope"></i>
-					<input type="text" class="login__input" placeholder="Email" id="email" name="email"  required autocomplete="email">
+					<input type="text" class="login__input" placeholder="Email" [(ngModel)]="employee.email" required autocomplete="email">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password" id="password" name="password" required autocomplete="password">
+					<input type="password" class="login__input" placeholder="Password" [(ngModel)]="employee.password" required autocomplete="password">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Name" id="name" name="name"  required autocomplete="name">
+					<input type="text" class="login__input" placeholder="Name" [(ngModel)]="employee.name"  required autocomplete="name">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Surname" id="surname" name="surname" required autocomplete="surname">
+					<input type="text" class="login__input" placeholder="Surname" [(ngModel)]="employee.surname"  required autocomplete="surname">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Username" id="username" name="username" required autocomplete="username">
+					<input type="text" class="login__input" placeholder="Username" [(ngModel)]="employee.username" required autocomplete="username">
 				</div>
 				<div class="login__field">
-                        <select [(ngModel)]="description" name="employeeType" aria-label="Employee Type Required" aria-live="polite">
+                        <select [(ngModel)]="employeeType.idEmployeeType" aria-label="Employee Type Required" aria-live="polite">
                         <option *ngFor="let employeeType of employeeTypes$ | async" [value]="employeeType.idEmployeeType">{{employeeType.description}}</option>
                         </select>
                   </div>
+
 				<button class="button login__submit">
 					<span class="button__text" (click)="signUpEmployee()">Sign Up</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
-			</form>
+		</div>
 			<div class="social-login">
 				<div class="social-icons">
 				</div>

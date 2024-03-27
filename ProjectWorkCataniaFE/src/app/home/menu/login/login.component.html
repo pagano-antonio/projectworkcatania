@@ -5,16 +5,16 @@
 		<div class="screen__content">
 			<form class="login">
 				<div class="login__field">
-					<!-- <i class="login__icon fas fa-user"></i> -->
+					<i class="login__icon fas fa-user"></i> 
 					<input type="text" class="login__input" placeholder="Email" [(ngModel)]="email" id="email" name="email" required autocomplete="email">
 				</div>
 				<div class="login__field">
-					<!-- <i class="login__icon fas fa-lock"></i> -->
+					<i class="login__icon fas fa-lock"></i>
 					<input type="password" class="login__input" placeholder="Password" [(ngModel)]="password" id="password" name="password" required autocomplete="password">
 				</div>
 				<button class="button login__submit">
 					<span class="button__text" (click)="login()">Log In Now</span>
-					<!-- <i class="button__icon fas fa-chevron-right"></i> -->
+					 <i class="button__icon fas fa-chevron-right"></i> 
 				</button>
 				<div class = "alert.container">
 				<div *ngIf="errorMessage" class="alert alert-danger">
@@ -23,12 +23,12 @@
 				</div>
 			</form>
 			<div class="social-login">
-  <!-- <h3>Log in via</h3>
+  <h3>Log in via</h3>
   <div class="social-icons">
-    <a href="#" class="social-login__icon fab fa-instagram-square"></a>
+    <a href="#" class="social-login__icon fab fa-instagram"></a>
     <a href="#" class="social-login__icon fab fa-facebook-square"></a>
     <a href="#" class="social-login__icon fab fa-twitter-square"></a>
-  </div> -->
+  </div>
 </div>
 		</div>
 		<div class="screen__background">
