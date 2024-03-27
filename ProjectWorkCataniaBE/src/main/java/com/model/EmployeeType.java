@@ -3,8 +3,6 @@ package com.model;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -27,7 +25,6 @@ public class EmployeeType implements Serializable {
 	private String description;
 
 	// bi-directional many-to-one association to Employee
-	@JsonIgnore
 	@OneToMany(mappedBy = "employeeType")
 	private List<Employee> employees;
 
