@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List Company By Name</title>
+<title>List Skills By Title</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -268,14 +268,15 @@ p {
         <i class="fas fa-qrcode"></i>
         <span>Home</span>
       </a>
-       <a href="${pageContext.request.contextPath}SkillController/preAddSkill"target="_blank">
-         <i class="fas fa-briefcase"></i>
-        <span>Add Skill</span>
-      </a>
-      <a href="${pageContext.request.contextPath}SkillController/preSearchSkillByTitle"target="_blank">
+      <a href="${pageContext.request.contextPath}/SkillController/preSearchSkillByTitle"target="_blank">
         <i class="fas fa-clipboard"></i>
         <span>Back to Search</span>
       </a>
+       <a href="${pageContext.request.contextPath}/SkillController/preAddSkill"target="_blank">
+         <i class="fas fa-briefcase"></i>
+        <span>Add Skill</span>
+      </a>
+      
    	   
     </div>
 </body>

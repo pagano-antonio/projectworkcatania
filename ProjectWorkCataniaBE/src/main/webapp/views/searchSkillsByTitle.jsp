@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search Company By City</title>
+<title>Search By Title</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
