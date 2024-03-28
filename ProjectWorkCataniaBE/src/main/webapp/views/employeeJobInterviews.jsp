@@ -340,7 +340,7 @@ p {
         <i class="fas fa-user"></i>
         <span>Update Account</span>
       </a>
-       <a href="${pageContext.request.contextPath}/preAddJobInterview"target="_blank">
+       <a href="${pageContext.request.contextPath}/JobInterviewController/preAddJobInterview"target="_blank">
          <i class="fas fa-clipboard"></i>
         <span>Add Interview</span>
       </a>
